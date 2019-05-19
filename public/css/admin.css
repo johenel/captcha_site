@@ -1,0 +1,25 @@
+.sidebar {
+    height: 100%;
+    width: 100%;
+    border: solid 1px #ddd;
+}
+
+.sidebar-header {
+    padding: 10px;
+    background: #333;
+    color:white;
+    text-align: center;
+}
+
+.sidebar-body {
+}
+
+.sidebar-body ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.sidebar-body ul li {
+    padding: 0px 40px;
+    margin-top:20px;
+}

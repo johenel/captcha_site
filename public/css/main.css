@@ -1,0 +1,34 @@
+.login-box {
+    background: white;
+    text-align: left;
+    padding: 20px;
+}
+
+.login-box label {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+#feature_login .card-header, #feature_signup .card-header {
+    background-color: rgba(0,0,0,.03);
+    color:white;
+}
+
+#feature_login.card, #feature_signup.card {
+    border: solid 0px transparent;
+    border-radius: 0px;
+}
+
+#feature_login label, #feature_signup label {
+    font-weight: bold;
+    text-transform: capitalize;
+    color:white;
+}
+
+#feature_signup {
+    margin-top: -90px;
+}
+
+input.btn, input.form-control {
+    border-radius: 0px;
+}
