@@ -48,6 +48,7 @@ jQuery(function($){
 
 
 	jQuery(window).bind('scroll', function () {
+		console.log($(window).scrollTop());
     if ($(window).scrollTop() > 700) {
         $('.main-navbar').addClass('navbar-fixed-top');
         $('.logo').addClass('logo-compressed');
@@ -179,7 +180,6 @@ jQuery(function($){
 		  jQuery('html, body').stop().animate({ 
 		      scrollTop: offsetTop
 		  }, 1500);
-		  e.preventDefault();
 		});
 
 		// Bind to scroll
@@ -189,8 +189,10 @@ jQuery(function($){
 		   
 		   // Get id of current scroll item
 		   var cur = scrollItems.map(function(){
-		     if ($(this).offset().top < fromTop)
-		       return this;
+		   	if($(this).length > 0) {
+				if ($(this).offset().top < fromTop)
+					return this;
+			}
 		   });
 		   // Get the id of the current element
 		   cur = cur[cur.length-1];

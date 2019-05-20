@@ -17,6 +17,8 @@
 #feature_login.card, #feature_signup.card {
     border: solid 0px transparent;
     border-radius: 0px;
+    max-width: 400px;
+    margin: auto;
 }
 
 #feature_login label, #feature_signup label {
@@ -26,7 +28,7 @@
 }
 
 #feature_signup {
-    margin-top: -90px;
+    margin-top: -90px !important;
 }
 
 input.btn, input.form-control {

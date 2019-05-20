@@ -283,14 +283,20 @@ img{
 	border-radius: 0;
 	border-bottom: 1px solid #e7e7e7;  
 	border-right: medium none;
-	height: 100px;
 	margin-bottom: 0;
+	height: 100px;
 	-webkit-box-shadow: 0px 2px 4px 0px #f3f3f3;
 	-moz-box-shadow: 0px 2px 4px 0px #f3f3f3;
 	box-shadow: 0px 2px 4px 0px #f3f3f3;
 }
 .navbar-fixed-top{
 	height: 80px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 99999;
+	background: white;
+	left: 0px;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
@@ -314,7 +320,6 @@ img{
 }
 #navbar {
 	float: left;
-	width: 83%;
 }
 .main-nav {
 	display: inline-block;
@@ -451,6 +456,7 @@ img{
 	display: inline;
 	width: 100%;
 	margin-top: 50px;
+	text-align: center;
 }
 .wc-table{
 	display: inline-block;
@@ -458,7 +464,7 @@ img{
 }
 .wc-table li {  
 	float: left;
-	width: 25%;
+	width: 33%;
 }
 .single-wc-content{
 	float: left;
@@ -513,10 +519,24 @@ img{
 	width: 445px;
 }
 .about-left img {
-	left: 23px;
-	position: absolute;
-	top: 23px;
+	width: 100%;
+	height: 100%;
 }
+.marketing-instruction li {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+ul.service-table li {
+	float: left;
+}
+
+ul.service-table li .single-service {
+	text-align: center;
+	padding: 45px 20px;
+	height: 150px;
+}
+
 .introduction-btn {
 	color: #f9fffd;
 	display: inline-block;
