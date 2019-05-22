@@ -284,4 +284,8 @@
 
         {{--</div>--}}
 
+        <script>
+
+        </script>
+
 @endsection
