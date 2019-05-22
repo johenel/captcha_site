@@ -29,25 +29,25 @@
                         </li>
                     </ul>
                 @else
-                    <ul class="nav navbar-nav">
-                        <li class="">
-                            <a href="/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    <ul class="nav navbar-nav user-side-bar" style="padding-top:20px;">
+                        <li>
+                            <a href="/"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                         </li>
                         <li class="">
-                            <a href="/dashboard"><i class="menu-icon fa fa-laptop"></i>TYPING CAPTCHA </a>
+                            <a href="/typing-captcha"><i class="menu-icon fa fa-keyboard-o"></i>TYPING CAPTCHA </a>
                         </li>
                         <li class="">
-                            <a href="/dashboard"><i class="menu-icon fa fa-laptop"></i>REFERRAL LIST</a>
+                            <a href="/referral-list"><i class="menu-icon fa fa-group"></i>REFERRAL LIST</a>
                         </li>
                         <li class="">
-                            <a href="/dashboard"><i class="menu-icon fa fa-laptop"></i>ENCASHMENT</a>
+                            <a href="/encashment"><i class="menu-icon fa fa-money"></i>ENCASHMENT</a>
                         </li>
                         <li class="">
-                            <a href="/dashboard"><i class="menu-icon fa fa-laptop"></i>HISTORY</a>
+                            <a href="/history"><i class="menu-icon fa fa-calendar"></i>HISTORY</a>
                         </li>
-                        <li class="">
-                            <a href="/dashboard"><i class="menu-icon fa fa-laptop"></i>CODELIST</a>
-                        </li>
+                        {{--<li class="">--}}
+                            {{--<a href="/code-list"><i class="menu-icon fa fa-laptop"></i>CODELIST</a>--}}
+                        {{--</li>--}}
                     </ul>
                 @endif
             </div><!-- /.navbar-collapse -->
@@ -96,5 +96,7 @@
         <!-- /.content -->
         <div class="clearfix"></div>
     </div>
+
+
 </body>
 </html>
