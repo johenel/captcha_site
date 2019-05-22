@@ -15,7 +15,7 @@ class AdminUser
      */
     public function handle($request, Closure $next)
     {
-        if(session()->get('user')->account_type == 1) {
+        if($type = session()->get('user')->account_type == 1) {
             return redirect('/');
         }
         return $next($request);
