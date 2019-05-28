@@ -7,11 +7,18 @@ use App\Models\Transactions;
 
 class UsersController extends Controller
 {
+    protected $user;
+
+    public function __construct(Request $request)
+    {
+        $this->user = session()->get('user');
+    }
+
     public function typeCaptchaIndex(Request $request)
     {
         $response = [];
 
-        $response['total_captcha'] = 0;
+        $response['total_captcha'] = $this->getTotalCaptcha();
         $response['total_earnings'] = 0;
         $response['today_captcha'] = 0;
         $response['today_earnings'] = 0;
@@ -21,7 +28,7 @@ class UsersController extends Controller
 
     private function getTotalCaptcha()
     {
-
+        return Transactions::where('users_id', session()->get('user')->id)->where('type_id', 1)->where('status_id', 3)->count();
     }
 
     public function typeCaptcha(Request $request)

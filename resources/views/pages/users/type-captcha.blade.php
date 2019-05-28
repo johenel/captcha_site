@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text"><span class="count">0</span></div>
+                                        <div class="stat-text"><span class="count">{{$total_captcha}}</span></div>
                                         <div class="stat-heading">Total Captcha</div>
                                     </div>
                                 </div>
