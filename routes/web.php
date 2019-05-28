@@ -18,6 +18,12 @@ Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@index']);
 Route::post('/login', 'LoginController@attempt');
 Route::get('/logout', 'LogoutController@logout');
 
+/* USER ROUETS */
+
+Route::group(['middleware' => 'filterGuest'], function() {
+    Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
+    Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
+});
 
 //ADMIN ROUTES
 

@@ -11,7 +11,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="count">{{$total_income}}</span></div>
+                                <div class="stat-text">&#8369; <span class="">{{$total_income}}</span></div>
                                 <div class="stat-heading">Total Income</div>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="count">{{$total_encashment}}</span></div>
+                                <div class="stat-text">&#8369; <span class="">{{$total_encashment}}</span></div>
                                 <div class="stat-heading">Total Encashment</div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="count">{{$remaining_balance}}</span></div>
+                                <div class="stat-text">&#8369; <span class="">{{$remaining_balance}}</span></div>
                                 <div class="stat-heading">Remaining Balance</div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="count">{{$referral_income}}</span></div>
+                                <div class="stat-text">&#8369; <span class="">{{$referral_income}}</span></div>
                                 <div class="stat-heading">Referral Bonus</div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="count">{{$captcha_income}}</span></div>
+                                <div class="stat-text">&#8369; <span class="">{{$captcha_income}}</span></div>
                                 <div class="stat-heading">Captcha Bonus</div>
                             </div>
                         </div>

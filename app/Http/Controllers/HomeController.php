@@ -16,6 +16,7 @@ class HomeController extends Controller
         if ($request->session()->has('user')) {
             $this->user = $request->session()->get('user');
             $response = $this->getIncomeStatistics();
+
             return view('pages.home', $response);
         }
 
@@ -44,51 +45,51 @@ class HomeController extends Controller
     {
         $total = 0;
 
-        $result = Transactions::whereIn('type_id', [1, 3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id',$this->user->id)->whereIn('type_id', [1, 3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
         }
 
-        return $total;
+        return $total ? $total : 0;
     }
 
     private function getCaptchaIncome()
     {
         $total = 0;
 
-        $result = Transactions::whereIn('type_id', [1])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id',$this->user->id)->whereIn('type_id', [1])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
         }
 
-        return $total;
+        return $total ? $total : 0;
     }
 
     private function getReferralIncome()
     {
         $total = 0;
 
-        $result = Transactions::whereIn('type_id', [3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id',$this->user->id)->whereIn('type_id', [3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
         }
 
-        return $total;
+        return $total ? $total : 0;
     }
 
     private function getTotalEncashment()
     {
         $total = 0;
 
-        $result = Transactions::where('type_id', 2)->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id',$this->user->id)->where('type_id', 2)->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
         }
 
-        return $total;
+        return $total ? $total : 0;
     }
 }
