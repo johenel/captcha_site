@@ -37,7 +37,7 @@
                             <a href="/typing-captcha"><i class="menu-icon fa fa-keyboard-o"></i>TYPING CAPTCHA </a>
                         </li>
                         <li class="">
-                            <a href="/referral-list"><i class="menu-icon fa fa-group"></i>REFERRAL LIST</a>
+                            <a href="/referrals"><i class="menu-icon fa fa-group"></i>REFERRAL LIST</a>
                         </li>
                         <li class="">
                             <a href="/encashment"><i class="menu-icon fa fa-money"></i>ENCASHMENT</a>

@@ -55,8 +55,8 @@
                             <li><a href="#faq">FAQ</a></li>
                             <li><a href="#contact">CONTACT</a></li>
                             <li><a href="#pricing-table">PINCODE STATUS</a></li>
-                            <li><button class="btn btn-outline-primary">Login</button></li>
-                            <li><button class="btn btn-outline-success">Sign Up</button></li>
+                            <li><button class="btn btn-outline-primary" onclick="window.location.href='/?action=login';">Login</button></li>
+                            <li><button class="btn btn-outline-success" onclick="window.location.href='/?action=signup';">Sign Up</button></li>
 
                         </ul>
 
@@ -76,33 +76,71 @@
                             <div class="title-area">
                                 <h2 class="tittle">Welcome to <span>Trihomebased</span></h2>
                                 <span class="tittle-line"></span>
-                                <p>Trihomebased Marketing is an online captcha typing job where you will solve captcha to get guaranteed additional income in Internet.
+                                <p>
+                                    Trihomebased is a hybrid website which offers guaranteed income by typing captcha and an online store
+                                    which gives lots of privileges to its members.
 
-                                    To work on the service, you only need a computer, mobile device and internet connection. The point is that, there are lots of images that cannot be recognized automatically and there are people (customers) who are ready to pay for recognition of these images. We made a service suitable for both customers and workers when we collect images from customer and send them to you (worker) in a simple interface where you need to enter the numbers correctly according to the shown images. You will earn funds for every correctly entered captcha.</p>
+                                    A website may generate income via google adsense through its traffic. Every time a user visits our website and does captcha encoding, trihomebased will generate income.
+
+                                    Aside from that, we have tangible products that are available in our online store and with free delivery nationwide!
+                                    Once you are a member, you will be getting up to 20% discount in all trihomebased products and earn extra income
+                                    by doing direct selling. Non-members can also purchase in our online store, free
+                                    delivery nationwide.
+
+                                </p>
                             </div>
                             <div class="welcome-content">
-                                <h1 style="margin-bottom: 50px">3 Ways to earn in Trihomebased</h1>
+                                <hr style="margin-bottom: 50px;">
+
+                                <h1 style="margin-bottom: 20px">3 Ways to earn in Trihomebased</h1>
+                                <div class="p-set-1">
+                                    <h2 style="    color: black;text-align: center;">***REGISTRATION***</h2>
+                                    <p>
+                                        UPON SUCCESFUL REGISTRATION (AFTER PAYING 150)
+                                        MAGKAKAROON AGAD NG 100 REWARD POINTS ANG NEWLY REGISTERED
+                                        ACCOUNTS
+                                    </p>
+                                    <ul>
+                                        <li>40 PESOS WILL GO TO CASH WALLET NG NAG REFER</li>
+                                        <li>10 PESOS WILL BE CONVERTED INTO REWARD POINTS NG NAG REFER
+                                            (1POINT = 1 PESO)
+                                        </li>
+                                    </ul>
+                                    <p>-REWARD POINTS CAN BE USED TO PURCHASE OUR PRODUCTS</p>
+
+                                </div>
+
                                 <ul class="wc-table">
                                     <li>
                                         <div class="single-wc-content wow fadeInUp">
                                             <span class="fa fa-users wc-icon"></span>
-                                            <h4 class="wc-tittle">1. Direct Referral</h4>
-                                            <p>Get ₱30 for each refer person</p>
+                                            <h4 class="wc-tittle">1. CAPTCHA ENCODING</h4>
+                                            <p>0.03 PESOS PER SUCCESSFUL CAPTCHA
+                                                (captcha income will be automatically credited to cash wallet)
+                                            </p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="single-wc-content wow fadeInUp">
                                             <span class="fa fa-sellsy wc-icon"></span>
-                                            <h4 class="wc-tittle">2. Indirect Referral</h4>
-                                            <p>(2nd to 4th level ₱10)</p>
-                                            <p>(5th to 6th level ₱5) </p>
+                                            <h4 class="wc-tittle">2. REFERRAL INCENTIVE</h4>
+                                            <ul class="sub-item" style="    list-style-type: decimal;    margin-top: 20px;">
+                                                <li>1ST LEVEL = 40 PESOS + 10 REWARD POINTS</li>
+                                                <li>2ND LEVEL = 10 PESOS</li>
+                                                <li>3RD LEVEL = 5 PESOS</li>
+                                                <li>4TH LEVEL = 2.50</li>
+                                                <li>5H LEVEL = 2.50</li>
+                                            </ul>
+
                                         </div>
                                     </li>
                                     <li>
                                         <div class="single-wc-content wow fadeInUp">
                                             <span class="fa fa-line-chart wc-icon"></span>
-                                            <h4 class="wc-tittle">3. Typing Captcha</h4>
-                                            <p>But if you have invite that joins the business, you will earn more income</p>
+                                            <h4 class="wc-tittle">3. DIRECT SELLING (UP TO 20% DISCOUNT ON OUR PRODUCTS)</h4>
+                                            <p>ONCE YOU ARE A MEMBER YOU WILL ENJOY 20% DISCOUNT ON ALL OUR
+                                                PRODUCTS.
+                                            </p>
                                         </div>
                                     </li>
                                 </ul>
@@ -117,7 +155,7 @@
                             <div class="row">
                                 <div class="col-md-5 col-sm-6 col-xs-12">
                                     <div class="about-left wow fadeInLeft">
-                                        <img src="/images/marketing.png" alt="img">
+                                        <img src="/temp-rex/assets/images/marketing.png" alt="img">
                                     </div>
                                 </div>
                                 <div class="col-md-7 col-sm-6 col-xs-12">

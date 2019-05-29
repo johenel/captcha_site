@@ -34,3 +34,21 @@
 input.btn, input.form-control {
     border-radius: 0px;
 }
+
+.sub-item li {
+    display: block;
+    float: none!important;
+    width:100% !important;
+}
+
+.wc-tittle {
+    min-height: 60px;
+}
+
+.p-set-1 {
+    text-align: left;
+    width: 550px;
+    margin: auto;
+    text-transform: lowercase;
+    margin-bottom: 60px;
+}
