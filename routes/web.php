@@ -23,6 +23,7 @@ Route::get('/logout', 'LogoutController@logout');
 Route::group(['middleware' => 'filterGuest'], function() {
     Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
     Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
+    Route::get('/referrals', 'UsersController@referralsIndex');
 });
 
 //ADMIN ROUTES

@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text"><span class="count">{{$total_captcha}}</span></div>
+                                        <div class="stat-text"><span class="">{{$total_captcha}}</span></div>
                                         <div class="stat-heading">Total Captcha</div>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text">&#8369; <span class="count">0</span></div>
+                                        <div class="stat-text">&#8369; <span class="">{{$total_earnings}}</span></div>
                                         <div class="stat-heading">Total Captcha Earnings</div>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text"><span class="count">0</span></div>
+                                        <div class="stat-text"><span class="">{{$today_captcha}}</span></div>
                                         <div class="stat-heading">Today's Total Captcha</div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text">&#8369; <span class="count">0</span></div>
+                                        <div class="stat-text">&#8369; <span class="">{{$today_earnings}}</span></div>
                                         <div class="stat-heading">Today's Total Earnings</div>
                                     </div>
                                 </div>
@@ -110,11 +110,11 @@
                     <div class="card-body">
                         <form action="/typing-captcha/attempt" method="post">
                             @csrf
-                            <img src="{{\Illuminate\Support\Facades\URL::to('/')}}/images/captcha-sample.png" style="border: solid 1px #ddd;width:100%;">
+                            <img src="{{\Illuminate\Support\Facades\URL::to('/')}}/temp-rex/assets/images/captcha-sample.png" style="border: solid 1px #ddd;width:100%;">
                             <div class="captcha-input" style="height:100px;background: #dde;margin-top:30px;padding:30px;">
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <input class="form-control" name="captcha_user_input" placeholder="Enter">
+                                        <input class="form-control" name="captcha_user_input" placeholder="Enter test123">
                                     </div>
                                     <div class="col-md-3">
                                         <input type="submit" class="btn btn-dark">
