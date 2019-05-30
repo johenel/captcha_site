@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transactions;
 use Illuminate\Http\Request;
 use Hash;
 
@@ -24,6 +25,8 @@ class SignupController extends Controller
 
         $request->session()->flash('draft', $draft);
 
+        $referrer = $this->checkIfReferred($request->ref);
+
         $this->validate($request, [
             'email' => 'required|email|unique:users',
             'first_name' => 'required|min:3',
@@ -40,8 +43,31 @@ class SignupController extends Controller
 
         $user->save();
 
+        if($referrer) {
+            $transaction = new Transactions();
+            $transaction->users_id = $referrer->id;
+            $transaction->value = 40;
+            $transaction->type_id = 3;
+            $transaction->status_id = 3;
+            $transaction->source_token = $user->id;
+            $transaction->save();
+        }
+
         $request->session()->put('user', $user);
 
         return redirect('/');
+    }
+
+    private function checkIfReferred($ref)
+    {
+        $email = decrypt($ref);
+
+        $result = Users::where('email', $email)->get();
+
+        if(count($result) == 1) {
+            return $result[0];
+        }
+
+        return false;
     }
 }
