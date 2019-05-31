@@ -146,7 +146,7 @@
                                                     Ask for a referral link to any of <span style="color:#00d999;">TRIHOMEBASED</span> members or you can directly <a href="?action=signup" style="color:dodgerblue">signup to our website</a>.
                                                 </li>
                                                 <li>
-                                                    To activate your account, you must pay <b style="color:black">&#8369;150.00</b> via payment options and send the payment transaction details / SCREENSHOT together with your USERNAME to trihomebased@gmail.com or send it through our <a href="#" style="color:dodgerblue">CONTACT US</a> section.
+                                                    To activate your account, you must pay <b style="color:black">&#8369;150.00</b> via payment options below and send the payment transaction details / SCREENSHOT together with your USERNAME to trihomebased@gmail.com or send it through our <a href="#contact" style="color:dodgerblue">CONTACT US</a> section.
                                                 </li>
                                                 <li>
                                                     Once your payment is verified, your account will be activated within 24 to 48 hours.
