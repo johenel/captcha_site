@@ -131,49 +131,12 @@
                         <!-- End welcome area -->
                     </div>
                 </div>
+                <hr style="margin-top:30px;">
                 <div class="row" id="how_it_works">
                     <div class="col-md-12">
                         <div class="about-area">
                             <div class="row">
-                                <div class="col-md-5 col-sm-6 col-xs-12">
-                                    <div class="wow fadeInLeft payment-method-list">
-                                        <div class="container-fluid" style="width: 100%">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            GCASH Mobile No : 09350057909
-                                                        </div>
-                                                        <div class="card-body text-center">
-                                                            <img src="/temp-rex/assets/images/gcash.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            Smart Padala Referrence No : 09350057909
-                                                        </div>
-                                                        <div class="card-body text-center">
-                                                            <img src="/temp-rex/assets/images/smartpadala.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            Coins.ph <br> Email : trihomebased@gmail.com <br> Mobile # : 09350057909
-                                                        </div>
-                                                        <div class="card-body text-center">
-                                                            <img src="/temp-rex/assets/images/coinsph.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-7 col-sm-6 col-xs-12">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="about-right wow fadeInRight" >
                                         <div class="title-area">
                                             <h2 class="tittle">How To Join <span>Trihomebased</span> Marketing?</h2>
@@ -193,6 +156,43 @@
                                                 <a href="?action=signup" class="button button-default" data-text="SIGN UP!"><span>GET STARTED</span></a>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row payment-method-list">
+                    <div class="container-fluid" style="width: 100%">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        GCASH Mobile No :<br>09350057909
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <img src="/temp-rex/assets/images/gcash.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Smart Padala Referrence No :<br> 09350057909
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <img src="/temp-rex/assets/images/smartpadala.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                       Email : trihomebased@gmail.com <br> Mobile # : 09350057909
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <img src="/temp-rex/assets/images/coinsph.png" alt="">
                                     </div>
                                 </div>
                             </div>

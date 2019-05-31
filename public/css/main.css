@@ -83,4 +83,5 @@ input.btn, input.form-control {
     -webkit-box-shadow: 1px 1px 1px #ddd;
     -moz-box-shadow: 1px 1px 1px #ddd;
     box-shadow: 1px 1px 1px #ddd;
+    height: 220px;
 }
