@@ -18,6 +18,11 @@ class CreateAccountTypesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        DB::table('account_types')->insert([
+            ['name' => 'user'],
+            ['name' => 'admin']
+        ]);
     }
 
     /**
