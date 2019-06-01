@@ -60,7 +60,7 @@ class SignupController extends Controller
 
     private function checkIfReferred($ref)
     {
-        $email = decrypt(decodeURIComponent($ref));
+        $email = decrypt(urldecode($ref));
 
         $result = Users::where('email', $email)->get();
 
