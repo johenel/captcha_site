@@ -51,7 +51,7 @@
                                     <div class="col-md-4">
                                         <div class="card">
                                             <div class="card-header">
-                                                Smart Padala Referrence No :<br> 09350057909
+                                                Smart Padala Referrence No :<br> 5577-5194-1012-0100
                                             </div>
                                             <div class="card-body text-center">
                                                 <img src="/temp-rex/assets/images/smartpadala.png" alt="">
