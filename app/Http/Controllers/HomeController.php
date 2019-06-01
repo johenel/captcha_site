@@ -14,10 +14,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         if ($request->session()->has('user')) {
-            $this->user = $request->session()->get('user');
-            $response = $this->getIncomeStatistics();
+            if(session()->get('user')->is_activated == 1) {
+                $this->user = $request->session()->get('user');
+                $response = $this->getIncomeStatistics();
 
-            return view('pages.home', $response);
+                return view('pages.home', $response);
+            }
+            return redirect('/activate-account');
         }
 
         $response           = [];
