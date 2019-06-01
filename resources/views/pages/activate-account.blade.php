@@ -34,6 +34,7 @@
                         <h2 class="text-black-50">Hi <span style="text-transform: capitalize">{{$user->first_name}}</span>, your account is not yet activated.</h2>
                         <a href="/logout" class="btn btn-outline-danger logout" style="float:right"><i class="fa fa-power-off"></i> Logout</a>
                         <p>Please pay a registration fee of 150.00 PHP to any of the following payment outlet below to activate your account.</p>
+
                         <div class="row payment-method-list">
                             <div class="container-fluid" style="width: 100%">
                                 <div class="row">
@@ -74,13 +75,13 @@
                             <div class="col-md-12">
                                 <h2 class="text-black-50">Done paying the registration fee?</h2>
                                 <p>Submit the transaction details of the payment made OR send a readable SCREENSHOT/PHOTO of the payment receipt below.</p>
-                                <form action="/payment-receipt-details">
+                                <p>Need help? Feel free to contact us at <a href="mailto:trihomebased@gmail.com" style="color:dodgerblue;font-weight: bold;">trihomebased@gmail.com</a> for inquiries and questions.</p>
+                                @include('includes.error-validation')
+                                <form action="/activation-payment-details" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <label>Details</label>
-                                        <textarea name="text_details" class="form-control" style="height: 100px">
-
-                                        </textarea>
+                                        <textarea name="text_details" class="form-control" style="height: 100px;text-align: left;padding:10px;" value=""></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Upload a SCREENSHOT</label>

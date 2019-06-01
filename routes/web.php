@@ -21,6 +21,7 @@ Route::get('/logout', 'LogoutController@logout');
 /* USER ROUETS */
 
 Route::get('/activate-account', 'ActivateAccountController@index')->middleware('signedIn');
+Route::post('/activation-payment-details', 'ActivateAccountController@submitPaymentDetails');
 
 Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
