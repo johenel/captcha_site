@@ -16,15 +16,14 @@
                         <li class="menu-item-has-children dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>USERS</a>
                             <ul class="sub-menu children dropdown-menu">
-                                <li><i class="fa fa-user"></i><a href="/users">ALL</a></li>
+                                <li><i class="fa fa-user"></i><a href="/users">ACTIVATED</a></li>
                                 <li><i class="fa fa-id-badge"></i><a href="/users?status=pending">PENDING</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>PAYMENT REQUESTS</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>ENCASHMENTS</a>
                             <ul class="sub-menu children dropdown-menu">
-                                <li><i class="fa fa-user"></i><a href="/users">PENDING</a></li>
-                                <li><i class="fa fa-id-badge"></i><a href="/users?status=pending">PROCESSED</a></li>
+                                <li><i class="fa fa-user"></i><a href="/encashments?status=pending">PENDING</a></li>
                             </ul>
                         </li>
                     </ul>

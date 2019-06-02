@@ -29,11 +29,14 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/referrals', 'UsersController@referralsIndex');
 });
 
-
-
 //ADMIN ROUTES
 
-Route::get('/dashboard', 'Admin\DashboardController@index')->middleware('admin');
+Route::group(['middleware' => ['admin']], function () {
+    Route::get('/dashboard', 'Admin\DashboardController@index');
+    Route::get('/users', 'Admin\UsersController@index');
+    Route::get('/activation-request/{id}', 'Admin\ActivateAccountController@index');
+    route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
+});
 
 
 
