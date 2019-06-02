@@ -17,6 +17,11 @@ Route::post('/signup', 'SignupController@attempt');
 Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@index']);
 Route::post('/login', 'LoginController@attempt');
 Route::get('/logout', 'LogoutController@logout');
+Route::get('/forgot-password', 'ForgotPasswordController@index');
+Route::post('/forgot-password', 'ForgotPasswordController@forgotPassword');
+
+Route::get('/forgot-password/{token}', 'ForgotPasswordController@updatePassIndex');
+Route::post('/forgot-password/update', 'ForgotPasswordController@updatePass');
 
 /* USER ROUETS */
 
