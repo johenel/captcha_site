@@ -14,6 +14,6 @@
         </form>
     </div>
     <div class="card-footer text-center">
-        <span>Don't have an account?</span><a href="?action=signup" style="color:blue;"> Sign up!</a>
+        <span>Don't have an account?</span><br><a href="?action=signup" style="color:blue;"> Sign up</a> | <a href="/forgot-password" style="color:red;font-size: 14px;">Forgot Password</a>
     </div>
 </div>
