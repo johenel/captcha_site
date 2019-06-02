@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
 use App\Models\ActivationRequestDetails;
+use App\Mail\AccountVerified;
+use Illuminate\Support\Facades\Mail;
 
 class ActivateAccountController extends Controller
 {
@@ -26,6 +28,8 @@ class ActivateAccountController extends Controller
                 Users::where('id', $request->uid)->update([
                     'is_activated' => 1
                 ]);
+                $user = Users::where('id', $request->uid)->first();
+                $this->sendEmail($user);
                 break;
         }
 
@@ -35,5 +39,10 @@ class ActivateAccountController extends Controller
             ]);
 
         return redirect('/activation-request/' . $request->uid);
+    }
+
+    private function sendEmail($user)
+    {
+        Mail::to($user->email)->send(new AccountVerified($user));
     }
 }
