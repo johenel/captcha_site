@@ -85,3 +85,8 @@ input.btn, input.form-control {
     box-shadow: 1px 1px 1px #ddd;
     height: 220px;
 }
+
+table td, table th {
+    text-align: center;
+}
+

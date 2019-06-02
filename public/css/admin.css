@@ -23,3 +23,7 @@
     padding: 0px 40px;
     margin-top:20px;
 }
+
+table td, table th {
+    text-align: center;
+}
