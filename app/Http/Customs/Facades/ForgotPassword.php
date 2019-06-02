@@ -33,7 +33,7 @@ class ForgotPassword
         $fpModel = new ForgotPassModel();
 
         $fpModel->user_id = $user[0]->id;
-        $fpModel->slug    = urlencode(Hash::make(Carbon::now()));
+        $fpModel->slug    = str_replace('/', '', urldecode(Hash::make(Carbon::now() . $user[0]->email)));
         $fpModel->save();
 
         $this->sendEmail($user[0], $fpModel->slug);

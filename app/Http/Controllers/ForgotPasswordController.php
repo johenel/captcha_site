@@ -37,7 +37,6 @@ class ForgotPasswordController extends Controller
 
     public function updatePassIndex(Request $request, $token)
     {
-        $token = urlencode($token);
 
         $result = ForgotPasswordModel::where('slug', $token)->get();
 
@@ -58,8 +57,7 @@ class ForgotPasswordController extends Controller
              'password' => 'required|confirmed|min:6'
         ]);
 
-        $token = $request->token;
-        $token = urlencode($token);
+        $token = urldecode($request->token);
         $result = ForgotPasswordModel::where('slug', $token)->get();
 
         if (count($result) > 0) {

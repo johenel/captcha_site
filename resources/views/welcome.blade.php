@@ -131,8 +131,7 @@
                         <!-- End welcome area -->
                     </div>
                 </div>
-                <hr style="margin-top:30px;">
-                <div class="row" id="how_it_works">
+                <div class="row" id="how_it_works" style="margin-top:30px;">
                     <div class="col-md-12">
                         <div class="about-area">
                             <div class="row">
