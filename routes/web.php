@@ -32,6 +32,7 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
     Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
     Route::get('/referrals', 'UsersController@referralsIndex');
+    Route::get('/encashment', 'UsersController@encashmentIndex');
 });
 
 //ADMIN ROUTES

@@ -104,4 +104,9 @@ class UsersController extends Controller
 
         return redirect('/typing-captcha');
     }
+
+    public function encashmentIndex(Request $request)
+    {
+        return view('pages.users.encashment');
+    }
 }
