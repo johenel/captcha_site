@@ -40,7 +40,7 @@
                                     @endif
                                 </td>
                             @endif
-                            <td>{{date_format($u->created_at,'m - d - Y')}}</td>
+                            <td>{{date_format($u->created_at,'F - d - Y')}}</td>
                         </tr>
                         <?php
                         $count--;
