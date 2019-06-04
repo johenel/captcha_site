@@ -21,8 +21,16 @@ class UsersController extends Controller
 
         $response = [];
 
-        $response['count'] = $users->count();
-        $response['users'] = $users->with('activationRequests')->paginate(2);
+        $paginate = 2;
+
+        if($request->page > 1) {
+            $count = $users->count() - ($paginate * intval($request->page));
+        } else {
+            $count = $users->count();
+        }
+
+        $response['count'] = $count;
+        $response['users'] = $users->with('activationRequests')->paginate($paginate);
         $response['status'] = $status;
 
         return view('pages.admin.users', $response);
