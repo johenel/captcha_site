@@ -24,7 +24,7 @@ class UsersController extends Controller
         $paginate = 2;
 
         if($request->page > 1) {
-            $count = $users->count() - ($paginate * intval($request->page));
+            $count = $users->count() - ($paginate * (intval($request->page) - 1));
         } else {
             $count = $users->count();
         }
