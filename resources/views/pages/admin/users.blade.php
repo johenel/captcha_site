@@ -5,8 +5,8 @@
         <h1>Activated Users</h1>
         <hr>
         <div class="content">
-            <table class="table table-bordered bg-white">
-                <thead>
+            <table class="table table-bordered table-striped bg-white">
+                <thead style="background-color: #0d3537;color: white;">
                     <tr>
                         <th>No.</th>
                         <th>Name</th>
