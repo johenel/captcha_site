@@ -30,7 +30,7 @@ class UsersController extends Controller
         }
 
         $response['count'] = $count;
-        $response['users'] = $users->with('activationRequests')->paginate($paginate);
+        $response['users'] = $users->orderBy('created_at','desc')->with('activationRequests')->paginate($paginate);
         $response['status'] = $status;
 
         return view('pages.admin.users', $response);
