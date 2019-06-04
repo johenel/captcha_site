@@ -21,7 +21,7 @@ class UsersController extends Controller
 
         $response = [];
 
-        $paginate = 2;
+        $paginate = 15;
 
         if($request->page > 1) {
             $count = $users->count() - ($paginate * (intval($request->page) - 1));
