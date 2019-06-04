@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
+use App\Models\Encashments;
 
 class UsersController extends Controller
 {
@@ -31,7 +32,7 @@ class UsersController extends Controller
 
     public function referralsIndex(Request $request)
     {
-        $response = [];
+        $response              = [];
         $response['referrals'] = [];
         return view('pages.users.referral-list', $response);
     }
@@ -41,7 +42,7 @@ class UsersController extends Controller
         return Transactions::where('users_id', session()->get('user')->id)
             ->where('type_id', 1)
             ->where('status_id', 3)
-            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d'). '%')
+            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
             ->count();
     }
 
@@ -53,7 +54,7 @@ class UsersController extends Controller
             ->whereIn('type_id', [1, 3])
             ->where('status_id', 3)
             ->select(DB::raw('sum(value) as total'))
-            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d'). '%')
+            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
             ->get();
 
         if (count($result) > 0) {
@@ -109,4 +110,44 @@ class UsersController extends Controller
     {
         return view('pages.users.encashment');
     }
+
+    public function encashGcashIndex(Request $request)
+    {
+        return view('pages.payment-forms.gcash');
+    }
+
+    public function encashPalawanIndex(Request $request)
+    {
+        return view('pages.payment-forms.palawan');
+    }
+
+    public function encashCoinsphIndex(Request $request)
+    {
+        return view('pages.payment-forms.coinsph');
+    }
+
+    public function encashMlhuillierIndex(Request $request)
+    {
+        return view('pages.payment-forms.mlhuillier');
+    }
+
+    public function encash(Request $request)
+    {
+        session()->flash('encashment_request_submitted', true);
+
+        $encash = new Encashments();
+
+        $encash->users_id               = session()->get('user')->id;
+        $encash->payment_option         = $request->payment_option;
+        $encash->amount                 = $request->amount;
+        $encash->full_name              = $request->full_name;
+        $encash->address                = $request->address;
+        $encash->mobile_number          = $request->mobile_number;
+        $encash->coinsph_wallet_address = $request->coinsph_address;
+        $encash->save();
+
+        return redirect('/encashment');
+    }
+
+
 }

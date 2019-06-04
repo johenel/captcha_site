@@ -13,6 +13,13 @@
     <section>
         <div class="container-fluid">
             <div class="row text-center align-content-center">
+                @if(session()->has('encashment_request_submitted'))
+                    <div class="col-md-12">
+                        <div class="alert alert-success">
+                            <h2>Encashment Request Submitted</h2>
+                        </div>
+                    </div>
+                @endif
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-header">
@@ -22,7 +29,7 @@
                             <img src="/images/globegcash.png">
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-success">Withdraw</a>
+                            <a href="/encashment/gcash" class="btn btn-success">Withdraw</a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +42,7 @@
                             <img src="/images/palawan-pawnshop.png">
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-success">Withdraw</a>
+                            <a href="/encashment/palawan" class="btn btn-success">Withdraw</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +55,7 @@
                             <img src="/images/coinsph.png">
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-success">Withdraw</a>
+                            <a href="/encashment/coinsph" class="btn btn-success">Withdraw</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +68,7 @@
                             <img src="/images/mlhuillier.png">
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-success">Withdraw</a>
+                            <a href="/encashment/mlhuillier" class="btn btn-success">Withdraw</a>
                         </div>
                     </div>
                 </div>
