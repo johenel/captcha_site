@@ -32,6 +32,13 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
     Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
     Route::get('/referrals', 'UsersController@referralsIndex');
+    Route::get('/encashment', 'UsersController@encashmentIndex');
+    Route::post('/encashment', 'UsersController@encash');
+
+    Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
+    Route::get('/encashment/palawan', 'UsersController@encashPalawanIndex');
+    Route::get('/encashment/coinsph', 'UsersController@encashCoinsphIndex');
+    Route::get('/encashment/mlhuillier', 'UsersController@encashMlhuillierIndex');
 });
 
 //ADMIN ROUTES
