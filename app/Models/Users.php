@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Transactions;
 use DB;
+use Carbon\Carbon;
 
 class Users extends Model
 {

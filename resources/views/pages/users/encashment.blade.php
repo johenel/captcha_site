@@ -20,10 +20,10 @@
                         </div>
                     </div>
                 @endif
-                @if(session()->has('total_income_not_enough'))
+                @if(session()->has('available_income_not_enough'))
                     <div class="col-md-12">
                         <div class="alert alert-danger">
-                            Your TOTAL INCOME is not enough to make an encashment. Minimum of 300 php per encashment request.
+                            Your <b>AVAILABLE INCOME</b> is not enough to request an encashment. Minimum of 300 php per encashment request.
                         </div>
                     </div>
                 @endif

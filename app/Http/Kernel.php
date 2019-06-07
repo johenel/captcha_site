@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
         'filterGuest' => \App\Http\Middleware\FilterSignedUser::class,
         'admin' => \App\Http\Middleware\AdminUser::class,
         'activated' => \App\Http\Middleware\CheckIfAccountActivated::class,
+        'encash' => \App\Http\Middleware\ValidateEncashment::class
     ];
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
 use App\Models\Encashments;
+use App\Models\Users;
 
 class UsersController extends Controller
 {
@@ -22,10 +23,12 @@ class UsersController extends Controller
     {
         $response = [];
 
-        $response['total_captcha']  = $this->getTotalCaptcha();
-        $response['total_earnings'] = $this->getTotalEarnings();
-        $response['today_captcha']  = $this->getTodaysCaptcha();
-        $response['today_earnings'] = $this->getTodaysEarning();
+        $usersModel = new Users;
+
+        $response['total_captcha']  = $usersModel->getTotalCaptcha();
+        $response['total_earnings'] = $usersModel->getTotalIncome();
+        $response['today_captcha']  = $usersModel->getTodaysCaptcha();
+        $response['today_earnings'] = $usersModel->getTodaysEarning();
 
         return view('pages.users.type-captcha', $response);
     }

@@ -10,11 +10,22 @@
                             <i class="pe-7s-cash"></i>
                         </div>
                         <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="">{{$total_income - $pending_encashment}}</span> @if($pending_encashment > 0) ( <span class="stat-text" style="color:red;font-size: 14px;">&#8369; <span class="">- {{$pending_encashment}}</span></span>
-                                    ) @endif</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="text-left dib">
+                                        <div class="stat-text">&#8369; <span class="">{{$total_income - $pending_encashment}}</span> @if($pending_encashment > 0) ( <span class="stat-text" style="color:red;font-size: 14px;">&#8369; <span class="">- {{$pending_encashment}}</span></span>
+                                            ) @endif</div>
 
-                                <div class="stat-heading">Total Income</div>
+                                        <div class="stat-heading">Available Income</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-left dib">
+                                        <div class="stat-text">&#8369; <span class="">{{$total_income}}</span></div>
+
+                                        <div class="stat-heading">Total Income</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,15 @@ class ValidateEncashment
     {
         $uid = session()->get('user')->id;
 
+        $usersModel = new Users;
 
+        $availableIncome = $usersModel->getTotalIncome() - $usersModel->getPendingEncashment();
+
+        if($availableIncome < 300) {
+            session()->flash('available_income_not_enough');
+
+            return redirect('/encashment');
+        }
 
         return $next($request);
     }
