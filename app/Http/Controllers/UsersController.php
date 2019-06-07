@@ -37,55 +37,6 @@ class UsersController extends Controller
         return view('pages.users.referral-list', $response);
     }
 
-    private function getTodaysCaptcha()
-    {
-        return Transactions::where('users_id', session()->get('user')->id)
-            ->where('type_id', 1)
-            ->where('status_id', 3)
-            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
-            ->count();
-    }
-
-    private function getTodaysEarning()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id', session()->get('user')->id)
-            ->whereIn('type_id', [1, 3])
-            ->where('status_id', 3)
-            ->select(DB::raw('sum(value) as total'))
-            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
-            ->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
-
-    private function getTotalCaptcha()
-    {
-        return Transactions::where('users_id', session()->get('user')->id)->where('type_id', 1)->where('status_id', 3)->count();
-    }
-
-    private function getTotalEarnings()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id', session()->get('user')->id)
-            ->whereIn('type_id', [1, 3])
-            ->where('status_id', 3)
-            ->select(DB::raw('sum(value) as total'))
-            ->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
-
     public function typeCaptcha(Request $request)
     {
         $input = $request->captcha_user_input;

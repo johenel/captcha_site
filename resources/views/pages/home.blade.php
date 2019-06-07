@@ -11,7 +11,9 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="">{{$total_income}}</span></div>
+                                <div class="stat-text">&#8369; <span class="">{{$total_income - $pending_encashment}}</span> @if($pending_encashment > 0) ( <span class="stat-text" style="color:red;font-size: 14px;">&#8369; <span class="">- {{$pending_encashment}}</span></span>
+                                    ) @endif</div>
+
                                 <div class="stat-heading">Total Income</div>
                             </div>
                         </div>
@@ -45,8 +47,8 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text">&#8369; <span class="">{{$remaining_balance}}</span></div>
-                                <div class="stat-heading">Remaining Balance</div>
+                                <div class="stat-text">&#8369; <span class="">{{$pending_encashment}}</span></div>
+                                <div class="stat-heading">Pending Encashment</div>
                             </div>
                         </div>
                     </div>
