@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
 use App\Models\Encashments;
+use App\Models\Users;
 
 class UsersController extends Controller
 {
@@ -22,10 +23,12 @@ class UsersController extends Controller
     {
         $response = [];
 
-        $response['total_captcha']  = $this->getTotalCaptcha();
-        $response['total_earnings'] = $this->getTotalEarnings();
-        $response['today_captcha']  = $this->getTodaysCaptcha();
-        $response['today_earnings'] = $this->getTodaysEarning();
+        $usersModel = new Users;
+
+        $response['total_captcha']  = $usersModel->getTotalCaptcha();
+        $response['total_earnings'] = $usersModel->getTotalIncome();
+        $response['today_captcha']  = $usersModel->getTodaysCaptcha();
+        $response['today_earnings'] = $usersModel->getTodaysEarning();
 
         return view('pages.users.type-captcha', $response);
     }
@@ -35,55 +38,6 @@ class UsersController extends Controller
         $response              = [];
         $response['referrals'] = [];
         return view('pages.users.referral-list', $response);
-    }
-
-    private function getTodaysCaptcha()
-    {
-        return Transactions::where('users_id', session()->get('user')->id)
-            ->where('type_id', 1)
-            ->where('status_id', 3)
-            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
-            ->count();
-    }
-
-    private function getTodaysEarning()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id', session()->get('user')->id)
-            ->whereIn('type_id', [1, 3])
-            ->where('status_id', 3)
-            ->select(DB::raw('sum(value) as total'))
-            ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
-            ->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
-
-    private function getTotalCaptcha()
-    {
-        return Transactions::where('users_id', session()->get('user')->id)->where('type_id', 1)->where('status_id', 3)->count();
-    }
-
-    private function getTotalEarnings()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id', session()->get('user')->id)
-            ->whereIn('type_id', [1, 3])
-            ->where('status_id', 3)
-            ->select(DB::raw('sum(value) as total'))
-            ->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
     }
 
     public function typeCaptcha(Request $request)
@@ -133,6 +87,14 @@ class UsersController extends Controller
 
     public function encash(Request $request)
     {
+        $this->validate($request,
+            [
+                'amount' => 'integer|min:300'
+            ],
+            [
+                'amount.min' => 'The minimum required amount is 300.00 PHP'
+            ]);
+
         session()->flash('encashment_request_submitted', true);
 
         $encash = new Encashments();

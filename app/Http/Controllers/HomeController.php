@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
 use URL;
+use App\Models\Users;
 
 class HomeController extends Controller
 {
@@ -33,66 +34,18 @@ class HomeController extends Controller
     {
         $response = [];
 
-        $response['total_income']      = $this->getTotalIncome();
-        $response['total_encashment']  = $this->getTotalEncashment();
-        $response['remaining_balance'] = $this->getTotalIncome(); - $this->getTotalEncashment();
-        $response['referral_income']   = $this->getReferralIncome();
-        $response['captcha_income']    = $this->getCaptchaIncome();
+        $usersModel = new Users;
+
+        $response['total_income']      = $usersModel->getTotalIncome();
+        $response['total_encashment']  = $usersModel->getTotalEncashment();
+        $response['pending_encashment'] = $usersModel->getPendingEncashment();
+        $response['referral_income']   = $usersModel->getReferralIncome();
+        $response['captcha_income']    = $usersModel->getCaptchaIncome();
         $response['reward_points']     = 0;
         $response['referral_link'] = URL::to('/') .'?action=signup&ref=' . encrypt($this->user->email);
 
         return $response;
     }
 
-    private function getTotalIncome()
-    {
-        $total = 0;
 
-        $result = Transactions::where('users_id',$this->user->id)->whereIn('type_id', [1, 3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
-
-    private function getCaptchaIncome()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id',$this->user->id)->whereIn('type_id', [1])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
-
-    private function getReferralIncome()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id',$this->user->id)->whereIn('type_id', [3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
-
-    private function getTotalEncashment()
-    {
-        $total = 0;
-
-        $result = Transactions::where('users_id',$this->user->id)->where('type_id', 2)->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
-
-        if (count($result) > 0) {
-            $total = $result[0]->total;
-        }
-
-        return $total ? $total : 0;
-    }
 }

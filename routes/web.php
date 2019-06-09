@@ -35,10 +35,13 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/encashment', 'UsersController@encashmentIndex');
     Route::post('/encashment', 'UsersController@encash');
 
-    Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
-    Route::get('/encashment/palawan', 'UsersController@encashPalawanIndex');
-    Route::get('/encashment/coinsph', 'UsersController@encashCoinsphIndex');
-    Route::get('/encashment/mlhuillier', 'UsersController@encashMlhuillierIndex');
+    Route::group(['middleware' => ['encash']], function () {
+        Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
+        Route::get('/encashment/palawan', 'UsersController@encashPalawanIndex');
+        Route::get('/encashment/coinsph', 'UsersController@encashCoinsphIndex');
+        Route::get('/encashment/mlhuillier', 'UsersController@encashMlhuillierIndex');
+    });
+
 });
 
 //ADMIN ROUTES
@@ -47,7 +50,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@index');
     Route::get('/users', 'Admin\UsersController@index');
     Route::get('/activation-request/{id}', 'Admin\ActivateAccountController@index');
-    route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
+    Route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
+    Route::get('/encashments', 'Admin\EncashmentsController@index');
+    Route::post('/encashments/process', 'Admin\EncashmentsController@process');
 });
 
 

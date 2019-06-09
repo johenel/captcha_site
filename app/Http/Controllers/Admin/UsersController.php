@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -18,6 +19,7 @@ class UsersController extends Controller
         $users = new Users();
 
         $users = $this->filterStatus($users, $filters);
+        $users = $this->getIncomes($users);
 
         $response = [];
 
@@ -34,6 +36,13 @@ class UsersController extends Controller
         $response['status'] = $status;
 
         return view('pages.admin.users', $response);
+    }
+
+    private function getIncomes($users)
+    {
+        $users = $users->with('incomes');
+
+        return $users;
     }
 
     private function filterStatus($users, $filters)
