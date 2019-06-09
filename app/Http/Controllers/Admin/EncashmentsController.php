@@ -20,7 +20,6 @@ class EncashmentsController extends Controller
             }])
             ->get();
 
-        dd($response);
         return view('pages.admin.encashments', $response);
     }
 }
