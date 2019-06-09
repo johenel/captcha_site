@@ -13,6 +13,13 @@ class Users extends Model
     protected $hidden = ['password'];
     private $user;
 
+    public const PENDING = 0;
+    public const ACTIVATED = 1;
+    public const DEACTIVATED = 2;
+
+    public const TYPE_USERS = 1;
+    public const TYPE_ADMIN = 2;
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -22,6 +29,11 @@ class Users extends Model
     public function activationRequests()
     {
         return $this->hasMany('App\Models\ActivationRequestDetails', 'users_id');
+    }
+
+    public function encashments()
+    {
+        return $this->hasMany('App\Models\Encashments', 'users_id');
     }
 
     public function getTodaysCaptcha()

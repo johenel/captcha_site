@@ -7,9 +7,16 @@ use DB;
 
 class Transactions extends Model
 {
+
     protected $table = 'transactions';
     protected $types = 'transaction_types';
     protected $statuses = 'transaction_statuses';
+
+    public const TYPE_CAPTCHA = 1;
+
+    public const STATUS_PENDING = 1;
+    public const STATUS_REJECTED = 2;
+    public const STATUS_COMPLETED = 3;
 
     public function getTypes()
     {

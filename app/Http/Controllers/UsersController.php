@@ -89,7 +89,7 @@ class UsersController extends Controller
     {
         $this->validate($request,
             [
-                'amount' => 'min:300'
+                'amount' => 'integer|min:300'
             ],
             [
                 'amount.min' => 'The minimum required amount is 300.00 PHP'
