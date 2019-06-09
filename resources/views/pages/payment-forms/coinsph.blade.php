@@ -15,6 +15,7 @@
         <div class="container-fluid">
             <div class="row text-center align-content-center">
                 <div class="col-md-12">
+                    @include('includes.error-validation')
                     <form action="/encashment" method="post">
                         <div class="card">
                             <div class="card-header">

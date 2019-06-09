@@ -87,6 +87,14 @@ class UsersController extends Controller
 
     public function encash(Request $request)
     {
+        $this->validate($request,
+            [
+                'amount' => 'min:300'
+            ],
+            [
+                'amount.min' => 'The minimum required amount is 300.00 PHP'
+            ]);
+
         session()->flash('encashment_request_submitted', true);
 
         $encash = new Encashments();
