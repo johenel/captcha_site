@@ -44,16 +44,35 @@
                                                     <th>Amount</th>
                                                     <td>&#8369; {{$e->amount}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <th>Action</th>
-                                                    <td>
-                                                        <form action="/encashments/process" method="post">
-                                                            @csrf
-                                                            <input type="hidden" name="eid" value="{{$e->id}}">
-                                                            <input type="submit" class="btn btn-success" value="Process">
-                                                        </form>
-                                                    </td>
-                                                </tr>
+                                                @if($status != 'completed')
+                                                    <tr>
+                                                        <th>Action</th>
+                                                        <td>
+                                                            @if($status == 'pending')
+                                                                <form action="/encashments/process" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="processing">
+                                                                    <input type="submit" class="btn btn-success" value="Process">
+                                                                </form>
+                                                            @endif
+                                                            @if($status == 'processing')
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="completed">
+                                                                    <input type="submit" class="btn btn-success" value="Complete">
+                                                                </form>
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="failed">
+                                                                    <input type="submit" class="btn btn-danger" value="Fail">
+                                                                </form>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endif
                                             @break
                                             @case('coinsph')
                                                 <tr>
@@ -68,20 +87,133 @@
                                                     <th>Amount</th>
                                                     <td>&#8369; {{$e->amount}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <th>Action</th>
-                                                    <td>
-                                                        <form action="/encashments/process" method="post">
-                                                            @csrf
-                                                            <input type="hidden" name="eid" value="{{$e->id}}">
-                                                            <input type="submit" class="btn btn-success" value="Process">
-                                                        </form>
-                                                    </td>
-                                                </tr>
+                                                @if($status != 'completed')
+                                                    <tr>
+                                                        <th>Action</th>
+                                                        <td>
+                                                            @if($status == 'pending')
+                                                                <form action="/encashments/process" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="processing">
+                                                                    <input type="submit" class="btn btn-success" value="Process">
+                                                                </form>
+                                                            @endif
+                                                            @if($status == 'processing')
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="completed">
+                                                                    <input type="submit" class="btn btn-success" value="Complete">
+                                                                </form>
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="failed">
+                                                                    <input type="submit" class="btn btn-danger" value="Fail">
+                                                                </form>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endif
                                             @break
                                             @case('mlhuillier')
+                                                <tr>
+                                                    <th>Payment Option</th>
+                                                    <td>Mlhuillier</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Full Name</th>
+                                                    <td>{{$e->full_name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Address</th>
+                                                    <td>{{$e->address}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Mobile Number</th>
+                                                    <td>{{$e->mobile_number}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Amount</th>
+                                                    <td>&#8369; {{$e->amount}}</td>
+                                                </tr>
+                                                @if($status != 'completed')
+                                                    <tr>
+                                                        <th>Action</th>
+                                                        <td>
+                                                            @if($status == 'pending')
+                                                                <form action="/encashments/process" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="processing">
+                                                                    <input type="submit" class="btn btn-success" value="Process">
+                                                                </form>
+                                                            @endif
+                                                            @if($status == 'processing')
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="completed">
+                                                                    <input type="submit" class="btn btn-success" value="Complete">
+                                                                </form>
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="failed">
+                                                                    <input type="submit" class="btn btn-danger" value="Fail">
+                                                                </form>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endif
                                             @break
                                             @case('gcash')
+                                                <tr>
+                                                    <th>Payment Option</th>
+                                                    <td>GCash</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Full Name</th>
+                                                    <td>{{$e->full_name}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Mobile Number</th>
+                                                    <td>{{$e->mobile_number}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Amount</th>
+                                                    <td>&#8369; {{$e->amount}}</td>
+                                                </tr>
+                                                @if($status != 'completed')
+                                                    <tr>
+                                                        <th>Action</th>
+                                                        <td>
+                                                            @if($status == 'pending')
+                                                                <form action="/encashments/process" method="post">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="processing">
+                                                                    <input type="submit" class="btn btn-success" value="Process">
+                                                                </form>
+                                                            @endif
+                                                            @if($status == 'processing')
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="completed">
+                                                                    <input type="submit" class="btn btn-success" value="Complete">
+                                                                </form>
+                                                                <form action="/encashments/process" method="post" class="d-inline">
+                                                                    @csrf
+                                                                    <input type="hidden" name="eid" value="{{$e->id}}">
+                                                                    <input type="hidden" name="status" value="failed">
+                                                                    <input type="submit" class="btn btn-danger" value="Fail">
+                                                                </form>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endif
                                             @break
                                         @endswitch
                                     </tbody>
