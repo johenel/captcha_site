@@ -69,7 +69,7 @@
                                     <strong>Encashment Requests</strong>
                                 </div>
                                 <div class="card-body">
-                                    <h1>{{$users_income ? $users_income[0]->total : 0}}</h1>
+                                    <h1>{{$users_encashments ? $users_encashments[0]->total : 0}}</h1>
                                 </div>
                             </div>
                         </div>
