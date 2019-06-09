@@ -36,6 +36,11 @@ class Users extends Model
         return $this->hasMany('App\Models\Encashments', 'users_id');
     }
 
+    public function incomes()
+    {
+        return $this->hasMany('App\Models\Transactions', 'users_id');
+    }
+
     public function getTodaysCaptcha()
     {
         return Transactions::where('users_id', session()->get('user')->id)
