@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Encashments;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
@@ -19,6 +20,7 @@ class DashboardController extends Controller
         $response['users_activated']   = Users::where('is_activated', Users::ACTIVATED)->count();
         $response['users_deactivated'] = Users::where('is_activated', Users::DEACTIVATED)->count();
         $response['users_income']      = count($total = Transactions::where('status_id', Transactions::STATUS_COMPLETED)->select(DB::raw('sum(value) as total'))->get()) > 0 ? $total : null;
+        $response['users_encashments'] = count($total = Encashments::where('status', Encashments::STATUS_PENDING)->select(DB::raw('sum(amount) as total'))->get()) > 0 ? $total : null;
 
         return view('pages.admin.dashboard', $response);
     }
