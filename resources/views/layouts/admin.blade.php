@@ -47,6 +47,9 @@
                             <a href="/typing-captcha"><i class="menu-icon fa fa-keyboard-o"></i>TYPING CAPTCHA </a>
                         </li>
                         <li class="">
+                            <a href="/rewards/list"><i class="menu-icon fa fa-star"></i>REWARDS</a>
+                        </li>
+                        <li class="">
                             <a href="/referrals"><i class="menu-icon fa fa-group"></i>REFERRAL LIST</a>
                         </li>
                         <li class="">

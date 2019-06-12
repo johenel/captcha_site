@@ -69,5 +69,8 @@
                 <h1>No Item Found</h1>
             @endif
         </div>
+        <div class="row">
+            {{$rewards->links()}}
+        </div>
     </section>
 @endsection
