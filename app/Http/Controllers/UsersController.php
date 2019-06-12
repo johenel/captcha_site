@@ -8,6 +8,7 @@ use App\Models\Transactions;
 use DB;
 use App\Models\Encashments;
 use App\Models\Users;
+use App\Models\Rewards;
 
 class UsersController extends Controller
 {
@@ -111,5 +112,13 @@ class UsersController extends Controller
         return redirect('/encashment');
     }
 
+    public function rewardsIndex(Request $request)
+    {
+        $rewards = Rewards::where('is_published', '!=', Rewards::ARCHIVED)->paginate(15);
 
+        $response            = [];
+        $response['rewards'] = $rewards;
+
+        return view('pages.users.rewards', $response);
+    }
 }
