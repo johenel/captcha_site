@@ -53,6 +53,14 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
     Route::get('/encashments', 'Admin\EncashmentsController@index');
     Route::post('/encashments/process', 'Admin\EncashmentsController@process');
+    Route::get('/rewards', 'Admin\RewardsController@index');
+    Route::get('/rewards/add', 'Admin\RewardsController@addIndex');
+    Route::post('/rewards/add', 'Admin\RewardsController@add');
+    Route::get('/rewards/edit/{id}', 'Admin\RewardsController@editIndex');
+    Route::post('/rewards/edit', 'Admin\RewardsController@edit');
+    Route::post('/rewards/publish', 'Admin\RewardsController@publish');
+    Route::get('/rewards/archive', 'Admin\RewardsController@archiveIndex');
+    Route::post('/rewards/archive', 'Admin\RewardsController@archive');
 });
 
 

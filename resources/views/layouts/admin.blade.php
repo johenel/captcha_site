@@ -29,6 +29,14 @@
                                 <li><i class="fa fa-check"></i><a href="/encashments?status=completed">COMPLETED</a></li>
                             </ul>
                         </li>
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-star"></i>REWARDS</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fa fa-list"></i><a href="/rewards">LIST</a></li>
+                                <li><i class="fa fa-plus"></i><a href="/rewards/add">ADD</a></li>
+                                <li><i class="fa fa-archive"></i><a href="/rewards/archive">ARCHIVE</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 @else
                     <ul class="nav navbar-nav user-side-bar" style="padding-top:20px;">
