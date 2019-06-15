@@ -13,11 +13,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="text-left dib">
-                                        <div class="stat-text">&#8369; <span class="">{{$total_income - $pending_encashment}}</span>
-                                            @if($pending_encashment > 0) <br>( <span class="stat-text" style="color:red;font-size: 14px;">&#8369; <span class="">- {{$pending_encashment}}</span></span>
-                                            ) @endif</div>
-
-                                        <div class="stat-heading">Available Income</div>
+                                        <div class="stat-text"><span class="" style="color:red">&#8369; {{$money_balance}}</span>
+                                            <div class="stat-heading">Available Income</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

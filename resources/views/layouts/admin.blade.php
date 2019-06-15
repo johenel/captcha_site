@@ -4,6 +4,16 @@
     @include('includes.templates.head-admin-ela')
 </head>
 <body>
+    <style>
+        .income-header {
+            list-style-type: none;
+        }
+        .income-header li {
+            float: left;
+            margin-right: 40px;
+            font-size: 20px;
+        }
+    </style>
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -77,10 +87,16 @@
                 </div>
             </div>
             <div class="top-right">
-                <div class="header-menu">
-                    <div class="header-left">
-
-
+                <div class="header-menu" style="position: relative;">
+                    <div class="" style="position: absolute;left: 0px;top:12px;">
+                        <ul class="income-header">
+                            <li>
+                                <i class="fa fa-star" style="color:orange;margin-right: 10px;"></i> {{session()->get('user_info')->reward_points}}
+                            </li>
+                            <li>
+                                <i class="fa fa-money" style="color:#04d204;margin-right: 10px;"></i> {{session()->get('user_info')->money_balance}}
+                            </li>
+                        </ul>
                     </div>
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

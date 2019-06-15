@@ -23,6 +23,7 @@
         .price li {
             float: left;
             margin-right: 40px;
+            font-size: 40px;
         }
     </style>
     <section id="checkoutPage">
