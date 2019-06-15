@@ -121,4 +121,26 @@ class UsersController extends Controller
 
         return view('pages.users.rewards', $response);
     }
+
+    public function checkoutIndex(Request $request, $rid)
+    {
+        $reward = Rewards::find($rid);
+
+        $response = [];
+
+        $response['reward'] = $reward;
+
+        return view('pages.users.rewards-checkout', $response);
+    }
+
+    public function rewardClaim(Request $request)
+    {
+        $this->validate($request, [
+            'delivery_address' => 'required',
+            'mobile_number'    => 'required',
+            'payment_option'   => 'required'
+        ]);
+
+        return view('pages.thankyou.reward-claim');
+    }
 }

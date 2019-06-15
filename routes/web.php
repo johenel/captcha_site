@@ -35,6 +35,8 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/encashment', 'UsersController@encashmentIndex');
     Route::post('/encashment', 'UsersController@encash');
     Route::get('/rewards/list', 'UsersController@rewardsIndex');
+    Route::get('/reward/checkout/{id}', 'UsersController@checkoutIndex');
+    Route::post('/rewards/claim', 'UsersController@rewardClaim');
 
     Route::group(['middleware' => ['encash']], function () {
         Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
