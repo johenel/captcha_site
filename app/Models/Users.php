@@ -143,7 +143,8 @@ class Users extends Model
     public function getMoneyBalance()
     {
         $em = new Encashments;
+        $rcr = new RewardClaimRequests;
 
-        return $this->getTotalIncome() - $em->getTotalEncashments() - $this->getPendingEncashment();
+        return $this->getTotalIncome() - $em->getTotalEncashments() - $this->getPendingEncashment() - $rcr->getTotal();
     }
 }

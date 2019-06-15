@@ -41,6 +41,11 @@
                                         </div>
                                         <div class="col-md-7" style="">
                                             @include('includes.error-validation')
+                                            @if(session()->has('CLAIM_REWARD_FAIL'))
+                                                <div class="alert alert-danger">
+                                                    Your Reward Points or Money Balance is not enough.
+                                                </div>
+                                            @endif
                                             <div style="padding: 20px; width: 90%;">
                                                 <h1>{{$reward->title}}</h1>
                                                 <hr>
@@ -66,7 +71,7 @@
                                                         <input type="text" name="mobile_number" class="form-control" placeholder="Mobile Number">
                                                     </div>
                                                     <div class="form-group">
-                                                        <textarea type="text" name="look_for" class="form-control" placeholder="Notes"></textarea>
+                                                        <textarea type="text" name="notes" class="form-control" placeholder="Notes"></textarea>
                                                     </div>
                                                     <h4>Claim With :</h4>
                                                     <div class="row" style="padding: 20px 0px;">
