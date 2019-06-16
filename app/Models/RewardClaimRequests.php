@@ -19,7 +19,7 @@ class RewardClaimRequests extends Model
     public function getTotalPending()
     {
         $result = DB::table($this->table)->where('status', self::STATUS_PENDING)->where('users_id', session()->get('user')->id)
-            ->join('rewards','reward_claim_requests.reward_id','=','rewards.id')
+            ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
             ->select(DB::raw('sum(rewards.price_money_balance) as total'))
             ->get();
 
@@ -29,7 +29,7 @@ class RewardClaimRequests extends Model
     public function getTotalCompleted()
     {
         $result = DB::table($this->table)->where('status', self::STATUS_COMPLETED)->where('users_id', session()->get('user')->id)
-            ->join('rewards','reward_claim_requests.reward_id','=','rewards.id')
+            ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
             ->select(DB::raw('sum(rewards.price_money_balance) as total'))
             ->get();
 
@@ -39,5 +39,15 @@ class RewardClaimRequests extends Model
     public function getTotal()
     {
         return $this->getTotalCompleted() + $this->getTotalPending();
+    }
+
+    public function reward()
+    {
+        return $this->hasOne('\App\Models\Rewards', 'id', 'reward_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne('\App\Models\Users', 'id', 'users_id');
     }
 }

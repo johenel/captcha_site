@@ -42,6 +42,7 @@
                         <li class="menu-item-has-children dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-star"></i>REWARDS</a>
                             <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fa fa-gift"></i><a href="/rewards/requests">CLAIM REQUESTS</a></li>
                                 <li><i class="fa fa-list"></i><a href="/rewards">LIST</a></li>
                                 <li><i class="fa fa-plus"></i><a href="/rewards/add">ADD</a></li>
                                 <li><i class="fa fa-archive"></i><a href="/rewards/archive">ARCHIVE</a></li>
@@ -65,9 +66,9 @@
                         <li class="">
                             <a href="/encashment"><i class="menu-icon fa fa-money"></i>ENCASHMENT</a>
                         </li>
-                        <li class="">
-                            <a href="/history"><i class="menu-icon fa fa-calendar"></i>HISTORY</a>
-                        </li>
+                        {{--<li class="">--}}
+                            {{--<a href="/history"><i class="menu-icon fa fa-calendar"></i>HISTORY</a>--}}
+                        {{--</li>--}}
                         {{--<li class="">--}}
                             {{--<a href="/code-list"><i class="menu-icon fa fa-laptop"></i>CODELIST</a>--}}
                         {{--</li>--}}
@@ -88,16 +89,20 @@
             </div>
             <div class="top-right">
                 <div class="header-menu" style="position: relative;">
-                    <div class="" style="position: absolute;left: 0px;top:12px;">
-                        <ul class="income-header">
-                            <li>
-                                <i class="fa fa-star" style="color:orange;margin-right: 10px;"></i> {{session()->get('user_info')->reward_points}}
-                            </li>
-                            <li>
-                                <i class="fa fa-money" style="color:#04d204;margin-right: 10px;"></i> {{session()->get('user_info')->money_balance}}
-                            </li>
-                        </ul>
-                    </div>
+                    @if(session()->has('user'))
+                        @if(session()->get('user')->account_type == \App\Models\Users::TYPE_USERS)
+                            <div class="" style="position: absolute;left: 0px;top:12px;">
+                                <ul class="income-header">
+                                    <li>
+                                        <i class="fa fa-star" style="color:orange;margin-right: 10px;"></i> {{session()->get('user_info')->reward_points}}
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-money" style="color:#04d204;margin-right: 10px;"></i> {{session()->get('user_info')->money_balance}}
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
+                    @endif
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="/images/profile.png" alt="User Avatar">

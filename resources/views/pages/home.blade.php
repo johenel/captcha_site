@@ -14,7 +14,7 @@
                                 <div class="col-md-6">
                                     <div class="text-left dib">
                                         <div class="stat-text"><span class="" style="color:red">&#8369; {{$money_balance}}</span>
-                                            <div class="stat-heading">Money Balance</div>
+                                            <div class="stat-heading">Available Balance</div>
                                         </div>
                                     </div>
                                 </div>
@@ -107,6 +107,23 @@
             <div class="card">
                 <div class="card-body">
                     <div class="stat-widget-five">
+                        <div class="stat-icon dib flat-color-2">
+                            <i class="fa fa-star" style="color:orange"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="text-left dib">
+                                <div class="stat-text"> <span class="count">{{$reward_points}}</span></div>
+                                <div class="stat-heading">Reward Points</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="stat-widget-five">
                         <div class="stat-icon dib flat-color-4">
                             <i class="pe-7s-users"></i>
                         </div>
@@ -131,23 +148,6 @@
                             <div class="text-left dib">
                                 <div class="stat-text">&#8369; <span class="">{{$captcha_income}}</span></div>
                                 <div class="stat-heading">Captcha Bonus</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="stat-widget-five">
-                        <div class="stat-icon dib flat-color-2">
-                            <i class="fa fa-star" style="color:orange"></i>
-                        </div>
-                        <div class="stat-content">
-                            <div class="text-left dib">
-                                <div class="stat-text"> <span class="count">{{$reward_points}}</span></div>
-                                <div class="stat-heading">Reward Points</div>
                             </div>
                         </div>
                     </div>
