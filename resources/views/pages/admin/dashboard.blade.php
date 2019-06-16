@@ -52,10 +52,10 @@
                         <div class="users">
                             <div class="card text-center" style="width: max-content">
                                 <div class="card-header">
-                                    <strong>Income (PHP)</strong>
+                                    <strong>Users Income</strong>
                                 </div>
                                 <div class="card-body">
-                                    <h1>{{$users_income ? $users_income[0]->total : 0}}</h1>
+                                    <h1>{{$users_income[0]->total ? $users_income[0]->total : 0}}</h1>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                     <strong>Encashment Requests</strong>
                                 </div>
                                 <div class="card-body">
-                                    <h1>{{$users_encashments ? $users_encashments[0]->total : 0}}</h1>
+                                    <h1>{{$users_encashments[0]->total ? $users_encashments[0]->total : 0}}</h1>
                                 </div>
                             </div>
                         </div>

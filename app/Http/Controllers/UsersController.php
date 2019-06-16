@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RewardClaimRequests;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Transactions;
@@ -9,6 +10,7 @@ use DB;
 use App\Models\Encashments;
 use App\Models\Users;
 use App\Models\Rewards;
+use Illuminate\Support\Facades\URL;
 
 class UsersController extends Controller
 {
@@ -120,5 +122,56 @@ class UsersController extends Controller
         $response['rewards'] = $rewards;
 
         return view('pages.users.rewards', $response);
+    }
+
+    public function checkoutIndex(Request $request, $rid)
+    {
+        $reward = Rewards::find($rid);
+
+        $response = [];
+
+        $response['reward'] = $reward;
+
+        return view('pages.users.rewards-checkout', $response);
+    }
+
+    public function rewardClaim(Request $request)
+    {
+        $this->validate($request, [
+            'delivery_address' => 'required',
+            'mobile_number'    => 'required',
+            'payment_option'   => 'required'
+        ]);
+
+        $reward = Rewards::find($request->rid);
+
+        $proceed = false;
+
+        switch (intval($request->payment_option)) {
+            case RewardClaimRequests::PAYMENT_OPTION_REWARD :
+                if(session('user_info')->reward_points >= $reward->price_reward_points)
+                    $proceed = true;
+                break;
+            case RewardClaimRequests::PAYMENT_OPTION_MONEY :
+                if(session('user_info')->money_balance >= $reward->price_money_balance)
+                    $proceed = true;
+                break;
+        }
+
+        if(!$proceed) {
+            session()->flash('CLAIM_REWARD_FAIL', true);
+            return redirect(URL::previous());
+        }
+
+        $rcr = new RewardClaimRequests;
+        $rcr->users_id = session()->get('user')->id;
+        $rcr->reward_id = $request->rid;
+        $rcr->delivery_address = $request->delivery_address;
+        $rcr->mobile_number = $request->mobile_number;
+        $rcr->notes = $request->notes;
+        $rcr->payment_option = $request->payment_option;
+        $rcr->save();
+
+        return view('pages.thankyou.reward-claim');
     }
 }

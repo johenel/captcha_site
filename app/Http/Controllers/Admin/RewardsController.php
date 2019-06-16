@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\RewardClaimRequests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Rewards;
@@ -155,6 +156,45 @@ class RewardsController extends Controller
         session()->flash('edit_reward_success', true);
 
         return redirect(URL::previous());
+    }
+
+    public function claimRequestsIndex(Request $request)
+    {
+        $rcr = new RewardClaimRequests;
+
+        $response = [];
+        $response['requests'] = $rcr->where('status', RewardClaimRequests::STATUS_PENDING)
+            ->orderBy('created_at','desc')
+            ->with('user')
+            ->with('reward')
+            ->paginate(15);
+
+        return view('pages.admin.rewards.claim-requests', $response);
+    }
+
+    public function completeCRC(Request $request)
+    {
+        $rcr = RewardClaimRequests::find($request->rcrid);
+        $rcr->status = RewardClaimRequests::STATUS_COMPLETED;
+        $rcr->update();
+
+        session()->flash('CLAIM_REQUEST_COMPLETED', true);
+
+        return redirect(URL::previous());
+    }
+
+    public function completedCRCIndex()
+    {
+        $rcr = new RewardClaimRequests;
+
+        $response = [];
+        $response['requests'] = $rcr->where('status', RewardClaimRequests::STATUS_COMPLETED)
+            ->orderBy('created_at','desc')
+            ->with('user')
+            ->with('reward')
+            ->paginate(15);
+
+        return view('pages.admin.rewards.claim-completed', $response);
     }
 }
 

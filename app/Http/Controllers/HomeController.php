@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Encashments;
+use App\Models\RewardClaimRequests;
 use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
@@ -10,14 +12,15 @@ use App\Models\Users;
 
 class HomeController extends Controller
 {
+
     protected $user;
 
     public function index(Request $request)
     {
         if ($request->session()->has('user')) {
-            if(session()->get('user')->is_activated == 1) {
+            if (session()->get('user')->is_activated == 1) {
                 $this->user = $request->session()->get('user');
-                $response = $this->getIncomeStatistics();
+                $response   = $this->getIncomeStatistics();
 
                 return view('pages.home', $response);
             }
@@ -34,15 +37,20 @@ class HomeController extends Controller
     {
         $response = [];
 
-        $usersModel = new Users;
+        $usersModel      = new Users;
+        $encashmentModel = new Encashments;
+        $rcr             = new RewardClaimRequests;
 
-        $response['total_income']      = $usersModel->getTotalIncome();
-        $response['total_encashment']  = $usersModel->getTotalEncashment();
-        $response['pending_encashment'] = $usersModel->getPendingEncashment();
-        $response['referral_income']   = $usersModel->getReferralIncome();
-        $response['captcha_income']    = $usersModel->getCaptchaIncome();
-        $response['reward_points']     = 0;
-        $response['referral_link'] = URL::to('/') .'?action=signup&ref=' . encrypt($this->user->email);
+        $response['total_income']          = $usersModel->getTotalIncome();
+        $response['total_encashment']      = $encashmentModel->getTotalEncashments();
+        $response['pending_encashment']    = $usersModel->getPendingEncashment();
+        $response['referral_income']       = $usersModel->getReferralIncome();
+        $response['captcha_income']        = $usersModel->getCaptchaIncome();
+        $response['money_balance']         = $usersModel->getMoneyBalance();
+        $response['reward_points']         = 0;
+        $response['reward_claims']         = $rcr->getTotalCompleted();
+        $response['reward_claims_pending'] = $rcr->getTotalPending();
+        $response['referral_link']         = URL::to('/') . '?action=signup&ref=' . encrypt($this->user->email);
 
         return $response;
     }

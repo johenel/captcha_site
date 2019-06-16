@@ -35,6 +35,8 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::get('/encashment', 'UsersController@encashmentIndex');
     Route::post('/encashment', 'UsersController@encash');
     Route::get('/rewards/list', 'UsersController@rewardsIndex');
+    Route::get('/reward/checkout/{id}', 'UsersController@checkoutIndex');
+    Route::post('/rewards/claim', 'UsersController@rewardClaim');
 
     Route::group(['middleware' => ['encash']], function () {
         Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
@@ -62,6 +64,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/rewards/publish', 'Admin\RewardsController@publish');
     Route::get('/rewards/archive', 'Admin\RewardsController@archiveIndex');
     Route::post('/rewards/archive', 'Admin\RewardsController@archive');
+    Route::get('/rewards/requests', 'Admin\RewardsController@claimRequestsIndex');
+    Route::get('/rewards/requests/completed', 'Admin\RewardsController@completedCRCIndex');
+    Route::post('/reward/request/complete', 'Admin\RewardsController@completeCRC');
 });
 
 

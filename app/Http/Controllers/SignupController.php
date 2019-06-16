@@ -41,17 +41,11 @@ class SignupController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
 
-        $user->save();
-
         if($referrer) {
-            $transaction = new Transactions();
-            $transaction->users_id = $referrer->id;
-            $transaction->value = 40;
-            $transaction->type_id = 3;
-            $transaction->status_id = 3;
-            $transaction->source_token = $user->id;
-            $transaction->save();
+            $user->referred_by = $referrer->id;
         }
+
+        $user->save();
 
         $request->session()->put('user', $user);
 

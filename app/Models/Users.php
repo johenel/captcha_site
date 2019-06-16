@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Transactions;
 use DB;
 use Carbon\Carbon;
+use App\Models\Encashments;
+
 
 class Users extends Model
 {
@@ -116,7 +118,7 @@ class Users extends Model
     {
         $total = 0;
 
-        $result = Transactions::where('users_id', $this->user->id)->where('type_id', 2)->where('status_id', 0)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id', $this->user->id)->where('type_id', 2)->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
@@ -129,12 +131,20 @@ class Users extends Model
     {
         $total = 0;
 
-        $encashments = Encashments::where('users_id', $this->user->id)->where('status', 0)->select(DB::raw('sum(amount) as total'))->get();
+        $encashments = Encashments::where('users_id', $this->user->id)->whereIn('status', [Encashments::STATUS_PENDING, Encashments::STATUS_PROCESSING])->select(DB::raw('sum(amount) as total'))->get();
 
         if (count($encashments) > 0) {
             $total = $encashments[0]->total;
         }
 
         return $total ? $total : 0;
+    }
+
+    public function getMoneyBalance()
+    {
+        $em = new Encashments;
+        $rcr = new RewardClaimRequests;
+
+        return $this->getTotalIncome() - $em->getTotalEncashments() - $this->getPendingEncashment() - $rcr->getTotal();
     }
 }

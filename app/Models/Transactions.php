@@ -13,6 +13,9 @@ class Transactions extends Model
     protected $statuses = 'transaction_statuses';
 
     public const TYPE_CAPTCHA = 1;
+    public const TYPE_ENCASHMENT = 2;
+    public const TYPE_REFERRAL_BONUS_REWARD = 3;
+    public const TYPE_REFERRAL_BONUS_MONEY = 4;
 
     public const STATUS_PENDING = 1;
     public const STATUS_REJECTED = 2;

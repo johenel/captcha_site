@@ -10,6 +10,11 @@
             color: white;
             font-size: 20px;
         }
+
+        .price.reward {
+            top: 0px;
+            right: 0px;
+        }
     </style>
     <section>
         <div class="row">
@@ -21,7 +26,10 @@
                 @foreach($rewards as $r)
                     <div class="col-md-3">
                         <div class="card">
-                            <span class="price reward"><i class="fa fa-star" style="color:orange"></i> {{$r->price_reward_points}}</span>
+                            <span class="price reward">
+                                <i class="fa fa-star" style="color:orange"></i> {{$r->price_reward_points}}<br><i class="fa fa-money" style="color:#04d204"></i> {{$r->price_money_balance}}
+                            </span>
+
                             <img class="card-img-top" src="/images/rewards/{{$r->featured_image_url}}" alt="">
                             <div class="card-body">
                                 <h4 class="card-title mb-3">{{$r->title}}</h4>
