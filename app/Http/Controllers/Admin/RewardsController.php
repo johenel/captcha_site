@@ -175,7 +175,26 @@ class RewardsController extends Controller
     public function completeCRC(Request $request)
     {
         $rcr = RewardClaimRequests::find($request->rcrid);
+        $rcr->status = RewardClaimRequests::STATUS_COMPLETED;
+        $rcr->update();
 
+        session()->flash('CLAIM_REQUEST_COMPLETED', true);
+
+        return redirect(URL::previous());
+    }
+
+    public function completedCRCIndex()
+    {
+        $rcr = new RewardClaimRequests;
+
+        $response = [];
+        $response['requests'] = $rcr->where('status', RewardClaimRequests::STATUS_COMPLETED)
+            ->orderBy('created_at','desc')
+            ->with('user')
+            ->with('reward')
+            ->paginate(15);
+
+        return view('pages.admin.rewards.claim-completed', $response);
     }
 }
 

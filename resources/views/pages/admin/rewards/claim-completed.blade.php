@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Reward Claim Requests')
+@section('title','Completed Claims')
 @section('content')
     <style>
         th, td {
@@ -7,15 +7,6 @@
     </style>
     <section>
         <div class="container">
-            @if(session()->has('CLAIM_REQUEST_COMPLETED'))
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-success">
-                            Claim Request Completed
-                        </div>
-                    </div>
-                </div>
-            @endif
             <div class="row" style="overflow: auto;min-height: 500px;">
                 <div class="col-md-12">
                     <table class="table table-bordered bg-white">
@@ -27,7 +18,6 @@
                                 <th nowrap>Mobile Number</th>
                                 <th nowrap>Notes</th>
                                 <th nowrap>Item</th>
-                                <th nowrap>Action</th>
                                 <th nowrap>Date</th>
                             </tr>
                         </thead>
@@ -47,13 +37,6 @@
                                         @if($r->payment_option == \App\Models\RewardClaimRequests::PAYMENT_OPTION_MONEY )
                                             <i class='fa fa-money' style="color:green"></i> {{$r->reward->price_money_balance}}
                                         @endif
-                                    </td>
-                                    <td nowrap>
-                                        <form action="/reward/request/complete" method="post">
-                                            @csrf
-                                            <input type="hidden" name="rcrid" value="{{$r->id}}">
-                                            <input type="submit" value="COMPLETE" class="btn btn-success">
-                                        </form>
                                     </td>
                                     <td nowrap>
                                         {{date_format(date_create($r->created_at), 'M, d Y')}}

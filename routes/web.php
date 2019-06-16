@@ -65,6 +65,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/rewards/archive', 'Admin\RewardsController@archiveIndex');
     Route::post('/rewards/archive', 'Admin\RewardsController@archive');
     Route::get('/rewards/requests', 'Admin\RewardsController@claimRequestsIndex');
+    Route::get('/rewards/requests/completed', 'Admin\RewardsController@completedCRCIndex');
+    Route::post('/reward/request/complete', 'Admin\RewardsController@completeCRC');
 });
 
 
