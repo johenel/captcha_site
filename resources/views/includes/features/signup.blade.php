@@ -2,6 +2,7 @@
     <div class="card-body bg-dark">
         <form action="/signup" method="post">
             @csrf
+            <input type="hidden" name="ref" value="{{\Illuminate\Support\Facades\Input::get('ref')}}">
             <div class="form-group">
                 <label for="first_name">First Name</label>
                 <input type="text" class="form-control" name="first_name" @if(session()->has('draft')) value="{{session()->get('draft')->first_name}}" @endif>
