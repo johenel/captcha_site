@@ -152,6 +152,6 @@ class Users extends Model
     {
         $r = Transactions::where('users_id', $this->user->id)->where('type_id', Transactions::TYPE_REFERRAL_BONUS_REWARD)->select(DB::raw('sum(value) as total'))->first();
 
-        return $r ? $r->total : 0;
+        return $r ? $r->total : 0 ? $r->total : 0;
     }
 }
