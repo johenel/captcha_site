@@ -3,7 +3,6 @@
 namespace App\Helpers\Facades;
 
 use App\Models\Users;
-
 class UsersHelper
 {
     private $user;
@@ -27,6 +26,6 @@ class UsersHelper
 
     public function rewardPoints()
     {
-        return 0;
+        return  $this->um->getRewardPoints();
     }
 }

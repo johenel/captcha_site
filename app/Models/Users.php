@@ -79,7 +79,7 @@ class Users extends Model
     {
         $total = 0;
 
-        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [1, 3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [Transactions::TYPE_CAPTCHA, Transactions::TYPE_REFERRAL_BONUS_MONEY])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
@@ -105,7 +105,7 @@ class Users extends Model
     {
         $total = 0;
 
-        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [3])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [Transactions::TYPE_REFERRAL_BONUS_MONEY])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
@@ -146,5 +146,12 @@ class Users extends Model
         $rcr = new RewardClaimRequests;
 
         return $this->getTotalIncome() - $em->getTotalEncashments() - $this->getPendingEncashment() - $rcr->getTotal();
+    }
+
+    public function getRewardPoints()
+    {
+        $r = Transactions::where('users_id', $this->user->id)->where('type_id', Transactions::TYPE_REFERRAL_BONUS_REWARD)->select(DB::raw('sum(value) as total'))->first();
+
+        return $r ? $r->total : 0;
     }
 }

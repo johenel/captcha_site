@@ -112,7 +112,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"> <span class="count">{{$reward_points}}</span></div>
+                                <div class="stat-text"> <span>{{$reward_points}}</span></div>
                                 <div class="stat-heading">Reward Points</div>
                             </div>
                         </div>

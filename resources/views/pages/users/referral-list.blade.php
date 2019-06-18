@@ -16,18 +16,33 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Referral Level</th>
+                            <th>Earnings</th>
                             <th>Registration Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                        </tr>
+                        @foreach($referrals as $r)
+                            <?php
+                            $user = explode(',', $r->source_token);
+                            ?>
+                            <tr>
+                                <td>{{$user[0]}}</td>
+                                <td>{{$user[1]}}</td>
+                                <td>{{str_replace('_level', '', $user[2])}}</td>
+                                <td>
+                                    @if($r->type_id == \App\Models\Transactions::TYPE_REFERRAL_BONUS_REWARD)
+                                        <i class="fa fa-star" style="color:orange"></i>
+                                    @elseif($r->type_id == \App\Models\Transactions::TYPE_REFERRAL_BONUS_MONEY)
+                                        <i class="fa fa-money" style="color:green"></i>
+                                    @endif
+                                    {{$r->value}}
+                                </td>
+                                <td>{{$r->created_at}}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{$referrals->links()}}
             @else
                 <div class="card" style="margin-top:50px;">
                     <div class="card-body">

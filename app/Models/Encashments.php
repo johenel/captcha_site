@@ -22,7 +22,7 @@ class Encashments extends Model
             ->select(DB::raw('sum(amount) as total'))
             ->get();
 
-        return count($result) > 0 ? $result[0]->total : 0;
+        return count($result) > 0 ? $result[0]->total : 0 ? $result[0]->total : 0 ;
     }
 
 }
