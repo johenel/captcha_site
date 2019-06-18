@@ -47,7 +47,7 @@ class HomeController extends Controller
         $response['referral_income']       = $usersModel->getReferralIncome();
         $response['captcha_income']        = $usersModel->getCaptchaIncome();
         $response['money_balance']         = $usersModel->getMoneyBalance();
-        $response['reward_points']         = 0;
+        $response['reward_points']         = $usersModel->getRewardPoints();
         $response['reward_claims']         = $rcr->getTotalCompleted();
         $response['reward_claims_pending'] = $rcr->getTotalPending();
         $response['referral_link']         = URL::to('/') . '?action=signup&ref=' . encrypt($this->user->email);

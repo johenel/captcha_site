@@ -31,7 +31,7 @@ class ActivateAccountController extends Controller
                 ]);
                 $user = Users::where('id', $request->uid)->first();
                 $this->processReferral($user->id);
-//                $this->sendEmail($user);
+                $this->sendEmail($user);
                 break;
         }
 
@@ -59,31 +59,31 @@ class ActivateAccountController extends Controller
                     switch ($i):
                         case 0:
                             $transaction->value        = 40;
-                            $transaction->source_token = $uid . ',' . '1st_level';
+                            $transaction->source_token = $user->first_name . ' ' . $user->last_name . ',' . $user->email . ',' . '1st_level';
 
                             $transaction2               = new Transactions();
                             $transaction2->users_id     = $referrer;
                             $transaction2->value        = 10;
                             $transaction2->type_id      = Transactions::TYPE_REFERRAL_BONUS_REWARD;
                             $transaction2->status_id    = Transactions::STATUS_COMPLETED;
-                            $transaction2->source_token = $uid . ',' . '1st_level';
+                            $transaction2->source_token = $user->first_name . ' ' . $user->last_name . ',' . $user->email . ',' . '1st_level';
                             $transaction2->save();
                             break;
                         case 1:
                             $transaction->value        = 10;
-                            $transaction->source_token = $uid . ',' . '2nd_level';
+                            $transaction->source_token = $user->first_name . ' ' . $user->last_name . ',' . $user->email . ',' . '2nd_level';
                             break;
                         case 2:
                             $transaction->value        = 5;
-                            $transaction->source_token = $uid . ',' . '3rd_level';
+                            $transaction->source_token = $user->first_name . ' ' . $user->last_name . ',' . $user->email . ',' . '3rd_level';
                             break;
                         case 3:
                             $transaction->value        = 2.5;
-                            $transaction->source_token = $uid . ',' . '4th_level';
+                            $transaction->source_token = $user->first_name . ' ' . $user->last_name . ',' . $user->email . ',' . '4th_level';
                             break;
                         case 4:
                             $transaction->value        = 2.5;
-                            $transaction->source_token = $uid . ',' . '5th_level';
+                            $transaction->source_token = $user->first_name . ' ' . $user->last_name . ',' . $user->email . ',' . '5th_level';
                             break;
                     endswitch;
 
