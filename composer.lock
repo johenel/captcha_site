@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f43d926ac77a215ce973e41c87289e1",
+    "content-hash": "53ec7bf774b13fa1d671e7b475830016",
     "packages": [
+        {
+            "name": "bonecms/laravel-captcha",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igoshev/laravel-captcha.git",
+                "reference": "bc6b632b809931b6d65cfe707ae9c1ebf2fddffd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igoshev/laravel-captcha/zipball/bc6b632b809931b6d65cfe707ae9c1ebf2fddffd",
+                "reference": "bc6b632b809931b6d65cfe707ae9c1ebf2fddffd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^5.6|^5.5|^5.4",
+                "illuminate/http": "^5.6|^5.5|^5.4",
+                "illuminate/routing": "^5.6|^5.5|^5.4",
+                "illuminate/session": "^5.6|^5.5|^5.4",
+                "illuminate/support": "^5.6|^5.5|^5.4",
+                "illuminate/translation": "^5.6|^5.5|^5.4",
+                "illuminate/view": "^5.6|^5.5|^5.4",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Igoshev\\Captcha\\Providers\\CaptchaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Igoshev\\Captcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitriy Igoshev",
+                    "email": "dmitry.igo@gmail.com"
+                }
+            ],
+            "description": "Captcha integration for the Laravel 5",
+            "homepage": "https://github.com/igoshev/laravel-captcha",
+            "keywords": [
+                "Laravel Captcha",
+                "captcha"
+            ],
+            "time": "2019-04-22T13:22:56+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
