@@ -46,20 +46,20 @@ class UsersController extends Controller
 
     public function typeCaptcha(Request $request)
     {
-        $input = $request->captcha_user_input;
+        sleep(3);
 
-        if ($input == 'test123') {
-            $transaction            = new Transactions();
-            $transaction->users_id  = $request->session()->get('user')->id;
-            $transaction->type_id   = 1;
-            $transaction->status_id = 3;
-            $transaction->value     = 0.03;
-            $transaction->save();
+        $this->validate($request, [
+            'captcha' => 'required|captcha'
+        ]);
 
-            $request->session()->flash('success', true);
-        } else {
-            $request->session()->flash('success', false);
-        }
+        $transaction            = new Transactions();
+        $transaction->users_id  = $request->session()->get('user')->id;
+        $transaction->type_id   = 1;
+        $transaction->status_id = 3;
+        $transaction->value     = 0.03;
+        $transaction->save();
+
+        $request->session()->flash('success', true);
 
         return redirect('/typing-captcha');
     }

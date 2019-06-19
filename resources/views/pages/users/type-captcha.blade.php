@@ -100,8 +100,7 @@
 
         </div>
         <div class="col-md-12">
-
-
+            @include('includes.error-validation')
             <div class="captcha-box" style="width:600px;margin: auto;">
                 <div class="card">
                     <div class="card-header">
@@ -110,11 +109,11 @@
                     <div class="card-body">
                         <form action="/typing-captcha/attempt" method="post">
                             @csrf
-                            <img src="{{\Illuminate\Support\Facades\URL::to('/')}}/temp-rex/assets/images/captcha-sample.png" style="border: solid 1px #ddd;width:100%;">
+                            @captcha
                             <div class="captcha-input" style="height:100px;background: #dde;margin-top:30px;padding:30px;">
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <input class="form-control" name="captcha_user_input" placeholder="Enter test123">
+                                        <input type="text" id="captcha" name="captcha" class="form-control">
                                     </div>
                                     <div class="col-md-3">
                                         <input type="submit" class="btn btn-dark">
