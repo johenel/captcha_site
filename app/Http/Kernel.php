@@ -36,7 +36,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\AdminConfig::class,
-            \App\Http\Middleware\SetUserInfo::class
+            \App\Http\Middleware\SetUserInfo::class,
+            \App\Http\Middleware\AllowOneLoginPerUser::class
         ],
 
         'api' => [
@@ -66,7 +67,7 @@ class Kernel extends HttpKernel
         'filterGuest' => \App\Http\Middleware\FilterSignedUser::class,
         'admin' => \App\Http\Middleware\AdminUser::class,
         'activated' => \App\Http\Middleware\CheckIfAccountActivated::class,
-        'encash' => \App\Http\Middleware\ValidateEncashment::class
+        'encash' => \App\Http\Middleware\ValidateEncashment::class,
     ];
 
     /**

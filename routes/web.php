@@ -28,7 +28,7 @@ Route::post('/forgot-password/update', 'ForgotPasswordController@updatePass');
 Route::get('/activate-account', 'ActivateAccountController@index')->middleware('signedIn');
 Route::post('/activation-payment-details', 'ActivateAccountController@submitPaymentDetails');
 
-Route::group(['middleware' => ['signedIn', 'activated']], function () {
+Route::group(['middleware' => ['signedIn', 'activated','sessionLogin']], function () {
     Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
     Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
     Route::get('/referrals', 'UsersController@referralsIndex');
