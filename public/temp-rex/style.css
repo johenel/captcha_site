@@ -12,11 +12,11 @@ Tags: light, white,blog,business,multipurpose,one page, single page, custom-colo
 /* Table of Content
 ==================================================
 #BASIC TYPOGRAPHY
-#HEADER	
-#MENU 
+#HEADER
+#MENU
 #ABOUT
 #CALL TO ACTION
-#TEAM   
+#TEAM
 #SERVICE
 #PORTFOLIO
 #COUNTER
@@ -49,9 +49,9 @@ ul{
 	margin: 0;
 	list-style: none;
 }
-a{ 
+a{
 	text-decoration: none;
-	color: #2f2f2f;  
+	color: #2f2f2f;
 }
 a:focus{
 	outline: none;
@@ -61,12 +61,12 @@ h1,h2,h3,h4,h5,h6{
 	font-family: 'Raleway', sans-serif;
 }
 h2 {
-	color: #fff;  
+	color: #fff;
 	font-size: 30px;
 	font-weight: 700;
 	line-height: 40px;
 	margin: 0;
-	padding-bottom: 10px;  
+	padding-bottom: 10px;
 }
 img{
  border:none;
@@ -96,7 +96,7 @@ img{
 	text-indent: -9999em;
 	width: 11em;
 	height: 11em;
-	border-radius: 50%;	
+	border-radius: 50%;
 	position: relative;
 	-webkit-animation: load3 1.4s infinite linear;
 	animation: load3 1.4s infinite linear;
@@ -106,7 +106,7 @@ img{
 }
 .loader:before {
 	width: 50%;
-	height: 50%;	
+	height: 50%;
 	border-radius: 100% 0 0 0;
 	position: absolute;
 	top: 0;
@@ -153,7 +153,7 @@ img{
 .scrollToTop {
 	background: #f9f9f9 none repeat scroll 0 0;
 	border-radius: 50%;
-	bottom: 60px;	
+	bottom: 60px;
 	display: none;
 	font-size: 25px;
 	height: 55px;
@@ -165,11 +165,11 @@ img{
 	width: 55px;
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
-	transition: all 0.5s; 
+	transition: all 0.5s;
 	z-index: 999;
 }
 .scrollToTop:hover,
-.scrollToTop:focus{  
+.scrollToTop:focus{
   color: #fff;
   text-decoration: none;
   outline: none;
@@ -184,10 +184,10 @@ img{
 	display: inline;
 	width: 100%;
 }
-.header-inner{	
+.header-inner{
 	display: inline;
 	position: relative;
-	float: left;	
+	float: left;
 	width: 100%;
 }
 .header-inner>img{
@@ -232,8 +232,8 @@ img{
 .knowmore-btn{
 	border: 2px solid #fff;
 	border-radius: 2px;
-	color: #fff;	
-	font-size: 20px;	
+	color: #fff;
+	font-size: 20px;
 	font-weight: bold;
 	font-family: 'Raleway', sans-serif;
 	text-transform: uppercase;
@@ -281,7 +281,7 @@ img{
 .main-navbar {
 	background: #fff none repeat scroll 0 0;
 	border-radius: 0;
-	border-bottom: 1px solid #e7e7e7;  
+	border-bottom: 1px solid #e7e7e7;
 	border-right: medium none;
 	margin-bottom: 0;
 	height: 100px;
@@ -304,14 +304,14 @@ img{
 	transition: all 0.5s;
 }
 .logo {
-	height: 100px;  
+	height: 100px;
 	width: 85px;
 	margin-right: 45px;
 	margin-top: -1px;
 	padding: 0;
 }
 .logo-compressed {
-	height: 80px;  
+	height: 80px;
 	width: 70px;
 }
 .logo img {
@@ -368,13 +368,13 @@ img{
 .search-area input[type="text"] {
 	height: 100%;
 	font-size: 20px;
-	display: inline-block;  
+	display: inline-block;
 	font-weight: 100;
 	border: none;
 	outline: none;
 	line-height: 20px;
 	color: #555;
-	padding: 3px 60px 0px 3px;  
+	padding: 3px 60px 0px 3px;
 	width: 0px;
 	position: absolute;
 	top: 11%;
@@ -386,7 +386,6 @@ img{
 	cursor: pointer;
 }
 .search-area input[type="text"]:focus {
-	width: 880px;
 	z-index: 1;
 	background-color: #fff;
 	cursor: text;
@@ -423,12 +422,12 @@ img{
 	padding: 70px 0;
 	float: left;
 	display: inline;
-	width: 100%;	
+	width: 100%;
 }
 .welcome-area{
 	float: left;
 	display: inline;
-	width: 100%;	
+	width: 100%;
 }
 .title-area {
 	display: inline;
@@ -462,7 +461,7 @@ img{
 	display: inline-block;
 	text-align: center;
 }
-.wc-table li {  
+.wc-table li {
 	float: left;
 	width: 33%;
 }
@@ -491,7 +490,7 @@ img{
 	font-size: 18px;
 	border-bottom: 1px solid #bbbbbb;
 	margin-top: 32px;
-	padding-bottom: 17px;	
+	padding-bottom: 17px;
 }
 .single-wc-content p {
 	color: #7d7d7d;
@@ -502,7 +501,7 @@ img{
 	color: #fff;
 }
 .single-wc-content:hover .wc-tittle{
-	padding-bottom: 16px;	
+	padding-bottom: 16px;
 }
 .about-area {
 	display: inline;
@@ -584,9 +583,9 @@ ul.service-table li .single-service {
 	width: 100%;
 }
 .button {
-	float: left;	
+	float: left;
 	display: block;
-	margin: 1em;	
+	margin: 1em;
 	border: none;
 	background: none;
 	color: inherit;
@@ -664,7 +663,7 @@ ul.service-table li .single-service {
 /*--------------------*/
 
 #call-to-action{
-	display: inline;	
+	display: inline;
 	float: left;
 	position: relative;
 	width: 100%;
@@ -736,10 +735,10 @@ ul.service-table li .single-service {
 	border-radius: 50%;
 	position: relative;
 	cursor: default;
-	box-shadow: 
+	box-shadow:
 		inset 0 0 0 16px rgba(255,255,255,0.6),
 		0 1px 2px rgba(0,0,0,0.1);
-		
+
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -747,18 +746,18 @@ ul.service-table li .single-service {
 	transition: all 0.4s ease-in-out;
 }
 
-.team-img-1 { 
+.team-img-1 {
 	background-image: url(assets/images/team-member1.png);
 }
 
-.team-img-2 { 
+.team-img-2 {
 	background-image: url(assets/images/team-member2.png);
 }
 
-.team-img-3 { 
+.team-img-3 {
 	background-image: url(assets/images/team-member3.png);
 }
-.team-img-4 { 
+.team-img-4 {
 	background-image: url(assets/images/team-member4.png);
 }
 .team-info {
@@ -768,19 +767,19 @@ ul.service-table li .single-service {
 	padding: 50px 0;
 	border-radius: 50%;
 	opacity: 0;
-	
+
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
-	
+
 	-webkit-transform: scale(0);
 	-moz-transform: scale(0);
 	-o-transform: scale(0);
 	-ms-transform: scale(0);
 	transform: scale(0);
-	
+
 	-webkit-backface-visibility: hidden;
 }
 .team-info p {
@@ -788,7 +787,7 @@ ul.service-table li .single-service {
 	padding: 10px 5px;
 	font-style: italic;
 	margin: 0 30px;
-	font-size: 14px;	
+	font-size: 14px;
 	opacity: 0;
 	-webkit-transition: all 1s ease-in-out 0.4s;
 	-moz-transition: all 1s ease-in-out 0.4s;
@@ -806,7 +805,7 @@ ul.service-table li .single-service {
 	height: 27px;
 	margin: 0 5px;
 	text-align: center;
-	width: 27px; 
+	width: 27px;
 }
 .team-info a:hover {
 	opacity: 1;
@@ -971,7 +970,7 @@ ul.service-table li .single-service {
 	text-transform: uppercase;
 	-webkit-transition: all 0.5s ease 0s;
 	-o-transition: all 0.5s ease 0s;
-	transition: all 0.5s ease 0s;  
+	transition: all 0.5s ease 0s;
 }
 .portfolio-container {
 	display: inline;
@@ -1000,16 +999,16 @@ ul.service-table li .single-service {
 	-o-transition: all 0.5s ease 0s;
 	transition: all 0.5s ease 0s;
 }
-.single-item>img:hover{	
-	-webkit-transform: scale(1);	
-	    -ms-transform: scale(1);	
-	        transform: scale(1);	       
+.single-item>img:hover{
+	-webkit-transform: scale(1);
+	    -ms-transform: scale(1);
+	        transform: scale(1);
 }
 #mixit-container .mix{
     display: none;
 }
-.single-item-content { 
-	background-color: #000; 
+.single-item-content {
+	background-color: #000;
 	display: inline;
 	opacity: 0;
 	height: 100%;
@@ -1024,7 +1023,7 @@ ul.service-table li .single-service {
 	-ms-transition: background-color 0.5s linear;
 	transition: background-color 0.5s linear;
 }
-.portfolio-social-icon {  
+.portfolio-social-icon {
 	float: left;
 	display: inline;
 	padding: 110px 50px;
@@ -1036,10 +1035,10 @@ ul.service-table li .single-service {
 	transition: all 0.5s;
 }
 .single-item:hover .single-item-content{
-	opacity: 1;	
+	opacity: 1;
 }
 .single-item-content:hover{
-	background-color: rgba(0, 0, 0, 0.8);	
+	background-color: rgba(0, 0, 0, 0.8);
 }
 .portfolio-social-icon a {
 	color: #fff;
@@ -1048,9 +1047,9 @@ ul.service-table li .single-service {
 	height: 40px;
 	line-height: 15px;
 	margin: 0 8px;
-	padding: 12px;  
+	padding: 12px;
 	text-align: center;
-	width: 40px; 
+	width: 40px;
 	transform: scale(0.5);
 	-webkit-transition: all 0.7s ease 0s;
 	-o-transition: all 0.7s ease 0s;
@@ -1059,7 +1058,7 @@ ul.service-table li .single-service {
 .single-item-content:hover .fancybox,
 .single-item-content:hover .link-btn{
 	 transform: scale(0.9);
-} 
+}
 .portfolio-title {
 	bottom: 0;
 	display:inline;
@@ -1095,9 +1094,9 @@ ul.service-table li .single-service {
 
 #counter{
 	display: inline;
-	float: left;	
+	float: left;
 	position: relative;
-	width: 100%;	
+	width: 100%;
 }
 .counter-overlay{
 	background-color: rgba(0, 0, 0, 0.8);
@@ -1225,7 +1224,7 @@ ul.service-table li .single-service {
 	font-size: 18px;
 	border-bottom:1px solid #e4e4e4;
 	padding: 20px 0;
-	margin-bottom: 0px; 
+	margin-bottom: 0px;
 }
 .single-price p:last-of-type{
 	border: none;
@@ -1267,7 +1266,7 @@ ul.service-table li .single-service {
 	display: inline;
 	float: left;
 	padding: 70px 0;
-	width: 100%;	
+	width: 100%;
 }
 .testimonial-area .tittle{
 	color: #fff;
@@ -1352,10 +1351,10 @@ ul.service-table li .single-service {
 	color: #fff;
 	content: '\f105' !important;
 	border: 1px solid #fff;
-	border-radius: 50%; 
+	border-radius: 50%;
 	display: inline-block;
 	font-family: fontAwesome;
-	font-size: 35px;	
+	font-size: 35px;
 	height: 35px;
 	line-height: 31px;
 	padding: 0 10px;
@@ -1425,7 +1424,7 @@ ul.service-table li .single-service {
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
 }
-.single-from-blog .blog-title h2 a {  
+.single-from-blog .blog-title h2 a {
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-ms-transition: all 0.5s;
@@ -1433,7 +1432,7 @@ ul.service-table li .single-service {
 	transition: all 0.5s;
 }
 .single-from-blog .blog-title h2 a:hover,
-.single-from-blog .blog-title h2 a:focus{	
+.single-from-blog .blog-title h2 a:focus{
 	text-decoration: none;
 	outline: none;
 }
@@ -1465,7 +1464,7 @@ ul.service-table li .single-service {
 .single-from-blog .blog-footer a:hover,
 .single-from-blog .blog-footer a:focus {
 	text-decoration: none;
-	outline: none;	
+	outline: none;
 }
 .single-from-blog .blog-footer a span {
 	border: 1px solid;
@@ -1581,8 +1580,8 @@ ul.service-table li .single-service {
 }
 .contact-form .form-control:focus {
     outline: 0;
-    box-shadow: none;    
-} 
+    box-shadow: none;
+}
 .contact-form .form-control::-webkit-input-placeholder {
 	color: #e2e2e2;
 	font-size: 20px;
@@ -1590,7 +1589,7 @@ ul.service-table li .single-service {
 
 .contact-form .form-control:-moz-placeholder { /* Firefox 18- */
 	color: #e2e2e2;
-	font-size: 20px; 
+	font-size: 20px;
 }
 
 .contact-form .form-control::-moz-placeholder {  /* Firefox 19+ */
@@ -1598,7 +1597,7 @@ ul.service-table li .single-service {
 	font-size: 20px;
 }
 
-.contact-form .form-control:-ms-input-placeholder {  
+.contact-form .form-control:-ms-input-placeholder {
 	color: #e2e2e2;
 	font-size: 20px;
 }
@@ -1609,11 +1608,11 @@ ul.service-table li .single-service {
 }
 .contact-form.button-default::after,
 .contact-form .button-default > span {
-	padding: 12px 40px;  
+	padding: 12px 40px;
 }
 #google-map{
 	display: inline;
-	float: left;	
+	float: left;
 	width: 100%;
 }
 
@@ -1642,7 +1641,7 @@ ul.service-table li .single-service {
 }
 .footer-top {
 	display: inline;
-	float: left;  
+	float: left;
 	width: 100%;
 }
 .footer-top-area{
@@ -1654,7 +1653,7 @@ ul.service-table li .single-service {
 .footer-logo{
 	display: inline-block;
 }
-.footer-social{	
+.footer-social{
 	display: inline;
 	float: left;
 	margin: 40px 0px;
@@ -1731,7 +1730,7 @@ ul.service-table li .single-service {
 	display: inline;
 	float: left;
 	position: relative;
-	width: 100%;		
+	width: 100%;
 }
 .blog-overlay{
 	background-color: rgba(0, 0, 0, 0.8);
@@ -1787,7 +1786,7 @@ ul.service-table li .single-service {
 	margin-bottom: 35px;
 }
 .blog-archive .single-from-blog figure img {
-	height: 400px;  
+	height: 400px;
 }
 .blog-left{
 	display: inline;
@@ -1798,7 +1797,7 @@ ul.service-table li .single-service {
 
 }
 .blog-pagination > li > a,
-.blog-pagination > li > span {	
+.blog-pagination > li > span {
 	padding: 8px 18px;
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
@@ -1865,7 +1864,7 @@ ul.service-table li .single-service {
 }
 .blog-search .button-default::after,
 .blog-search .button-default > span {
-  	padding: 10px 30px; 
+  	padding: 10px 30px;
 }
 .follow-us {
 	border-top: 1px solid #d4d4d4;
@@ -1885,30 +1884,30 @@ ul.service-table li .single-service {
 	height: 35px;
 	line-height: 35px;
 	margin: 0 5px;
-	text-align: center;  
+	text-align: center;
 	width: 35px;
 }
 .follow-us a.facebook{
 	background-color: #3b5998;
-	border-color: #3b5998;	
+	border-color: #3b5998;
 }
-.follow-us a.twitter{	
+.follow-us a.twitter{
 	background-color: #00aced;
 	border-color: #00aced;
 }
-.follow-us a.google-plus{	
+.follow-us a.google-plus{
 	background-color: #dd4b39;
 	border-color: #dd4b39;
 }
-.follow-us a.youtube{	
+.follow-us a.youtube{
 	background-color: #bb0000;
 	border-color: #bb0000;
 }
-.follow-us a.linkedin{	
+.follow-us a.linkedin{
 	background-color: #007bb5;
 	border-color: #007bb5;
 }
-.follow-us a.dribbble{	
+.follow-us a.dribbble{
 	background-color: #ea4c89;
 	border-color: #ea4c89;
 }
@@ -1939,7 +1938,7 @@ ul.service-table li .single-service {
 	transition: all 0.5s;
 }
 .popular-post-widget .media-heading a:hover,
-.popular-post-widget .media-heading a:focus{	
+.popular-post-widget .media-heading a:focus{
 	text-decoration: none;
 	outline: none;
 }
@@ -1954,7 +1953,7 @@ ul.service-table li .single-service {
 	padding-bottom: 25px;
 	padding-top: 24px;
 	text-align: left;
-	width: 100%;	
+	width: 100%;
 }
 .single-instagram-feed{
 	display: inline;
@@ -1965,11 +1964,11 @@ ul.service-table li .single-service {
   	width: 100%;
 }
 .instagram-feed .slick-prev,
-.instagram-feed .slick-next {  
+.instagram-feed .slick-next {
 	font-size: 0;
 	height: 20px;
 	line-height: 0;
-	margin-top: -10px;  
+	margin-top: -10px;
 	padding: 0;
 	position: absolute;
 	top: 100%;
@@ -1983,7 +1982,7 @@ ul.service-table li .single-service {
   	right: 29%;
 }
 .instagram-feed .slick-prev::before,
-.instagram-feed .slick-next::before { 
+.instagram-feed .slick-next::before {
 	font-family: "fontAwesome";
 	font-size: 28px;
 	line-height: 1;
@@ -2013,7 +2012,7 @@ ul.service-table li .single-service {
 	width: 15px;
 }
 .instagram-feed li button::before{
- 	color: #eeeeee;  
+ 	color: #eeeeee;
 }
 .blog-details {
   	background-color: #fff;
@@ -2021,7 +2020,7 @@ ul.service-table li .single-service {
 .blog-details-content{
 	display: inline;
 	float: left;
-	padding: 40px;	
+	padding: 40px;
 	width: 100%;
 }
 .blog-details-content blockquote {
@@ -2088,8 +2087,8 @@ ul.service-table li .single-service {
 }
 .comment-form .form-control:focus {
     outline: 0;
-    box-shadow: none;    
-} 
+    box-shadow: none;
+}
 .comment-form .form-control::-webkit-input-placeholder {
 	color: #858585;
 	font-size: 18px;
@@ -2105,7 +2104,7 @@ ul.service-table li .single-service {
 	font-size: 18px;
 }
 
-.comment-form .form-control:-ms-input-placeholder {  
+.comment-form .form-control:-ms-input-placeholder {
     color: #858585;
    font-size: 18px;
 }
@@ -2117,7 +2116,7 @@ ul.service-table li .single-service {
 }
 .comment-form.button-default::after,
 .comment-form .button-default > span {
-  	padding: 12px 40px;  
+  	padding: 12px 40px;
 }
 
 /*--------------------*/
@@ -2195,35 +2194,35 @@ ul.service-table li .single-service {
 
 
 @media(max-width:1199px ){
-	.header-content {  
-      padding: 70px;  
+	.header-content {
+      padding: 170px;
 	}
 	.header-content h2 {
 	  font-size: 60px;
-	  line-height: 58px;  
+	  line-height: 58px;
 	}
-	.knowmore-btn {  
-	  font-size: 18px;  
-	  padding: 20px 25px;	  
+	.knowmore-btn {
+	  font-size: 18px;
+	  padding: 20px 25px;
 	}
-	.download-btn {  
-	  font-size: 18px;  
-	  padding: 20px 25px;	  
+	.download-btn {
+	  font-size: 18px;
+	  padding: 20px 25px;
 	}
 	.header-btn-area {
-	  margin-top: 65px;  
+	  margin-top: 65px;
 	}
 	.logo {
-	  margin-right: 0;	  
+	  margin-right: 0;
 	}
 	#navbar {
 	  width: 87%;
 	}
-	.main-nav li a {  
-	  padding: 39px 16px;  
+	.main-nav li a {
+	  padding: 39px 16px;
 	}
 	.search-area input[type="text"]:focus {
-	  width: 820px;  
+	  width: 820px;
 	}
 	.team-grid li {
 	  height: 198px;
@@ -2233,53 +2232,53 @@ ul.service-table li .single-service {
 	.team-img-1,
 	.team-img-2,
 	.team-img-3,
-	.team-img-4 { 
+	.team-img-4 {
 	  background-position: center center;
 	}
 	.team-info {
-		padding: 12px 0px;  
+		padding: 12px 0px;
 	}
 	.team-info p {
-		margin: 0 32px; 
-	  	padding: 10px 0px; 
+		margin: 0 32px;
+	  	padding: 10px 0px;
 	}
 	.team-info a {
-	  margin: 0 2px;	 
+	  margin: 0 2px;
 	}
 	.single-service {
-	  padding: 45px 15px;  
+	  padding: 45px 15px;
 	}
-	.single-service .service-title {	  
-	  font-size: 20px;	  
+	.single-service .service-title {
+	  font-size: 20px;
 	}
 	.single-portfolio {
 	  width: 23%;
 	}
 	.single-counter > span {
-	  font-size: 50px;	  
+	  font-size: 50px;
 	  width: 50px;
 	}
 	.single-counter .counter-count > span {
 	  font-size: 40px;
 	}
-	.single-counter .counter-count > p {	  
-	  font-size: 14px;	  
+	.single-counter .counter-count > p {
+	  font-size: 14px;
 	}
 	.single-from-blog .blog-title h2 {
-	  font-size: 25px;  
+	  font-size: 25px;
 	}
 	.single-from-blog .blog-footer a {
 	  margin-right: 18px;
 	}
 	.contact-left h2,
 	.contact-right h2 {
-	  font-size: 26px;  
+	  font-size: 26px;
 	}
 	.single-address h4 {
 	  font-size: 20px;
 	}
 	.counter-area {
-	  padding: 125px 0;  
+	  padding: 125px 0;
 	}
 	.blog-archive .single-from-blog figure img {
 	  height: 320px;
@@ -2288,20 +2287,20 @@ ul.service-table li .single-service {
 
 
 @media(max-width:991px ){
-	.header-content {  
-      padding: 50px;  
+	.header-content {
+      padding: 190px 0px;
 	}
 	.header-content h2 {
 	  font-size: 50px;
-	  line-height: 50px;  
+	  line-height: 50px;
 	}
-	.knowmore-btn {  
-	  font-size: 16px;  
-	  padding: 18px 20px;	  
+	.knowmore-btn {
+	  font-size: 16px;
+	  padding: 18px 20px;
 	}
-	.download-btn {  
-	  font-size: 16px;  
-	  padding: 18px 20px;	  
+	.download-btn {
+	  font-size: 16px;
+	  padding: 18px 20px;
 	}
 	.header-btn-area {
 	  margin-top: 20px;
@@ -2320,13 +2319,13 @@ ul.service-table li .single-service {
 	  padding: 30px 7px !important;
 	}
 	.search-area input[type="text"]:focus {
-	  width: 630px;  
+	  width: 630px;
 	}
 	.single-wc-content .wc-tittle {
-	  font-size: 15px;	  
+	  font-size: 15px;
 	}
-	.about-left {  
-	  height: 328px;  
+	.about-left {
+	  height: 328px;
 	  width: 100%;
 	}
 	.about-left img {
@@ -2337,69 +2336,69 @@ ul.service-table li .single-service {
 	  font-size: 28px;
 	}
 	.about-right .tittle-line {
-	  margin-bottom: 15px;	 
+	  margin-bottom: 15px;
 	}
 	.about-right p {
 	  font-size: 14px;
 	  margin-bottom: 6px;
 	}
 	.about-btn-area {
-	  margin-top: 0;	 
+	  margin-top: 0;
 	}
-	.call-to-content h2 {  
+	.call-to-content h2 {
 	  font-size: 30px;
 	}
 	.team-grid li {
 	  height: 170px;
-	  margin: 20px 10px;  
+	  margin: 20px 10px;
 	  width: 21%;
 	}
 	.team-info p {
  		font-size: 10px;
 	}
-	.team-info a { 
+	.team-info a {
 	  font-size: 15px;
-	  height: 25px; 
+	  height: 25px;
 	  width: 25px;
 	}
 	.team-address p {
 	  font-size: 16px;
 	}
 	.team-address span {
-	  font-size: 14px; 
+	  font-size: 14px;
 	}
 	.title-area {
-	  padding: 0 100px;  
+	  padding: 0 100px;
 	}
 	.single-portfolio {
 	  width: 22.5%;
 	}
 	.portfolio-social-icon {
-  		padding: 85px 50px; 
+  		padding: 85px 50px;
 	}
-	.portfolio-title h4 {  
-	  font-size: 13px; 
+	.portfolio-title h4 {
+	  font-size: 13px;
 	}
-	.counter-area {  
- 	 padding: 90px 0;  
+	.counter-area {
+ 	 padding: 90px 0;
 	}
-	.single-counter {  
-	  margin-bottom: 35px;  
+	.single-counter {
+	  margin-bottom: 35px;
 	}
-	.single-price .price-amount {  
-  		font-size: 25px;  
+	.single-price .price-amount {
+  		font-size: 25px;
 	}
 	.single-price p {
-  		font-size: 15px;  
+  		font-size: 15px;
 	}
-	.single-price a span {  
+	.single-price a span {
 	  padding: 12px 35px;
 	}
-	.single-from-blog {  
+	.single-from-blog {
 	  margin-bottom: 30px;
 	}
 	.blog-right {
-	  margin-top: 25px;  
+	  margin-top: 25px;
 	}
 	.instagram-feed .slick-prev {
 	  left: 40%;
@@ -2407,11 +2406,11 @@ ul.service-table li .single-service {
 	.instagram-feed .slick-next {
 	  right: 41%;
 	}
-	.error-message h4 {  
+	.error-message h4 {
 	  font-size: 50px;
-	  line-height: 50px;	 
+	  line-height: 50px;
 	}
-	.error-message p {	 
+	.error-message p {
 	  font-size: 25px;
 	  padding: 0 50px;
 	}
@@ -2441,7 +2440,7 @@ ul.service-table li .single-service {
 	  width: 100%;
 	}
 	.main-nav li a {
-	  display: block; 
+	  display: block;
 	  padding: 8px 7px;
 	}
 	.less-padding {
@@ -2473,7 +2472,7 @@ ul.service-table li .single-service {
 	.navbar-default .navbar-toggle:hover .icon-bar,
 	.navbar-default .navbar-toggle:focus .icon-bar{
 		background-color: #fff;
-		
+
 	}
 	.search-area {
 	  left: -3px;
@@ -2488,20 +2487,20 @@ ul.service-table li .single-service {
 	.navbar-fixed-top .search-area{
 		top: -77px;
 	}
-	.navbar-fixed-top .navbar-toggle { 
+	.navbar-fixed-top .navbar-toggle {
 	  margin-top: 25px;
 	}
 	.navbar-fixed-top .search-area input[type="text"]:focus {
-	  top: 23px !important;	  
+	  top: 23px !important;
 	}
 	.wc-table li {
 	  margin-bottom: 20px;
 	  width: 50%;
 	}
 	#about {
-	  padding: 0 0 50px;		
+	  padding: 0 0 50px;
 	}
-	.about-left { 
+	.about-left {
 	  width: 96%;
 	}
 	.about-left img {
@@ -2510,7 +2509,7 @@ ul.service-table li .single-service {
 	}
 	.about-right {
 	  margin-top: 35px;
-	  padding-left: 0;  
+	  padding-left: 0;
 	}
 	.title-area {
 	  padding: 0 50px;
@@ -2543,13 +2542,13 @@ ul.service-table li .single-service {
 	.single-slide > p {
 	  font-size: 15px;
 	  line-height: 28px;
-	  margin-top: 37px;  
+	  margin-top: 37px;
 	}
 	.contact-left {
 	  margin-bottom: 30px;
 	}
 	#blog-banner {
-	  margin-top: -60px;	  
+	  margin-top: -60px;
 	}
 	.instagram-feed .slick-prev {
 	  left: 39%;
@@ -2557,10 +2556,10 @@ ul.service-table li .single-service {
 	.instagram-feed .slick-next {
 	  right: 40%;
 	}
-	#error-page {	  
-	  padding: 100px 0;	  
+	#error-page {
+	  padding: 100px 0;
 	}
-	.error-page-area {	  
+	.error-page-area {
 	  width: 500px;
 	}
 	.error-message h4 {
@@ -2601,10 +2600,10 @@ ul.service-table li .single-service {
 	.title-area {
 	  padding: 0 15px;
 	}
-	.search-area input[type="text"] {  
-	  font-size: 15px;  
+	.search-area input[type="text"] {
+	  font-size: 15px;
 	}
-	.search-area input[type="text"]:focus {	 
+	.search-area input[type="text"]:focus {
 		height: 35px;
 		top: 32px !important;
 		width: 350px;
@@ -2613,7 +2612,7 @@ ul.service-table li .single-service {
 	  font-size: 20px;
 	}
 	.team-grid {
-	  padding: 0 75px;	  
+	  padding: 0 75px;
 	}
 	.team-grid li {
 	  height: 300px;
@@ -2642,15 +2641,15 @@ ul.service-table li .single-service {
 	  text-align: center;
 	  width: 100%;
 	}
-	.single-counter .counter-count {	  
+	.single-counter .counter-count {
 	  margin-left: 0;
 	  margin-top: 20px;
 	  text-align: center;
 	  width: 100%;
 	}
-	.single-price .price-header { 
-	  font-size: 20px;	
-	  padding: 10px 0;	  
+	.single-price .price-header {
+	  font-size: 20px;
+	  padding: 10px 0;
 	}
 	.single-price .price-header::after {
 	  bottom: -43%;
@@ -2671,10 +2670,10 @@ ul.service-table li .single-service {
 	  padding: 12px 20px;
 	}
 	.button-default::after, .button-default > span {
-	  font-size: 10px;	
+	  font-size: 10px;
 	}
 	.single-slide {
-	  padding: 0 100px;  
+	  padding: 0 100px;
 	}
 	.single-slide > p {
 	  font-size: 14px;
@@ -2682,13 +2681,13 @@ ul.service-table li .single-service {
 	  margin-top: 20px;
 	}
 	.single-slide > p::after {
-	  font-size: 40px;	 
+	  font-size: 40px;
 	  top: -10px;
 	}
 	.testimonial-thumb {
-	  margin: 20px auto 0;	  
+	  margin: 20px auto 0;
 	}
-	.client-table {  
+	.client-table {
 	  padding-left: 30px;
 	}
 	.instagram-feed .slick-prev {
@@ -2697,20 +2696,20 @@ ul.service-table li .single-service {
 	.instagram-feed .slick-next {
 	  right: 35%;
 	}
-	#error-page {	  
-	  padding: 80px 0;	  
+	#error-page {
+	  padding: 80px 0;
 	}
-	.error-page-area {	  
+	.error-page-area {
 	  width: 350px;
 	}
 	.error-no {
-	  padding: 20px;	  
+	  padding: 20px;
 	}
-	.error-no h2 {	  
-	  font-size: 45px;	
+	.error-no h2 {
+	  font-size: 45px;
 	}
-	.error-no p {	  
-	  font-size: 50px;	 
+	.error-no p {
+	  font-size: 50px;
 	}
 	.error-message h4 {
 	  font-size: 35px;
@@ -2750,11 +2749,11 @@ ul.service-table li .single-service {
 	}
 	.knowmore-btn {
 	  font-size: 14px;
-	  padding: 7px 8px;	  
+	  padding: 7px 8px;
 	}
 	.download-btn {
 	  font-size: 14px;
-	  padding: 7px 8px;	  
+	  padding: 7px 8px;
 	}
 	#navbar {
 	  width: 108.3%;
@@ -2762,17 +2761,17 @@ ul.service-table li .single-service {
 	.title-area {
 	  padding: 0 10px;
 	}
-	.tittle {  
-	  font-size: 20px;  
+	.tittle {
+	  font-size: 20px;
 	  padding-bottom: 5px;
 	}
 	.title-area p{
 		font-size: 14px;
 	}
-	.search-area input[type="text"] {  
-	  font-size: 14px;  
+	.search-area input[type="text"] {
+	  font-size: 14px;
 	}
-	.search-area input[type="text"]:focus {	 
+	.search-area input[type="text"]:focus {
 		height: 35px;
 		top: 32px !important;
 		width: 250px;
@@ -2782,7 +2781,7 @@ ul.service-table li .single-service {
 	  width: 100%;
 	}
 	.about-right {
-	  margin-top: 45px;	 
+	  margin-top: 45px;
 	}
 	.about-right .tittle {
 	  font-size: 20px;
@@ -2795,10 +2794,10 @@ ul.service-table li .single-service {
 	  font-size: 20px;
 	}
 	.team-grid {
-	  padding: 0 55px;	  
+	  padding: 0 55px;
 	}
 	.team-grid li {
-	  height: 220px;	  
+	  height: 220px;
 	}
 	.team-info {
 	  padding: 20px 10px;
@@ -2809,10 +2808,10 @@ ul.service-table li .single-service {
 	.portfolio-container {
 	  margin-left: 0;
 	}
-	.portfolio-menu ul li {  
-	  font-size: 12px;  
+	.portfolio-menu ul li {
+	  font-size: 12px;
 	  margin: 0 7px 5px;
-	  padding: 8px;  
+	  padding: 8px;
 	}
 	.single-portfolio {
 	  width: 100%;
@@ -2842,28 +2841,28 @@ ul.service-table li .single-service {
 	  width: 100%;
 	  border: 1px solid #e4e4e4;
 	}
-	.single-price a span {	 
+	.single-price a span {
 	  font-size: 14px;
-	}		
+	}
 	.single-price .price-amount {
 	  font-size: 16px;
 	}
 	.single-price p {
 	  font-size: 14px;
-	}		
+	}
 	.button-default::after, .button-default > span {
-	  font-size: 14px;	
+	  font-size: 14px;
 	}
 	.standard-price {
 	  margin-top: 0;
 	}
 	.single-slide {
-	  padding: 0 50px;  
+	  padding: 0 50px;
 	}
-	.introduction-btn {  
-	  font-size: 20px;	  
+	.introduction-btn {
+	  font-size: 20px;
 	}
-	.header-content h2 {  
+	.header-content h2 {
 	  margin-bottom: 10px;
 	}
 	.contact-left h2, .contact-right h2 {
@@ -2873,21 +2872,21 @@ ul.service-table li .single-service {
 	.single-address h4 {
 	  font-size: 18px;
 	}
-	.single-address p {	 
-	  font-size: 13px;	 
+	.single-address p {
+	  font-size: 13px;
 	}
-	.contact-right {	 
-	  padding: 30px 20px;	  
+	.contact-right {
+	  padding: 30px 20px;
 	}
-	.contact-form .form-group input {	  
+	.contact-form .form-group input {
 	  font-size: 16px;
-	  height: 40px;	 
+	  height: 40px;
 	}
-	.footer-social a { 
+	.footer-social a {
 	  font-size: 15px;
 	  height: 40px;
 	  line-height: 40px;
-	  margin: 0 5px;  
+	  margin: 0 5px;
 	  width: 40px;
 	}
 	.blog-archive .single-from-blog figure img {
@@ -2899,23 +2898,23 @@ ul.service-table li .single-service {
 	.instagram-feed .slick-next {
 	  right: 27%;
 	}
-	.single-widget h2 { 
+	.single-widget h2 {
 	  font-size: 20px;
-	  line-height: 20px;  
+	  line-height: 20px;
 	}
 	.blog-pagination > li > a,
-	.blog-pagination > li > span {	 
-	  padding: 6px 15px;	 
+	.blog-pagination > li > span {
+	  padding: 6px 15px;
 	}
-	.follow-us a {	  
+	.follow-us a {
 	  font-size: 15px;
 	  height: 32px;
 	  line-height: 32px;
-	  margin: 0 2px;	
+	  margin: 0 2px;
 	  width: 32px;
 	}
 	.blog-details-content {
-	  padding: 25px;	 
+	  padding: 25px;
 	}
 	.blog-comment {
 	  padding: 0 25px 40px;
@@ -2924,21 +2923,21 @@ ul.service-table li .single-service {
 	  font-size: 18px;
 	  margin-bottom: 30px;
 	  margin-top: 30px;
-	}	
-	#error-page {	  
-	  padding: 60px 0;	  
 	}
-	.error-page-area {	  
+	#error-page {
+	  padding: 60px 0;
+	}
+	.error-page-area {
 	  width: 250px;
 	}
 	.error-no {
-	  padding: 20px;	  
+	  padding: 20px;
 	}
-	.error-no h2 {	  
-	  font-size: 35px;	
+	.error-no h2 {
+	  font-size: 35px;
 	}
-	.error-no p {	  
-	  font-size: 40px;	 
+	.error-no p {
+	  font-size: 40px;
 	}
 	.error-message h4 {
 	  font-size: 25px;
@@ -2948,18 +2947,18 @@ ul.service-table li .single-service {
 	  font-size: 16px;
 	  padding: 0 15px;
 	}
-	
+
 
 
 }
 
 
 @media(max-width:320px ){
-	.search-area input[type="text"]:focus {	 		
+	.search-area input[type="text"]:focus {
 		width: 210px;
 	}
-	.search-area input[type="text"] {  
-	  font-size: 12px;  
+	.search-area input[type="text"] {
+	  font-size: 12px;
 	}
 	#navbar {
 	  width: 109%;
@@ -2978,7 +2977,7 @@ ul.service-table li .single-service {
 	  width: 35px;
 	}
 	.footer-bottom p {
-	  font-size: 15px;	
+	  font-size: 15px;
 	}
 	.blog-archive .single-from-blog figure img {
 	  height: 200px;
@@ -2988,16 +2987,16 @@ ul.service-table li .single-service {
 	}
 	.instagram-feed .slick-next {
 	  right: 24%;
-	}	
-	.blog-pagination > li > a,
-	.blog-pagination > li > span {	 
-	  padding: 4px 13px;	 
 	}
-	.follow-us a {	  
+	.blog-pagination > li > a,
+	.blog-pagination > li > span {
+	  padding: 4px 13px;
+	}
+	.follow-us a {
 	  font-size: 14px;
 	  height: 30px;
 	  line-height: 30px;
-	  margin: 0 2px;	
+	  margin: 0 2px;
 	  width: 30px;
 	}
 	.popular-post-widget .media-left {
@@ -3010,8 +3009,8 @@ ul.service-table li .single-service {
 		display: inline-block;
 	}
 	.popular-post-widget .media-body {
-	  text-align: center;	  
+	  text-align: center;
 	}
 
-	
+
 }

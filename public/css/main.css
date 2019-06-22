@@ -90,3 +90,19 @@ table td, table th {
     text-align: center;
 }
 
+
+@media(max-width: 1199px) {
+    .auth-box {
+        display: none;
+    }
+
+    header img {
+        height: 500px !important;
+    }
+}
+
+@media(max-width: 991px) {
+    header img {
+        height: 400px !important;
+    }
+}
