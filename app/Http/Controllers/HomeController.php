@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Encashments;
 use App\Models\RewardClaimRequests;
+use App\Models\Rewards;
 use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
@@ -29,6 +30,7 @@ class HomeController extends Controller
 
         $response           = [];
         $response['action'] = $request->action;
+        $response['rewards'] = Rewards::where('is_published', Rewards::PUBLISHED)->orderBy('created_at', 'desc')->limit(10)->get();
 
         return view('welcome', $response);
     }

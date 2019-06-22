@@ -1617,6 +1617,18 @@ ul.service-table li .single-service {
 	width: 100%;
 }
 
+/*
+    Products Section
+*/
+
+#products-section {
+    background-color: #fff;
+    padding: 70px 0;
+    float: left;
+    display: inline;
+    width: 100%;
+}
+
 /*--------------------*/
 /* FOOTER */
 /*--------------------*/

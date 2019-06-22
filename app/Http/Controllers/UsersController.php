@@ -46,7 +46,7 @@ class UsersController extends Controller
 
     public function typeCaptcha(Request $request)
     {
-        sleep(3);
+        sleep(5);
 
         $this->validate($request, [
             'captcha' => 'required|captcha'
