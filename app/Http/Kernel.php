@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
+
     /**
      * The application's global HTTP middleware stack.
      *
@@ -36,7 +37,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\AdminConfig::class,
-            \App\Http\Middleware\SetUserInfo::class
+            \App\Http\Middleware\SetUserInfo::class,
         ],
 
         'api' => [
@@ -53,20 +54,21 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'auth'          => \App\Http\Middleware\Authenticate::class,
+        'auth.basic'    => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'      => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'signedIn' => \App\Http\Middleware\CustomAuth::class,
-        'filterGuest' => \App\Http\Middleware\FilterSignedUser::class,
-        'admin' => \App\Http\Middleware\AdminUser::class,
-        'activated' => \App\Http\Middleware\CheckIfAccountActivated::class,
-        'encash' => \App\Http\Middleware\ValidateEncashment::class
+        'can'           => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'         => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed'        => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle'      => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified'      => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'signedIn'      => \App\Http\Middleware\CustomAuth::class,
+        'filterGuest'   => \App\Http\Middleware\FilterSignedUser::class,
+        'admin'         => \App\Http\Middleware\AdminUser::class,
+        'activated'     => \App\Http\Middleware\CheckIfAccountActivated::class,
+        'encash'        => \App\Http\Middleware\ValidateEncashment::class,
+        'sessionLogin'  => \App\Http\Middleware\AllowOneLoginPerUser::class,
     ];
 
     /**

@@ -14,6 +14,10 @@
                         @if($status == 'activated')
                             <th>Captcha Income</th>
                             <th>Referral Income</th>
+                            <th>Action</th>
+                        @endif
+                        @if($status == 'deactivated')
+                            <th>Action</th>
                         @endif
                         @if($status == 'pending')
                             <th>Activation Request</th>
@@ -28,8 +32,27 @@
                             <td>{{$u->first_name}} {{$u->last_name}}</td>
                             <td>{{$u->email}}</td>
                             @if($status == 'activated')
-                                <td></td>
-                                <td></td>
+                                <?php
+                                    $um = new \App\Models\Users;
+                                ?>
+                                <td><b style="color:green;">{{$um->getCaptchaIncome($u->id)}}</b></td>
+                                <td><b style="color:orange;">{{$um->getReferralIncome($u->id)}}</b></td>
+                                <td>
+                                    <form action="/user/deactivate" method="post">
+                                        @csrf
+                                        <input type="hidden" name="uid" value="{{$u->id}}">
+                                        <input type="submit" class="btn btn-danger" value="DEACTIVATE">
+                                    </form>
+                                </td>
+                            @endif
+                            @if($status == 'deactivated')
+                                <td>
+                                    <form action="/user/reactivate" method="post">
+                                        @csrf
+                                        <input type="hidden" name="uid" value="{{$u->id}}">
+                                        <input type="submit" class="btn btn-primary" value="REACTIVATE">
+                                    </form>
+                                </td>
                             @endif
                             @if($status== 'pending')
                                 <td>

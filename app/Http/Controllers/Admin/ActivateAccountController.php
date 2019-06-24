@@ -48,6 +48,15 @@ class ActivateAccountController extends Controller
         $user = Users::find($uid);
 
         if ($user) {
+
+            $tr               = new Transactions();
+            $tr->users_id     = $user->id;
+            $tr->type_id      = Transactions::TYPE_REFERRAL_BONUS_REWARD;
+            $tr->status_id    = Transactions::STATUS_COMPLETED;
+            $tr->value        = 100;
+            $tr->source_token = 'Successful Signup,NA,NA';
+            $tr->save();
+
             $referrer = $user->referred_by;
             for ($i = 0; $i < 5; $i++) {
                 if ($referrer) {

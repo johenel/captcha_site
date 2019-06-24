@@ -16,6 +16,8 @@ class Authentication
 
         if($user) {
             if(Hash::check($password, $user->password)) {
+                $user->active_session = session()->getId();
+                $user->update();
                 return $user;
             }
         }

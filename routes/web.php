@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->middleware('filterGuest');
+Route::get('/', 'HomeController@index')->middleware('filterGuest','sessionLogin');
 Route::get('/signup', ['as' => 'register', 'uses' => 'SignupController@index']);
 Route::post('/signup', 'SignupController@attempt');
 Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@index']);
@@ -27,24 +27,27 @@ Route::post('/forgot-password/update', 'ForgotPasswordController@updatePass');
 
 Route::get('/activate-account', 'ActivateAccountController@index')->middleware('signedIn');
 Route::post('/activation-payment-details', 'ActivateAccountController@submitPaymentDetails');
+Route::get('/account/deactivated', 'ActivateAccountController@deactivatedIndex')->middleware('signedIn');
+
 
 Route::group(['middleware' => ['signedIn', 'activated']], function () {
-    Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
-    Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
-    Route::get('/referrals', 'UsersController@referralsIndex');
-    Route::get('/encashment', 'UsersController@encashmentIndex');
-    Route::post('/encashment', 'UsersController@encash');
-    Route::get('/rewards/list', 'UsersController@rewardsIndex');
-    Route::get('/reward/checkout/{id}', 'UsersController@checkoutIndex');
-    Route::post('/rewards/claim', 'UsersController@rewardClaim');
+    Route::group(['middleware' => 'sessionLogin'], function() {
+        Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
+        Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
+        Route::get('/referrals', 'UsersController@referralsIndex');
+        Route::get('/encashment', 'UsersController@encashmentIndex');
+        Route::post('/encashment', 'UsersController@encash');
+        Route::get('/rewards/list', 'UsersController@rewardsIndex');
+        Route::get('/reward/checkout/{id}', 'UsersController@checkoutIndex');
+        Route::post('/rewards/claim', 'UsersController@rewardClaim');
 
-    Route::group(['middleware' => ['encash']], function () {
-        Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
-        Route::get('/encashment/palawan', 'UsersController@encashPalawanIndex');
-        Route::get('/encashment/coinsph', 'UsersController@encashCoinsphIndex');
-        Route::get('/encashment/mlhuillier', 'UsersController@encashMlhuillierIndex');
+        Route::group(['middleware' => ['encash']], function () {
+            Route::get('/encashment/gcash', 'UsersController@encashGcashIndex');
+            Route::get('/encashment/palawan', 'UsersController@encashPalawanIndex');
+            Route::get('/encashment/coinsph', 'UsersController@encashCoinsphIndex');
+            Route::get('/encashment/mlhuillier', 'UsersController@encashMlhuillierIndex');
+        });
     });
-
 });
 
 //ADMIN ROUTES
@@ -52,6 +55,8 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
 Route::group(['middleware' => ['admin']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@index');
     Route::get('/users', 'Admin\UsersController@index');
+    Route::post('/user/deactivate', 'Admin\UsersController@deactivateUser');
+    Route::post('/user/reactivate', 'Admin\UsersController@reactivateUser');
     Route::get('/activation-request/{id}', 'Admin\ActivateAccountController@index');
     Route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
     Route::get('/encashments', 'Admin\EncashmentsController@index');

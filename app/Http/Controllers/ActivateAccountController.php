@@ -14,6 +14,10 @@ class ActivateAccountController extends Controller
         $response         = [];
         $response['user'] = session()->get('user');
 
+        if(session()->get('user')->is_activated == 2) {
+            return redirect('/account/deactivated');
+        }
+
         return view('pages.activate-account', $response);
     }
 
@@ -40,5 +44,10 @@ class ActivateAccountController extends Controller
         $response['email'] = session()->get('user')->email;
 
         return view('pages.thankyou.activation-payment-details', $response);
+    }
+
+    public function deactivatedIndex(Request $request)
+    {
+        return view('pages.deactivated-account');
     }
 }

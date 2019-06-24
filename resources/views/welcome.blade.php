@@ -9,14 +9,14 @@
                 <div class="header-content">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-lg-7">
                                 <h2 class="header-slide">Trihomebased
                                     <span>EARNING MONEY EASY</span>
                                     <span>WORK ANYTIME</span>
                                     <span>AWESOME PRODUCTS</span>
                                 </h2>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-lg-5">
                                 @if(session()->has('error'))
                                     <div style="background:red;color:white;padding: 10px;border-radius:5px;margin-bottom:20px;">
                                         @foreach(session()->get('error') as $e)
