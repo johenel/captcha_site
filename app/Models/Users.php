@@ -8,7 +8,6 @@ use DB;
 use Carbon\Carbon;
 use App\Models\Encashments;
 
-
 class Users extends Model
 {
 
@@ -88,11 +87,13 @@ class Users extends Model
         return $total ? $total : 0;
     }
 
-    public function getCaptchaIncome()
+    public function getCaptchaIncome($uid = null)
     {
         $total = 0;
 
-        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [1])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $userId = $uid ? $uid : $this->user->id;
+
+        $result = Transactions::where('users_id', $userId)->whereIn('type_id', [1])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
@@ -101,11 +102,13 @@ class Users extends Model
         return $total ? $total : 0;
     }
 
-    public function getReferralIncome()
+    public function getReferralIncome($uid = null)
     {
         $total = 0;
 
-        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [Transactions::TYPE_REFERRAL_BONUS_MONEY])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $userId = $uid ? $uid : $this->user->id;
+
+        $result = Transactions::where('users_id', $userId)->whereIn('type_id', [Transactions::TYPE_REFERRAL_BONUS_MONEY])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
@@ -142,7 +145,7 @@ class Users extends Model
 
     public function getMoneyBalance()
     {
-        $em = new Encashments;
+        $em  = new Encashments;
         $rcr = new RewardClaimRequests;
 
         return $this->getTotalIncome() - $em->getTotalEncashments() - $this->getPendingEncashment() - $rcr->getTotal();

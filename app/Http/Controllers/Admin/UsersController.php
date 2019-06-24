@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Users;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 class UsersController extends Controller
 {
@@ -51,9 +52,31 @@ class UsersController extends Controller
 
         switch ($filters->status) {
             case 'activated':
-                $status = 1;
+                $status = Users::ACTIVATED;
+                break;
+            case 'deactivated':
+                $status = Users::DEACTIVATED;
+                break;
         }
 
         return $users->where('is_activated', $status);
+    }
+
+    public function deactivateUser(Request $request)
+    {
+        Users::where('id', $request->uid)->update([
+           'is_activated' => Users::DEACTIVATED
+        ]);
+
+        return redirect(URL::previous());
+    }
+
+    public function reactivateUser(Request $request)
+    {
+        Users::where('id', $request->uid)->update([
+            'is_activated' => Users::ACTIVATED
+        ]);
+
+        return redirect(URL::previous());
     }
 }

@@ -27,6 +27,8 @@ Route::post('/forgot-password/update', 'ForgotPasswordController@updatePass');
 
 Route::get('/activate-account', 'ActivateAccountController@index')->middleware('signedIn');
 Route::post('/activation-payment-details', 'ActivateAccountController@submitPaymentDetails');
+Route::get('/account/deactivated', 'ActivateAccountController@deactivatedIndex')->middleware('signedIn');
+
 
 Route::group(['middleware' => ['signedIn', 'activated']], function () {
     Route::group(['middleware' => 'sessionLogin'], function() {
@@ -53,6 +55,8 @@ Route::group(['middleware' => ['signedIn', 'activated']], function () {
 Route::group(['middleware' => ['admin']], function () {
     Route::get('/dashboard', 'Admin\DashboardController@index');
     Route::get('/users', 'Admin\UsersController@index');
+    Route::post('/user/deactivate', 'Admin\UsersController@deactivateUser');
+    Route::post('/user/reactivate', 'Admin\UsersController@reactivateUser');
     Route::get('/activation-request/{id}', 'Admin\ActivateAccountController@index');
     Route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
     Route::get('/encashments', 'Admin\EncashmentsController@index');
