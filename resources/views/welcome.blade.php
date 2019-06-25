@@ -65,17 +65,16 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        <header class="header" role="banner">
+        <header class="header" role="banner" style="display: none;">
 
             <nav id="nav" class="nav" role="navigation">
 
                 <!-- ACTUAL NAVIGATION MENU -->
                 <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
-                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Shop</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="#header" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#how_it_works" class="nav__link">How To Join</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact Us</a></li>
                 </ul>
 
                 <!-- MENU TOGGLE BUTTON -->
@@ -91,7 +90,14 @@
                         </g>
                     </svg>
                 </a>
-
+                <ul style="list-style-type: none; position: absolute;right: 40px;top: 20px;">
+                    <li style="float: left;margin-right: 20px;">
+                        <button class="btn btn-outline-primary" id="loginBtnM">Login</button>
+                    </li>
+                    <li style="float: left;">
+                        <button class="btn btn-outline-success" id="signupBtnM">Sign Up</button>
+                    </li>
+                </ul>
                 <!-- ANIMATED BACKGROUND ELEMENT -->
                 <div class="splash"></div>
 
@@ -170,14 +176,14 @@
             </div>
             <div class="row" id="how_it_works" style="margin-top:30px;">
                 <div class="col-md-12">
-                    <div class="about-area">
+                    <div class="about-area container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="about-right wow fadeInRight">
                                     <div class="title-area">
                                         <h2 class="tittle">How To Join <span>Trihomebased</span> Marketing?</h2>
                                         <span class="tittle-line"></span>
-                                        <ul class="marketing-instruction" style="list-style-type: decimal">
+                                        <ul class="marketing-instruction" style="list-style-type: decimal;padding: 20px;">
                                             <li>
                                                 Ask for a referral link to any of <span style="color:#00d999;">TRIHOMEBASED</span> members or you can directly
                                                 <a href="?action=signup" style="color:dodgerblue">signup to our website</a>.
@@ -205,7 +211,7 @@
             <div class="row payment-method-list">
                 <div class="container-fluid" style="width: 100%">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     GCASH Mobile No :<br>09350057909
@@ -215,7 +221,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     Smart Padala Referrence No :<br> 5577-5194-1012-0100
@@ -225,7 +231,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     Email : trihomebased@gmail.com <br> Mobile # : 09350057909
@@ -428,213 +434,11 @@
 
     {{--</div>--}}
     <style>
-        .price {
-            position: absolute;
-            background: white;
-            padding: 5px 20px;
-            background: #21212096;
-            color: white;
-            font-size: 20px;
-        }
 
-        .price.reward {
-            top: 0px;
-            right: 0px;
-        }
-        .p-item {
-            margin-right: 30px;
-        }
-        .p-item img {
-            height: 300px;
-        }
-
-        .p-item .card-body {
-            background-color: #0d3537;
-            color: white;
-        }
-
-        /*FOR MOBILE MENU NAV*/
-        :root {
-            --screen-width: 320px;
-            --screen-height: 560px;
-            --header-bg-color: #fff;
-            --splash-bg-color: #368887;
-        }
-        .nav__toggle {
-            display: inline-block;
-            position: absolute;
-            z-index: 10;
-            padding: 0;
-            border: 0;
-            background: rgba(0, 0, 0, .5);
-            outline: 0;
-            left: 25px;
-            top: 15px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background-color 0.15s linear;
-        }
-        .nav__toggle:hover, .nav__toggle:focus {
-            background-color: rgba(0, 0, 0, .5);
-        }
-        .nav__menu {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: var(--screen-height);
-            position: relative;
-            z-index: 5;
-            visibility: hidden;
-        }
-        .nav__item {
-            opacity: 0;
-            transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
-        }
-        .nav__item:nth-child(1) {
-            transform: translateY(-40px);
-        }
-        .nav__item:nth-child(2) {
-            transform: translateY(-80px);
-        }
-        .nav__item:nth-child(3) {
-            transform: translateY(-120px);
-        }
-        .nav__item:nth-child(4) {
-            transform: translateY(-160px);
-        }
-        .nav__item:nth-child(5) {
-            transform: translateY(-200px);
-        }
-        .nav__link {
-            color: white;
-            display: block;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-size: 1.25rem;
-            text-decoration: none;
-            padding: 1rem;
-        }
-        .nav__link:hover, .nav__link:focus {
-            outline: 0;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-        .menuicon {
-            display: block;
-            cursor: pointer;
-            color: white;
-            transform: rotate(0deg);
-            transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .menuicon__bar, .menuicon__circle {
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 3;
-            stroke-linecap: round;
-        }
-        .menuicon__bar {
-            transform: rotate(0deg);
-            transform-origin: 50% 50%;
-            transition: transform 0.25s ease-in-out;
-        }
-        .menuicon__circle {
-            transition: stroke-dashoffset 0.3s linear 0.1s;
-            stroke-dashoffset: 144.51326;
-            stroke-dasharray: 144.51326;
-        }
-        .splash {
-            position: absolute;
-            top: 40px;
-            right: 40px;
-            width: 1px;
-            height: 1px;
-        }
-        .splash::after {
-            content: "";
-            display: block;
-            position: absolute;
-            border-radius: 50%;
-            background-color: var(--splash-bg-color);
-            width: 284vmax;
-            height: 284vmax;
-            top: -142vmax;
-            left: -142vmax;
-            transform: scale(0);
-            transform-origin: 50% 50%;
-            transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
-            will-change: transform;
-        }
-        .nav:target > .splash::after, .nav--open > .splash::after {
-            transform: scale(1);
-        }
-        .nav:target .menuicon, .nav--open .menuicon {
-            color: white;
-            transform: rotate(180deg);
-        }
-        .nav:target .menuicon__circle, .nav--open .menuicon__circle {
-            stroke-dashoffset: 0;
-        }
-        .nav:target .menuicon__bar:nth-child(1), .nav--open .menuicon__bar:nth-child(1), .nav:target .menuicon__bar:nth-child(4), .nav--open .menuicon__bar:nth-child(4) {
-            opacity: 0;
-        }
-        .nav:target .menuicon__bar:nth-child(2), .nav--open .menuicon__bar:nth-child(2) {
-            transform: rotate(45deg);
-        }
-        .nav:target .menuicon__bar:nth-child(3), .nav--open .menuicon__bar:nth-child(3) {
-            transform: rotate(-45deg);
-        }
-        .nav:target .nav__menu, .nav--open .nav__menu {
-            visibility: visible;
-            width: 100%;
-        }
-        .nav:target .nav__item, .nav--open .nav__item {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        body {
-            background-color: #d7d7d7;
-            font-family: 'Roboto';
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .viewport {
-            width: var(--screen-width);
-            height: var(--screen-height);
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            background-color: white;
-        }
-        .header {
-            height: 5rem;
-            background-color: var(--header-bg-color);
-        }
-        .main {
-            padding: 20px;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            grid-auto-rows: 130px;
-            grid-gap: 20px;
-        }
-        .gallery__item {
-            height: 100%;
-            background-color: #d8d8d8;
-        }
-        .gallery__item:hover, .gallery__item:focus {
-            background-color: #a4a4a4;
-        }
 
     </style>
     <script>
         let ww = $(window).width();
-
-        if(ww <= 767) {
-            $('nav.navbar.navbar-default.main-navbar').css('display','none');
-        }
 
         $('.product-list').slick({
             infinite: true,
@@ -642,6 +446,20 @@
             slidesToScroll: 3,
             autoplay:true,
             autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 543,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
         });
 
         $('#loginBtn').click(function (e) {
@@ -666,11 +484,21 @@
 
         });
 
+        $('#loginBtnM').click(function (e) {
+            $('#loginModal').modal('show');
+        });
+
+        $('#signupBtnM').click(function (e) {
+            e.preventDefault();
+            $('#signupModal').modal('show');
+        });
+
         /* BABEL */
 
         const nav = document.querySelector('#nav');
         const menu = document.querySelector('#menu');
         const menuToggle = document.querySelector('.nav__toggle');
+        const menuItem = document.querySelector('.nav__link');
         let isMenuOpen = false;
 
 
@@ -684,6 +512,15 @@
             menu.hidden = !isMenuOpen;
             nav.classList.toggle('nav--open');
         });
+
+        $('.nav__link').click(function () {
+            isMenuOpen = !isMenuOpen;
+
+            // toggle a11y attributes and active class
+            menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+            menu.hidden = !isMenuOpen;
+            nav.classList.toggle('nav--open');
+        })
 
 
         // TRAP TAB INSIDE NAV WHEN OPEN
@@ -708,7 +545,7 @@
                 }
             }
         });
-
+        
 
     </script>
 
