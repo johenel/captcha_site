@@ -65,6 +65,39 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
+        <header class="header" role="banner">
+
+            <nav id="nav" class="nav" role="navigation">
+
+                <!-- ACTUAL NAVIGATION MENU -->
+                <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Shop</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                </ul>
+
+                <!-- MENU TOGGLE BUTTON -->
+                <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
+                    <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                        <title>Toggle Menu</title>
+                        <g>
+                            <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
+                            <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                            <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                            <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5"/>
+                            <circle class="menuicon__circle" r="23" cx="25" cy="25" />
+                        </g>
+                    </svg>
+                </a>
+
+                <!-- ANIMATED BACKGROUND ELEMENT -->
+                <div class="splash"></div>
+
+            </nav>
+
+        </header>
     </section>
     <!-- End menu section -->
 
@@ -419,8 +452,190 @@
             background-color: #0d3537;
             color: white;
         }
+
+        /*FOR MOBILE MENU NAV*/
+        :root {
+            --screen-width: 320px;
+            --screen-height: 560px;
+            --header-bg-color: #fff;
+            --splash-bg-color: #368887;
+        }
+        .nav__toggle {
+            display: inline-block;
+            position: absolute;
+            z-index: 10;
+            padding: 0;
+            border: 0;
+            background: rgba(0, 0, 0, .5);
+            outline: 0;
+            left: 25px;
+            top: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.15s linear;
+        }
+        .nav__toggle:hover, .nav__toggle:focus {
+            background-color: rgba(0, 0, 0, .5);
+        }
+        .nav__menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: var(--screen-height);
+            position: relative;
+            z-index: 5;
+            visibility: hidden;
+        }
+        .nav__item {
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
+        }
+        .nav__item:nth-child(1) {
+            transform: translateY(-40px);
+        }
+        .nav__item:nth-child(2) {
+            transform: translateY(-80px);
+        }
+        .nav__item:nth-child(3) {
+            transform: translateY(-120px);
+        }
+        .nav__item:nth-child(4) {
+            transform: translateY(-160px);
+        }
+        .nav__item:nth-child(5) {
+            transform: translateY(-200px);
+        }
+        .nav__link {
+            color: white;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 1.25rem;
+            text-decoration: none;
+            padding: 1rem;
+        }
+        .nav__link:hover, .nav__link:focus {
+            outline: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .menuicon {
+            display: block;
+            cursor: pointer;
+            color: white;
+            transform: rotate(0deg);
+            transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .menuicon__bar, .menuicon__circle {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 3;
+            stroke-linecap: round;
+        }
+        .menuicon__bar {
+            transform: rotate(0deg);
+            transform-origin: 50% 50%;
+            transition: transform 0.25s ease-in-out;
+        }
+        .menuicon__circle {
+            transition: stroke-dashoffset 0.3s linear 0.1s;
+            stroke-dashoffset: 144.51326;
+            stroke-dasharray: 144.51326;
+        }
+        .splash {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 1px;
+            height: 1px;
+        }
+        .splash::after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            background-color: var(--splash-bg-color);
+            width: 284vmax;
+            height: 284vmax;
+            top: -142vmax;
+            left: -142vmax;
+            transform: scale(0);
+            transform-origin: 50% 50%;
+            transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+            will-change: transform;
+        }
+        .nav:target > .splash::after, .nav--open > .splash::after {
+            transform: scale(1);
+        }
+        .nav:target .menuicon, .nav--open .menuicon {
+            color: white;
+            transform: rotate(180deg);
+        }
+        .nav:target .menuicon__circle, .nav--open .menuicon__circle {
+            stroke-dashoffset: 0;
+        }
+        .nav:target .menuicon__bar:nth-child(1), .nav--open .menuicon__bar:nth-child(1), .nav:target .menuicon__bar:nth-child(4), .nav--open .menuicon__bar:nth-child(4) {
+            opacity: 0;
+        }
+        .nav:target .menuicon__bar:nth-child(2), .nav--open .menuicon__bar:nth-child(2) {
+            transform: rotate(45deg);
+        }
+        .nav:target .menuicon__bar:nth-child(3), .nav--open .menuicon__bar:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+        .nav:target .nav__menu, .nav--open .nav__menu {
+            visibility: visible;
+            width: 100%;
+        }
+        .nav:target .nav__item, .nav--open .nav__item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        body {
+            background-color: #d7d7d7;
+            font-family: 'Roboto';
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .viewport {
+            width: var(--screen-width);
+            height: var(--screen-height);
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+        }
+        .header {
+            height: 5rem;
+            background-color: var(--header-bg-color);
+        }
+        .main {
+            padding: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            grid-auto-rows: 130px;
+            grid-gap: 20px;
+        }
+        .gallery__item {
+            height: 100%;
+            background-color: #d8d8d8;
+        }
+        .gallery__item:hover, .gallery__item:focus {
+            background-color: #a4a4a4;
+        }
+
     </style>
     <script>
+        let ww = $(window).width();
+
+        if(ww <= 767) {
+            $('nav.navbar.navbar-default.main-navbar').css('display','none');
+        }
+
         $('.product-list').slick({
             infinite: true,
             slidesToShow: 3,
@@ -450,6 +665,50 @@
             }
 
         });
+
+        /* BABEL */
+
+        const nav = document.querySelector('#nav');
+        const menu = document.querySelector('#menu');
+        const menuToggle = document.querySelector('.nav__toggle');
+        let isMenuOpen = false;
+
+
+        // TOGGLE MENU ACTIVE STATE
+        menuToggle.addEventListener('click', e => {
+            e.preventDefault();
+            isMenuOpen = !isMenuOpen;
+
+            // toggle a11y attributes and active class
+            menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+            menu.hidden = !isMenuOpen;
+            nav.classList.toggle('nav--open');
+        });
+
+
+        // TRAP TAB INSIDE NAV WHEN OPEN
+        nav.addEventListener('keydown', e => {
+            // abort if menu isn't open or modifier keys are pressed
+            if (!isMenuOpen || e.ctrlKey || e.metaKey || e.altKey) {
+                return;
+            }
+
+            // listen for tab press and move focus
+            // if we're on either end of the navigation
+            const menuLinks = menu.querySelectorAll('.nav__link');
+            if (e.keyCode === 9) {
+                if (e.shiftKey) {
+                    if (document.activeElement === menuLinks[0]) {
+                        menuToggle.focus();
+                        e.preventDefault();
+                    }
+                } else if (document.activeElement === menuToggle) {
+                    menuLinks[0].focus();
+                    e.preventDefault();
+                }
+            }
+        });
+
 
     </script>
 
