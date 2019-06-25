@@ -9,7 +9,6 @@
         <div class="loader">&nbsp;</div>
     </div>
     <!-- END PRELOADER -->
-
     @yield('content')
     </body>
 </html>

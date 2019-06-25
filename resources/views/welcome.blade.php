@@ -54,10 +54,10 @@
                         <li><a href="#how_it_works">HOW TO JOIN</a></li>
                         <li><a href="#contact">CONTACT US</a></li>
                         <li>
-                            <button class="btn btn-outline-primary" onclick="window.location.href='/?action=login';">Login</button>
+                            <button class="btn btn-outline-primary" id="loginBtn">Login</button>
                         </li>
                         <li>
-                            <button class="btn btn-outline-success" onclick="window.location.href='/?action=signup';">Sign Up</button>
+                            <button class="btn btn-outline-success" id="signupBtn">Sign Up</button>
                         </li>
 
                     </ul>
@@ -330,6 +330,31 @@
             </div>
         </div>
     </section>
+
+    {{--MODALS--}}
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999999999999999;margin-top:120px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent;border: none;">
+                <div class="modal-body" >
+                    @include('includes.features.login')
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999999999999999;margin-top:120px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent;border: none;">
+                <div class="modal-body" >
+                    <style>
+                        #feature_signup.card {
+                            padding-top:45px !important;
+                        }
+                    </style>
+                    @include('includes.features.signup')
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Contact section -->
 
     <!-- Start Google Map -->
@@ -403,6 +428,29 @@
             autoplay:true,
             autoplaySpeed: 3000,
         });
+
+        $('#loginBtn').click(function (e) {
+            e.preventDefault();
+            let ww = $(window).width();
+            if(ww > 1199) {
+                window.location.href='/?action=login';
+            } else {
+                $('#loginModal').modal('show');
+            }
+
+        });
+
+        $('#signupBtn').click(function (e) {
+            e.preventDefault();
+            let ww = $(window).width();
+            if(ww > 1199) {
+                window.location.href='/?action=signup';
+            } else {
+                $('#signupModal').modal('show');
+            }
+
+        });
+
     </script>
 
 @endsection
