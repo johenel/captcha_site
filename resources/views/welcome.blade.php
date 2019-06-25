@@ -54,10 +54,10 @@
                         <li><a href="#how_it_works">HOW TO JOIN</a></li>
                         <li><a href="#contact">CONTACT US</a></li>
                         <li>
-                            <button class="btn btn-outline-primary" onclick="window.location.href='/?action=login';">Login</button>
+                            <button class="btn btn-outline-primary" id="loginBtn">Login</button>
                         </li>
                         <li>
-                            <button class="btn btn-outline-success" onclick="window.location.href='/?action=signup';">Sign Up</button>
+                            <button class="btn btn-outline-success" id="signupBtn">Sign Up</button>
                         </li>
 
                     </ul>
@@ -65,6 +65,45 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
+        <header class="header" role="banner" style="display: none;">
+
+            <nav id="nav" class="nav" role="navigation">
+
+                <!-- ACTUAL NAVIGATION MENU -->
+                <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation" hidden>
+                    <li class="nav__item"><a href="#header" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#how_it_works" class="nav__link">How To Join</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact Us</a></li>
+                </ul>
+
+                <!-- MENU TOGGLE BUTTON -->
+                <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
+                    <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                        <title>Toggle Menu</title>
+                        <g>
+                            <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
+                            <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                            <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
+                            <line class="menuicon__bar" x1="13" y1="32.5" x2="37" y2="32.5"/>
+                            <circle class="menuicon__circle" r="23" cx="25" cy="25" />
+                        </g>
+                    </svg>
+                </a>
+                <ul style="list-style-type: none; position: absolute;right: 40px;top: 20px;">
+                    <li style="float: left;margin-right: 20px;">
+                        <button class="btn btn-outline-primary" id="loginBtnM">Login</button>
+                    </li>
+                    <li style="float: left;">
+                        <button class="btn btn-outline-success" id="signupBtnM">Sign Up</button>
+                    </li>
+                </ul>
+                <!-- ANIMATED BACKGROUND ELEMENT -->
+                <div class="splash"></div>
+
+            </nav>
+
+        </header>
     </section>
     <!-- End menu section -->
 
@@ -137,14 +176,14 @@
             </div>
             <div class="row" id="how_it_works" style="margin-top:30px;">
                 <div class="col-md-12">
-                    <div class="about-area">
+                    <div class="about-area container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="about-right wow fadeInRight">
                                     <div class="title-area">
                                         <h2 class="tittle">How To Join <span>Trihomebased</span> Marketing?</h2>
                                         <span class="tittle-line"></span>
-                                        <ul class="marketing-instruction" style="list-style-type: decimal">
+                                        <ul class="marketing-instruction" style="list-style-type: decimal;padding: 20px;">
                                             <li>
                                                 Ask for a referral link to any of <span style="color:#00d999;">TRIHOMEBASED</span> members or you can directly
                                                 <a href="?action=signup" style="color:dodgerblue">signup to our website</a>.
@@ -172,7 +211,7 @@
             <div class="row payment-method-list">
                 <div class="container-fluid" style="width: 100%">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     GCASH Mobile No :<br>09350057909
@@ -182,7 +221,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     Smart Padala Referrence No :<br> 5577-5194-1012-0100
@@ -192,7 +231,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-6">
                             <div class="card">
                                 <div class="card-header">
                                     Email : trihomebased@gmail.com <br> Mobile # : 09350057909
@@ -330,6 +369,31 @@
             </div>
         </div>
     </section>
+
+    {{--MODALS--}}
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999999999999999;margin-top:120px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent;border: none;">
+                <div class="modal-body" >
+                    @include('includes.features.login')
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 9999999999999999;margin-top:120px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: transparent;border: none;">
+                <div class="modal-body" >
+                    <style>
+                        #feature_signup.card {
+                            padding-top:45px !important;
+                        }
+                    </style>
+                    @include('includes.features.signup')
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- End Contact section -->
 
     <!-- Start Google Map -->
@@ -370,39 +434,119 @@
 
     {{--</div>--}}
     <style>
-        .price {
-            position: absolute;
-            background: white;
-            padding: 5px 20px;
-            background: #21212096;
-            color: white;
-            font-size: 20px;
-        }
 
-        .price.reward {
-            top: 0px;
-            right: 0px;
-        }
-        .p-item {
-            margin-right: 30px;
-        }
-        .p-item img {
-            height: 300px;
-        }
 
-        .p-item .card-body {
-            background-color: #0d3537;
-            color: white;
-        }
     </style>
     <script>
+        let ww = $(window).width();
+
         $('.product-list').slick({
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 3,
             autoplay:true,
             autoplaySpeed: 3000,
+            responsive: [
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 543,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
         });
+
+        $('#loginBtn').click(function (e) {
+            e.preventDefault();
+            let ww = $(window).width();
+            if(ww > 1199) {
+                window.location.href='/?action=login';
+            } else {
+                $('#loginModal').modal('show');
+            }
+
+        });
+
+        $('#signupBtn').click(function (e) {
+            e.preventDefault();
+            let ww = $(window).width();
+            if(ww > 1199) {
+                window.location.href='/?action=signup';
+            } else {
+                $('#signupModal').modal('show');
+            }
+
+        });
+
+        $('#loginBtnM').click(function (e) {
+            $('#loginModal').modal('show');
+        });
+
+        $('#signupBtnM').click(function (e) {
+            e.preventDefault();
+            $('#signupModal').modal('show');
+        });
+
+        /* BABEL */
+
+        const nav = document.querySelector('#nav');
+        const menu = document.querySelector('#menu');
+        const menuToggle = document.querySelector('.nav__toggle');
+        const menuItem = document.querySelector('.nav__link');
+        let isMenuOpen = false;
+
+
+        // TOGGLE MENU ACTIVE STATE
+        menuToggle.addEventListener('click', e => {
+            e.preventDefault();
+            isMenuOpen = !isMenuOpen;
+
+            // toggle a11y attributes and active class
+            menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+            menu.hidden = !isMenuOpen;
+            nav.classList.toggle('nav--open');
+        });
+
+        $('.nav__link').click(function () {
+            isMenuOpen = !isMenuOpen;
+
+            // toggle a11y attributes and active class
+            menuToggle.setAttribute('aria-expanded', String(isMenuOpen));
+            menu.hidden = !isMenuOpen;
+            nav.classList.toggle('nav--open');
+        })
+
+
+        // TRAP TAB INSIDE NAV WHEN OPEN
+        nav.addEventListener('keydown', e => {
+            // abort if menu isn't open or modifier keys are pressed
+            if (!isMenuOpen || e.ctrlKey || e.metaKey || e.altKey) {
+                return;
+            }
+
+            // listen for tab press and move focus
+            // if we're on either end of the navigation
+            const menuLinks = menu.querySelectorAll('.nav__link');
+            if (e.keyCode === 9) {
+                if (e.shiftKey) {
+                    if (document.activeElement === menuLinks[0]) {
+                        menuToggle.focus();
+                        e.preventDefault();
+                    }
+                } else if (document.activeElement === menuToggle) {
+                    menuLinks[0].focus();
+                    e.preventDefault();
+                }
+            }
+        });
+        
+
     </script>
 
 @endsection

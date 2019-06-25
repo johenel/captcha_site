@@ -48,7 +48,6 @@ jQuery(function($){
 
 
 	jQuery(window).bind('scroll', function () {
-		console.log($(window).scrollTop());
     if ($(window).scrollTop() > 700) {
         $('.main-navbar').addClass('navbar-fixed-top');
         $('.logo').addClass('logo-compressed');
