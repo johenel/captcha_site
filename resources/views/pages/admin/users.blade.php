@@ -4,6 +4,7 @@
     <section id="adminUsers">
         <h1>Activated Users</h1>
         <hr>
+        <p style="color:red;margin-bottom: 0px;"><strong>NOTE:</strong> Click user's <span style="color: darkgreen;font-weight: bold;">AVAILABLE INCOME</span> to edit</p>
         <div class="content">
             <table class="table table-bordered table-striped bg-white">
                 <thead style="background-color: #0d3537;color: white;">
