@@ -39,7 +39,7 @@
                                 <td><b style="color:green;">{{$um->getCaptchaIncome($u->id)}}</b></td>
                                 <td><b style="color:orange;">{{$um->getReferralIncome($u->id)}}</b></td>
                                 <td>
-                                    <a href="#" id="editAvailableIncome">{{$um->getMoneyBalance($u->id)}}</a>
+                                    <a href="#" class="edit-available-income" uid="{{$u->id}}" balance="{{$um->getMoneyBalance($u->id)}}">{{$um->getMoneyBalance($u->id)}}</a>
                                 </td>
                                 <td>
                                     <form action="/user/deactivate" method="post">
@@ -78,4 +78,10 @@
             {{$users->links()}}
         </div>
     </section>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script>
+        $('.edit-available-income').click(function () {
+            alert('asd');
+        })
+    </script>
 @endsection
