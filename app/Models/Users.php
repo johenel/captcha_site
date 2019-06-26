@@ -74,11 +74,13 @@ class Users extends Model
         return Transactions::where('users_id', session()->get('user')->id)->where('type_id', 1)->where('status_id', 3)->count();
     }
 
-    public function getTotalIncome()
+    public function getTotalIncome($uid = null)
     {
         $total = 0;
 
-        $result = Transactions::where('users_id', $this->user->id)->whereIn('type_id', [Transactions::TYPE_CAPTCHA, Transactions::TYPE_REFERRAL_BONUS_MONEY])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
+        $userId = $uid ? $uid : $this->user->id;
+
+        $result = Transactions::where('users_id', $userId)->whereIn('type_id', [Transactions::TYPE_CAPTCHA, Transactions::TYPE_REFERRAL_BONUS_MONEY])->where('status_id', 3)->select(DB::raw('sum(value) as total'))->get();
 
         if (count($result) > 0) {
             $total = $result[0]->total;
@@ -130,11 +132,12 @@ class Users extends Model
         return $total ? $total : 0;
     }
 
-    public function getPendingEncashment()
+    public function getPendingEncashment($uid = null)
     {
+        $userId = $uid ? $uid : $this->user->id;
         $total = 0;
 
-        $encashments = Encashments::where('users_id', $this->user->id)->whereIn('status', [Encashments::STATUS_PENDING, Encashments::STATUS_PROCESSING])->select(DB::raw('sum(amount) as total'))->get();
+        $encashments = Encashments::where('users_id', $userId)->whereIn('status', [Encashments::STATUS_PENDING, Encashments::STATUS_PROCESSING])->select(DB::raw('sum(amount) as total'))->get();
 
         if (count($encashments) > 0) {
             $total = $encashments[0]->total;
@@ -143,12 +146,13 @@ class Users extends Model
         return $total ? $total : 0;
     }
 
-    public function getMoneyBalance()
+    public function getMoneyBalance($uid = null)
     {
         $em  = new Encashments;
         $rcr = new RewardClaimRequests;
+        $userId = $uid ? $uid : $this->user->id;
 
-        return $this->getTotalIncome() - $em->getTotalEncashments() - $this->getPendingEncashment() - $rcr->getTotal();
+        return $this->getTotalIncome($userId) - $em->getTotalEncashments($userId) - $this->getPendingEncashment($userId) - $rcr->getTotal($userId);
     }
 
     public function getRewardPoints()
