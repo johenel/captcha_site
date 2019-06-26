@@ -16,9 +16,11 @@ class RewardClaimRequests extends Model
     public const STATUS_REJECTED = 1;
     public const STATUS_COMPLETED = 2;
 
-    public function getTotalPending()
+    public function getTotalPending($uid = null)
     {
-        $result = DB::table($this->table)->where('status', self::STATUS_PENDING)->where('users_id', session()->get('user')->id)
+        $userId = $uid ? $uid : session()->get('user')->id;
+
+        $result = DB::table($this->table)->where('status', self::STATUS_PENDING)->where('users_id', $userId)
             ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
             ->select(DB::raw('sum(rewards.price_money_balance) as total'))
             ->get();
@@ -26,9 +28,11 @@ class RewardClaimRequests extends Model
         return count($result) > 0 ? $result[0]->total : 0 ? $result[0]->total : 0;
     }
 
-    public function getTotalCompleted()
+    public function getTotalCompleted($uid = null)
     {
-        $result = DB::table($this->table)->where('status', self::STATUS_COMPLETED)->where('users_id', session()->get('user')->id)
+        $userId = $uid ? $uid : session()->get('user')->id;
+
+        $result = DB::table($this->table)->where('status', self::STATUS_COMPLETED)->where('users_id', $userId)
             ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
             ->select(DB::raw('sum(rewards.price_money_balance) as total'))
             ->get();
@@ -36,9 +40,10 @@ class RewardClaimRequests extends Model
         return count($result) > 0 ? $result[0]->total : 0 ? $result[0]->total : 0;
     }
 
-    public function getTotal()
+    public function getTotal($uid = null)
     {
-        return $this->getTotalCompleted() + $this->getTotalPending();
+
+        return $this->getTotalCompleted($uid) + $this->getTotalPending($uid);
     }
 
     public function reward()

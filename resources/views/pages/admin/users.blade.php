@@ -14,6 +14,7 @@
                         @if($status == 'activated')
                             <th>Captcha Income</th>
                             <th>Referral Income</th>
+                            <th>Available Income</th>
                             <th>Action</th>
                         @endif
                         @if($status == 'deactivated')
@@ -37,6 +38,9 @@
                                 ?>
                                 <td><b style="color:green;">{{$um->getCaptchaIncome($u->id)}}</b></td>
                                 <td><b style="color:orange;">{{$um->getReferralIncome($u->id)}}</b></td>
+                                <td>
+                                    <a href="#" id="editAvailableIncome">{{$um->getMoneyBalance($u->id)}}</a>
+                                </td>
                                 <td>
                                     <form action="/user/deactivate" method="post">
                                         @csrf
