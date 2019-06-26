@@ -485,11 +485,12 @@
         });
 
         $('#loginBtnM').click(function (e) {
+            $('#signupModal').modal('hide');
             $('#loginModal').modal('show');
         });
 
         $('#signupBtnM').click(function (e) {
-            e.preventDefault();
+            $('#loginModal').modal('hide');
             $('#signupModal').modal('show');
         });
 
