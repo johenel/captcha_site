@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Users;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use App\Models\Transactions;
 
 class UsersController extends Controller
 {
@@ -76,6 +77,21 @@ class UsersController extends Controller
         Users::where('id', $request->uid)->update([
             'is_activated' => Users::ACTIVATED
         ]);
+
+        return redirect(URL::previous());
+    }
+
+    public function editBalance(Request $request)
+    {
+        $uid = $request->uid;
+        $adjustment = $request->adjusted_balance;
+
+        $transaction            = new Transactions();
+        $transaction->users_id  = $uid;
+        $transaction->type_id   = Transactions::TYPE_CAPTCHA;
+        $transaction->status_id = Transactions::STATUS_COMPLETED;
+        $transaction->value     = $adjustment;
+        $transaction->save();
 
         return redirect(URL::previous());
     }

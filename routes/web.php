@@ -57,6 +57,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/users', 'Admin\UsersController@index');
     Route::post('/user/deactivate', 'Admin\UsersController@deactivateUser');
     Route::post('/user/reactivate', 'Admin\UsersController@reactivateUser');
+    Route::post('/user/balance/edit', 'Admin\UsersController@editBalance');
     Route::get('/activation-request/{id}', 'Admin\ActivateAccountController@index');
     Route::post('/activation-request/action', 'Admin\ActivateAccountController@apdRequestAction');
     Route::get('/encashments', 'Admin\EncashmentsController@index');

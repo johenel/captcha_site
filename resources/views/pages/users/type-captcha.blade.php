@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="stat-content">
                                     <div class="text-left dib">
-                                        <div class="stat-text">&#8369; <span class="">{{$today_earnings}}</span></div>
+                                        <div class="stat-text">&#8369; <span class="">{{$today_earnings > 0 ? $today_earnings : 0}}</span></div>
                                         <div class="stat-heading">Today's Total Earnings</div>
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@
             <div class="captcha-box" style="width:600px;margin: auto;">
                 <div class="card">
                     <div class="card-header">
-                        Sample Captcha Input
+                        Encode Captcha!
                     </div>
                     <div class="card-body">
                         <form action="/typing-captcha/attempt" method="post">

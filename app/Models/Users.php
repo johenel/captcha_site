@@ -47,6 +47,7 @@ class Users extends Model
         return Transactions::where('users_id', session()->get('user')->id)
             ->where('type_id', 1)
             ->where('status_id', 3)
+            ->where('value', '>=', 0)
             ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
             ->count();
     }
@@ -58,6 +59,7 @@ class Users extends Model
         $result = Transactions::where('users_id', session()->get('user')->id)
             ->whereIn('type_id', [1, 3])
             ->where('status_id', 3)
+            ->where('value', '>=', 0)
             ->select(DB::raw('sum(value) as total'))
             ->where('created_at', 'like', '%' . date_format(Carbon::now(), 'Y-m-d') . '%')
             ->get();
