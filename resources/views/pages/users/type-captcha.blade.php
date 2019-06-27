@@ -116,7 +116,7 @@
                                         <input type="text" id="captcha" name="captcha" class="form-control">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="submit" class="btn btn-dark">
+                                        <input type="submit" class="btn btn-dark" id="submitCaptcha">
                                     </div>
                                 </div>
 
@@ -129,9 +129,14 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="/js/loadingOverlay/dist/loadingoverlay.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $('.user-side-bar li:nth-child(2)').addClass('active');
+
+            $('#submitCaptcha').click(function () {
+                $('body').LoadingOverlay("show");
+            })
         })
     </script>
 @endsection
