@@ -30,8 +30,8 @@ class HomeController extends Controller
             return redirect('/activate-account');
         }
 
-        $response           = [];
-        $response['action'] = $request->action;
+        $response            = [];
+        $response['action']  = $request->action;
         $response['rewards'] = Rewards::where('is_published', Rewards::PUBLISHED)->orderBy('created_at', 'desc')->limit(10)->get();
 
         return view('welcome', $response);
@@ -52,8 +52,8 @@ class HomeController extends Controller
         $response['captcha_income']        = $usersModel->getCaptchaIncome();
         $response['money_balance']         = $usersModel->getMoneyBalance();
         $response['reward_points']         = $usersModel->getRewardPoints();
-        $response['reward_claims']         = $rcr->getTotalCompleted();
-        $response['reward_claims_pending'] = $rcr->getTotalPending();
+        $response['reward_claims']         = $rcr->getTotalCompleted(null, RewardClaimRequests::PAYMENT_OPTION_MONEY) + $rcr->getTotalCompleted(null, RewardClaimRequests::PAYMENT_OPTION_REWARD);
+        $response['reward_claims_pending'] = $rcr->getTotalPending(null, RewardClaimRequests::PAYMENT_OPTION_MONEY) + $rcr->getTotalPending(null, RewardClaimRequests::PAYMENT_OPTION_REWARD);
         $response['referral_link']         = URL::to('/') . '?action=signup&ref=' . encrypt($this->user->email);
 
         return $response;
@@ -62,8 +62,8 @@ class HomeController extends Controller
     public function contactUs(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required',
+            'name'        => 'required',
+            'email'       => 'required',
             'description' => 'required'
         ]);
 
