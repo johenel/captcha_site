@@ -22,6 +22,7 @@ Route::post('/forgot-password', 'ForgotPasswordController@forgotPassword');
 
 Route::get('/forgot-password/{token}', 'ForgotPasswordController@updatePassIndex');
 Route::post('/forgot-password/update', 'ForgotPasswordController@updatePass');
+Route::post('/contact-us', 'HomeController@contactUs');
 
 /* USER ROUETS */
 
