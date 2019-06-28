@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 @endif
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-header">
                             Globe GCASH
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-header">
                             Palawan Pawnshop
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-header">
                             Coins.ph
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-header">
                             MLHUILLIER

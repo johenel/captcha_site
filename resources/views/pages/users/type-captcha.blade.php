@@ -9,7 +9,7 @@
     <div class="row" style="margin-top: 30px;">
         <div class="container" style="width: 100%;">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="stat-widget-five">
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="stat-widget-five">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="stat-widget-five">
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="stat-widget-five">
