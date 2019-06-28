@@ -23,7 +23,7 @@ class RewardClaimRequests extends Model
         $result = DB::table($this->table)->where('status', self::STATUS_PENDING)->where('users_id', $userId)
             ->where('payment_option', $paymentOption)
             ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
-            ->select(DB::raw('sum(rewards.price_money_balance) as total'))
+            ->select(DB::raw('sum(rewards.price_reward_points) as total'))
             ->get();
 
         return count($result) > 0 ? $result[0]->total : 0 ? $result[0]->total : 0;
