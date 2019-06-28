@@ -20,10 +20,18 @@ class RewardClaimRequests extends Model
     {
         $userId = $uid ? $uid : session()->get('user')->id;
 
+        switch ($paymentOption) {
+            case RewardClaimRequests::PAYMENT_OPTION_REWARD:
+                $rcolumn = 'price_reward_points';
+                break;
+            case RewardClaimRequests::PAYMENT_OPTION_MONEY:
+                $rcolumn = 'price_money_balance';
+        }
+
         $result = DB::table($this->table)->where('status', self::STATUS_PENDING)->where('users_id', $userId)
             ->where('payment_option', $paymentOption)
             ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
-            ->select(DB::raw('sum(rewards.price_reward_points) as total'))
+            ->select(DB::raw('sum(rewards.' . $rcolumn . ') as total'))
             ->get();
 
         return count($result) > 0 ? $result[0]->total : 0 ? $result[0]->total : 0;
@@ -33,10 +41,18 @@ class RewardClaimRequests extends Model
     {
         $userId = $uid ? $uid : session()->get('user')->id;
 
+        switch ($paymentOption) {
+            case RewardClaimRequests::PAYMENT_OPTION_REWARD:
+                $rcolumn = 'price_reward_points';
+                break;
+            case RewardClaimRequests::PAYMENT_OPTION_MONEY:
+                $rcolumn = 'price_money_balance';
+        }
+
         $result = DB::table($this->table)->where('status', self::STATUS_COMPLETED)->where('users_id', $userId)
             ->where('payment_option', $paymentOption)
             ->join('rewards', 'reward_claim_requests.reward_id', '=', 'rewards.id')
-            ->select(DB::raw('sum(rewards.price_money_balance) as total'))
+            ->select(DB::raw('sum(rewards.' . $rcolumn . ') as total'))
             ->get();
 
         return count($result) > 0 ? $result[0]->total : 0 ? $result[0]->total : 0;

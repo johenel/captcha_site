@@ -94,7 +94,7 @@
                         <div class="stat-content">
                             <div class="text-left dib">
                                 <div class="stat-text">&#8369; <span class="">{{$reward_claims}}</span></div>
-                                <div class="stat-heading">Reward Claims</div>
+                                <div class="stat-heading">Reward Claimed</div>
                             </div>
                         </div>
                     </div>
