@@ -27,3 +27,17 @@
 table td, table th {
     text-align: center;
 }
+
+
+@media(max-width: 1199px) {
+    .user-area img.user-avatar {
+        width: 40px;
+        height: 40px !important;
+    }
+}
+
+@media(max-width: 1024px) {
+    .right-panel {
+        margin-left: 84px;
+    }
+}
