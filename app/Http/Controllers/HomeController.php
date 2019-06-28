@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUs;
 use App\Models\Encashments;
 use App\Models\RewardClaimRequests;
 use App\Models\Rewards;
 use Illuminate\Http\Request;
 use App\Models\Transactions;
 use DB;
-use URL;
 use App\Models\Users;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -57,5 +59,19 @@ class HomeController extends Controller
         return $response;
     }
 
+    public function contactUs(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'description' => 'required'
+        ]);
+
+        Mail::to('trihomebased@gmail.com')->send(new ContactUs($request->name, $request->email, $request->description));
+
+        session()->flash('SENT_CONTACTUS', true);
+
+        return redirect(URL::previous());
+    }
 
 }

@@ -352,15 +352,16 @@
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <div class="contact-right wow fadeInRight">
                         <h2>Send a message</h2>
-                        <form action="" class="contact-form">
+                        <form action="/contact-us" method="post" class="contact-form">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Name">
+                                <input type="text" class="form-control" placeholder="Name" name="name">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Enter Email">
+                                <input type="email" class="form-control" placeholder="Enter Email" name="email">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control"></textarea>
+                                <textarea class="form-control" name="description"></textarea>
                             </div>
                             <button type="submit" data-text="SUBMIT" class="button button-default"><span>SUBMIT</span></button>
                         </form>
@@ -547,7 +548,9 @@
             }
         });
         
-
+        @if(session()->has('SENT_CONTACTUS'))
+            alert('Your inquiry has been submitted.');
+        @endif
     </script>
 
 @endsection
