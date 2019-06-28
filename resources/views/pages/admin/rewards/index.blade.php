@@ -9,7 +9,7 @@
         <div class="row">
             @if(count($rewards) > 0)
                 @foreach($rewards as $r)
-                    <div class="col-md-3">
+                    <div class="col-lg-4 col-md-6">
                         <div class="card" >
                             <div class="card-title text-center" style="padding-top: 10px;">
                                 <h3>{{$r->title}}</h3>

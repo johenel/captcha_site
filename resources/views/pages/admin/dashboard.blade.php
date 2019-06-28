@@ -1,11 +1,16 @@
 @extends('layouts.admin')
 @section('title','Admin Dashbaord')
 @section('content')
+    <style>
+        .summary-box, .card {
+            width: 100% !important;
+        }
+    </style>
     <section>
         <div class="container">
             <div class="row">
                 <h1 class="col-md-12" style="margin-bottom:20px">USERS</h1>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                     <div class="summary-box">
                         <div class="users">
                             <div class="card text-center" style="width: max-content">
@@ -19,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                     <div class="summary-box">
                         <div class="users">
                             <div class="card text-center" style="width: max-content">
@@ -33,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                     <div class="summary-box">
                         <div class="users">
                             <div class="card text-center" style="width: max-content">
@@ -47,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                     <div class="summary-box">
                         <div class="users">
                             <div class="card text-center" style="width: max-content">
@@ -61,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-">
                     <div class="summary-box">
                         <div class="users">
                             <div class="card text-center" style="width: max-content">
