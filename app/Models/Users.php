@@ -137,7 +137,7 @@ class Users extends Model
     public function getPendingEncashment($uid = null)
     {
         $userId = $uid ? $uid : $this->user->id;
-        $total = 0;
+        $total  = 0;
 
         $encashments = Encashments::where('users_id', $userId)->whereIn('status', [Encashments::STATUS_PENDING, Encashments::STATUS_PROCESSING])->select(DB::raw('sum(amount) as total'))->get();
 
@@ -150,17 +150,24 @@ class Users extends Model
 
     public function getMoneyBalance($uid = null)
     {
-        $em  = new Encashments;
-        $rcr = new RewardClaimRequests;
+        $em     = new Encashments;
+        $rcr    = new RewardClaimRequests;
         $userId = $uid ? $uid : $this->user->id;
 
-        return $this->getTotalIncome($userId) - $em->getTotalEncashments($userId) - $this->getPendingEncashment($userId) - $rcr->getTotal($userId);
+        return $this->getTotalIncome($userId) - $em->getTotalEncashments($userId) - $this->getPendingEncashment($userId) - $rcr->getTotal($userId, RewardClaimRequests::PAYMENT_OPTION_MONEY);
     }
 
-    public function getRewardPoints()
+    public function getRewardPoints($uid = null)
     {
-        $r = Transactions::where('users_id', $this->user->id)->where('type_id', Transactions::TYPE_REFERRAL_BONUS_REWARD)->select(DB::raw('sum(value) as total'))->first();
+        $rcr    = new RewardClaimRequests;
+        $userId = $uid ? $uid : $this->user->id;
 
-        return $r ? $r->total : 0 ? $r->total : 0;
+        $res = Transactions::where('users_id', $userId)->where('type_id', Transactions::TYPE_REFERRAL_BONUS_REWARD)->select(DB::raw('sum(value) as total'))->first();
+
+        $res = $res ? $res->total : 0 ? $res->total : 0;
+
+        $r = $res - $rcr->getTotal($userId, RewardClaimRequests::PAYMENT_OPTION_REWARD);
+
+        return $r;
     }
 }
