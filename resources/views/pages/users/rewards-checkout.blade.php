@@ -34,7 +34,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="container">
+                                <div class="container" style="min-width: 900px;">
                                     <div class="row">
                                         <div class="col-md-5" style="background-color: #0d3537;">
                                             <img src="/images/rewards/{{$reward->featured_image_url}}" alt="">
@@ -52,16 +52,17 @@
                                                 <p>
                                                     {{$reward->description}}
                                                 </p>
-                                                <ul class="price">
-                                                    <li>
-                                                        <i class="fa fa-star" style="color:orange"></i> {{$reward->price_reward_points}}
-                                                    </li>
-                                                    <li>
-                                                        <i class="fa fa-money" style="color:#04d204"></i> {{$reward->price_money_balance}}
-                                                    </li>
-                                                </ul>
-                                                <div style="clear:both;margin-top:20px"></div>
-                                                <form id="claimReward" action="/rewards/claim" method="post" style="padding-top:20px;">
+                                                <div>
+                                                    <ul class="price">
+                                                        <li>
+                                                            <i class="fa fa-star" style="color:orange"></i> {{$reward->price_reward_points}}
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-money" style="color:#04d204"></i> {{$reward->price_money_balance}}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <form id="claimReward" action="/rewards/claim" method="post" style="padding-top:100px;">
                                                     @csrf
                                                     <input type="hidden" name="rid" value="{{$reward->id}}">
                                                     <div class="form-group">
