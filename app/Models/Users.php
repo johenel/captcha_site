@@ -166,7 +166,7 @@ class Users extends Model
 
         $res = $res ? $res->total : 0 ? $res->total : 0;
 
-        $r = $res - $rcr->getTotal($userId, RewardClaimRequests::PAYMENT_OPTION_REWARD);
+        $r = $res - $rcr->getTotalCompleted($userId, RewardClaimRequests::PAYMENT_OPTION_REWARD);
 
         return $r;
     }

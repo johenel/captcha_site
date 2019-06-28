@@ -117,7 +117,7 @@ class UsersController extends Controller
 
     public function rewardsIndex(Request $request)
     {
-        $rewards = Rewards::where('is_published', '!=', Rewards::ARCHIVED)->paginate(15);
+        $rewards = Rewards::where('is_published', '!=', Rewards::PUBLISHED)->paginate(15);
 
         $response            = [];
         $response['rewards'] = $rewards;
