@@ -298,9 +298,9 @@ body {
         height: 500px !important;
     }
 
-    #feature_signup.card {
-        padding-top: 45px !important;
-    }
+    /*#feature_signup.card {*/
+        /*padding-top: 45px !important;*/
+    /*}*/
 }
 
 @media(max-width: 991px) {
@@ -370,9 +370,9 @@ body {
    ul.sub-item li {
        margin-bottom: 10px;
    }
-    #feature_signup.card {
-        padding-top: 65px !important;
-    }
+    /*#feature_signup.card {*/
+        /*padding-top: 65px !important;*/
+    /*}*/
 }
 
 @media(max-width: 375px) {
