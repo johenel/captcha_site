@@ -297,6 +297,10 @@ body {
     header img {
         height: 500px !important;
     }
+
+    #feature_signup.card {
+        padding-top: 45px !important;
+    }
 }
 
 @media(max-width: 991px) {
@@ -309,6 +313,8 @@ body {
     .p-item img {
         height: 170px;
     }
+
+
 }
 
 @media(max-width: 767px) {
@@ -364,6 +370,9 @@ body {
    ul.sub-item li {
        margin-bottom: 10px;
    }
+    #feature_signup.card {
+        padding-top: 65px !important;
+    }
 }
 
 @media(max-width: 375px) {

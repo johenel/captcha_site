@@ -386,8 +386,10 @@
             <div class="modal-content" style="background-color: transparent;border: none;">
                 <div class="modal-body" >
                     <style>
-                        #feature_signup.card {
-                            padding-top:45px !important;
+                        @mdeia(max-width: 425px) {
+                            #feature_signup.card {
+                                padding-top:45px !important;
+                            }
                         }
                     </style>
                     @include('includes.features.signup')
@@ -440,6 +442,14 @@
     </style>
     <script>
         let ww = $(window).width();
+
+        if(ww < 1200) {
+            let ref = '{{$_GET['ref']}}';
+
+            if(ref !== '') {
+                $('#signupModal').modal('show');
+            }
+        }
 
         $('.product-list').slick({
             infinite: true,
