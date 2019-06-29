@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'Dashboard')
 @section('content')
+    <style>
+        .col-xs-6 {
+            width:50% ;
+        }
+    </style>
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-black-50 font-weight-bold">Encode, Earn and Enjoy!</h1>
@@ -110,13 +115,13 @@
                         <form action="/typing-captcha/attempt" method="post">
                             @csrf
                             @captcha
-                            <div class="captcha-input" style="height:100px;background: #dde;margin-top:30px;padding:30px;">
+                            <div class="captcha-input container" style="background: #dde;margin-top:30px;padding:30px;">
                                 <div class="row">
-                                    <div class="col-md-9">
+                                    <div class="col-sm-9 col-xs-6">
                                         <input type="text" id="captcha" name="captcha" class="form-control" autocomplete="off">
                                     </div>
-                                    <div class="col-md-3">
-                                        <input type="submit" class="btn btn-dark" id="submitCaptcha">
+                                    <div class="col-sm-3 col-xs-6">
+                                        <input type="submit" class="btn btn-dark form-control" id="submitCaptcha">
                                     </div>
                                 </div>
 
