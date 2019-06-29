@@ -442,7 +442,7 @@
     </style>
     <script>
         let ww = $(window).width();
-
+        @if(isset($_GET['ref']))
         if(ww < 1200) {
             let ref = '{{$_GET['ref']}}';
 
@@ -450,7 +450,7 @@
                 $('#signupModal').modal('show');
             }
         }
-
+        @endif
         $('.product-list').slick({
             infinite: true,
             slidesToShow: 3,
