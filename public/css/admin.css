@@ -41,3 +41,13 @@ table td, table th {
         margin-left: 84px;
     }
 }
+
+@media (max-width: 768px) {
+    .right-panel header.header {
+        padding-top: 6px;
+    }
+
+    .right-panel .menutoggle {
+        padding-top: 17px;
+    }
+}

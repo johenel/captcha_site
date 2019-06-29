@@ -113,7 +113,7 @@
                             <div class="captcha-input" style="height:100px;background: #dde;margin-top:30px;padding:30px;">
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <input type="text" id="captcha" name="captcha" class="form-control">
+                                        <input type="text" id="captcha" name="captcha" class="form-control" autocomplete="off">
                                     </div>
                                     <div class="col-md-3">
                                         <input type="submit" class="btn btn-dark" id="submitCaptcha">
