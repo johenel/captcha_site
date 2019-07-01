@@ -18,6 +18,47 @@
 
         }
 
+        @media(max-width: 768px) {
+            .content-wrapper {
+                padding: 50px;
+            }
+        }
+
+        @media(max-width: 767px) {
+            h1 {
+                font-size: 31px;
+                color:black;
+            }
+        }
+
+        @media(max-width: 475px) {
+            h1 {
+                font-size: 18px;
+            }
+            .content-wrapper {
+                padding: 40px;
+            }
+
+            #apdThankyouPage {
+                padding: 10px;
+            }
+        }
+
+        @media(max-width: 425px) {
+            h1 {
+                font-size: 20px;
+            }
+            .content-wrapper {
+                padding: 20px;
+            }
+        }
+
+        @media(max-width: 320px) {
+            h1 {
+                font-size: 23px;
+            }
+        }
+
     </style>
     <section id="apdThankyouPage">
         <div class="container">
