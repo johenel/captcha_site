@@ -49,6 +49,8 @@ class SignupController extends Controller
 
         $request->session()->put('user', $user);
 
+        session()->put('NEW_SIGNUP', true);
+
         return redirect('/');
     }
 
