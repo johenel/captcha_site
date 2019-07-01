@@ -12,6 +12,11 @@
                 width: auto !important;
             }
         }
+        @media(max-width: 375px) {
+            .right-panel header.header .top-right {
+                padding: 0px;
+            }
+        }
     </style>
     <div class="row">
         <div class="col-md-12">
