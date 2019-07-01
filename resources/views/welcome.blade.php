@@ -80,7 +80,7 @@
                 <!-- MENU TOGGLE BUTTON -->
                 <a href="#nav" class="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
                     <svg class="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
-                        <title>Toggle Menu</title>
+                        <title>Trihomebased</title>
                         <g>
                             <line class="menuicon__bar" x1="13" y1="16.5" x2="37" y2="16.5"/>
                             <line class="menuicon__bar" x1="13" y1="24.5" x2="37" y2="24.5"/>
