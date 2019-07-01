@@ -2,8 +2,20 @@
 @section('title', 'Dashboard')
 @section('content')
     <style>
+        .content {
+        }
         .col-xs-6 {
             width:50% ;
+        }
+        @media(max-width: 768px) {
+            .captcha-box {
+                width: auto !important;
+            }
+        }
+        @media(max-width: 375px) {
+            .right-panel header.header .top-right {
+                padding: 0px;
+            }
         }
     </style>
     <div class="row">
@@ -88,9 +100,10 @@
 
     </div>
     <div class="row text-center" style="padding-top:50px;">
+        @if(session()->has('success'))
         <div class="col-md-12">
-            <div style="width:600px;margin: auto;">
-                @if(session()->has('success'))
+            <div style="width:auto;margin: auto;">
+
                     @if(session()->get('success'))
                         <div class="alert-success" style="padding: 10px;">
                             Captcha is correct!
@@ -100,10 +113,10 @@
                             Captcha is wrong!
                         </div>
                     @endif
-                @endif
             </div>
-
         </div>
+        @endif
+
         <div class="col-md-12">
             @include('includes.error-validation')
             <div class="captcha-box" style="width:600px;margin: auto;">
