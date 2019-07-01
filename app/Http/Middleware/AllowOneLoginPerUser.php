@@ -19,10 +19,11 @@ class AllowOneLoginPerUser
     {
         if (session()->has('user')) {
             $user_session = Users::find(session()->get('user')->id)->active_session;
-
             if ($user_session != session()->getId()) {
-                session()->flush('user');
-                return redirect('/logout');
+                if(!session()->has('NEW_SIGNUP')) {
+                    session()->flush('user');
+                    return redirect('/logout');
+                }
             }
         }
 

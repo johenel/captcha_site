@@ -32,7 +32,7 @@ Route::get('/account/deactivated', 'ActivateAccountController@deactivatedIndex')
 
 
 Route::group(['middleware' => ['signedIn', 'activated']], function () {
-    Route::group(['middleware' => 'sessionLogin'], function() {
+    Route::group(['middleware' => 'sessionLogin', 'set-user-info'], function() {
         Route::get('/typing-captcha', 'UsersController@typeCaptchaIndex');
         Route::post('/typing-captcha/attempt', 'UsersController@typeCaptcha');
         Route::get('/referrals', 'UsersController@referralsIndex');
