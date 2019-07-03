@@ -373,6 +373,9 @@ body {
     /*#feature_signup.card {*/
         /*padding-top: 65px !important;*/
     /*}*/
+    #checkoutPage .col-md-12 {
+        padding: 0px !important;
+    }
 }
 
 @media(max-width: 375px) {
