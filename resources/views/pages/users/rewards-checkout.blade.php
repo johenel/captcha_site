@@ -25,6 +25,44 @@
             margin-right: 40px;
             font-size: 40px;
         }
+
+        .cop-main-container {
+            min-width: 900px;
+        }
+
+        .fillup-frm {
+            padding: 20px;
+            width: 90%;
+        }
+
+        @media(max-width: 768px) {
+            .cop-main-container {
+                min-width: auto;
+            }
+
+            .card {
+                width: auto;
+            }
+
+            .card img {
+                height: 330px;
+                width: 100%;
+            }
+
+            .col-lg-5 {
+                background-color: transparent;
+            }
+
+            .fillup-frm {
+                width:100%;
+            }
+        }
+
+        @media(max-width: 425px) {
+            .claim-reward-btn {
+                margin-bottom:10px;
+            }
+        }
     </style>
     <section id="checkoutPage">
         <div class="container">
@@ -34,19 +72,19 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="container" style="min-width: 900px;">
+                                <div class="container cop-main-container" style="">
                                     <div class="row">
-                                        <div class="col-md-5" style="background-color: #0d3537;">
+                                        <div class="col-lg-5" style="background-color: #0d3537;">
                                             <img src="/images/rewards/{{$reward->featured_image_url}}" alt="">
                                         </div>
-                                        <div class="col-md-7" style="">
+                                        <div class="col-lg-7" style="">
                                             @include('includes.error-validation')
                                             @if(session()->has('CLAIM_REWARD_FAIL'))
                                                 <div class="alert alert-danger">
                                                     Your Reward Points or Money Balance is not enough.
                                                 </div>
                                             @endif
-                                            <div style="padding: 20px; width: 90%;">
+                                            <div class="fillup-frm" style="">
                                                 <h1>{{$reward->title}}</h1>
                                                 <hr>
                                                 <p>
@@ -77,10 +115,10 @@
                                                     <h4>Claim With :</h4>
                                                     <div class="row" style="padding: 20px 0px;">
                                                         <div class="col-md-6">
-                                                            <button class="btn btn-warning form-control" style="background-color: orange;color: floralwhite" payment_option="{{\App\Models\RewardClaimRequests::PAYMENT_OPTION_REWARD}}">Reward Points</button>
+                                                            <button class="btn btn-warning form-control claim-reward-btn" style="background-color: orange;color: floralwhite" payment_option="{{\App\Models\RewardClaimRequests::PAYMENT_OPTION_REWARD}}">Reward Points</button>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <button class="btn btn-success form-control" style="color: floralwhite" payment_option="{{\App\Models\RewardClaimRequests::PAYMENT_OPTION_MONEY}}">Money Balance</button>
+                                                            <button class="btn btn-success form-control claim-cash-btn" style="color: floralwhite" payment_option="{{\App\Models\RewardClaimRequests::PAYMENT_OPTION_MONEY}}">Money Balance</button>
                                                         </div>
                                                     </div>
                                                 </form>
