@@ -383,12 +383,12 @@ body {
 
 @media(max-width: 320px) {
     .right-panel header.header .top-right {
-        padding:0px;
+        padding:0px !important;
     }
 
     .income-header li {
-        margin-right: 25px;
-        font-size: 16px;
+        margin-right: 25px !important;
+        font-size: 16px !important;
     }
 }
 
