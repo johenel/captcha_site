@@ -381,3 +381,14 @@ body {
     }
 }
 
+@media(max-width: 320px) {
+    .right-panel header.header .top-right {
+        padding:0px;
+    }
+
+    .income-header li {
+        margin-right: 25px;
+        font-size: 16px;
+    }
+}
+
