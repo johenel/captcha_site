@@ -50,7 +50,7 @@
             }
 
             .col-lg-5 {
-                background-color: transparent;
+                background-color: transparent !important;
             }
 
             .fillup-frm {
