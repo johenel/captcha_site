@@ -9,7 +9,7 @@
         }
 
         .card img {
-            height: 100%;
+            height: 620px;
         }
 
         #checkoutPage .card-body, #checkoutPage .container {
