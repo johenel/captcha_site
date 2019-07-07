@@ -61,7 +61,7 @@ class UsersController extends Controller
 
         $request->session()->flash('success', true);
 
-        return redirect('/typing-captcha');
+        return redirect('/typing-captcha#captchaBox');
     }
 
     public function encashmentIndex(Request $request)
