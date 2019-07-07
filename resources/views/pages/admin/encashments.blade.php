@@ -4,7 +4,7 @@
     <section id="encashmentsPage">
         <h1>Encashments</h1>
         <hr>
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover table-responsive">
             <thead style="background:#0d3537;color:white">
                 <tr>
                     <th>Name</th>
