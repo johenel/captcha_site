@@ -17,8 +17,8 @@
                 </div>
             @endif
             <div class="row" style="overflow: auto;min-height: 500px;">
-                <div class="col-md-12">
-                    <table class="table table-bordered bg-white table-responsive">
+                <div class="col-md-12" style="width: 100vw;">
+                    <table class="table table-bordered bg-white table-responsive" style="width: auto!important;">
                         <thead style="background: #000;color: white;">
                             <tr>
                                 <th nowrap>Name</th>
