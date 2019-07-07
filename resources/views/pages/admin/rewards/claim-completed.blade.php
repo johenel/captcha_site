@@ -5,7 +5,7 @@
         th, td {
         }
     </style>
-    <section class="add-reward-page">
+    <section class="">
         <div class="container">
             <div class="row" style="overflow: auto;min-height: 500px;">
                 <div class="col-md-12">

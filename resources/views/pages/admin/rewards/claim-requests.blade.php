@@ -5,7 +5,7 @@
         th, td {
         }
     </style>
-    <section class="add-reward-page">
+    <section class="">
         <div class="container">
             @if(session()->has('CLAIM_REQUEST_COMPLETED'))
                 <div class="row">
