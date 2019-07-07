@@ -380,13 +380,12 @@ body {
         padding: 0px !important;
     }
 
-    table.table-responsive,.row {
+    table.table-responsive{
         width:100vw !important;
         margin: 0px !important;
     }
 
     .content {
-        padding: 1.25em 0px !important;
     }
 
     .content .animated .container, .content .animated .container .col-md-12 {
