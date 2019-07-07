@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Admin Dashbaord')
 @section('content')
-    <section>
+    <section class="add-reward-page">
         <div class="row text-center">
             <div class="col-md-12">
                 <h1 class="text-center" style="color:red"><b>ARCHIVE</b></h1>

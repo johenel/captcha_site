@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title','Admin Dashbaord')
 @section('content')
-    <section>
+    <section class="add-reward-page">
         <div class="row">
             <h1>Edit Reward Item</h1>
         </div>
