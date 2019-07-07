@@ -376,6 +376,27 @@ body {
     #checkoutPage .col-md-12 {
         padding: 0px !important;
     }
+
+    table.table-responsive,.top-left,.row {
+        width:100vw !important;
+        margin: 0px !important;
+    }
+
+    .content {
+        padding: 1.25em 0px !important;
+    }
+
+    .content .animated .container, .content .animated .container .col-md-12 {
+        padding: 0px;
+    }
+
+    #bootstrap-data-table {
+        margin-top: 10px !important;
+    }
+
+    .referral-list .col-md-12 {
+        padding: 0px;
+    }
 }
 
 @media(max-width: 375px) {
