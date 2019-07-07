@@ -119,7 +119,7 @@
 
         <div class="col-md-12">
             @include('includes.error-validation')
-            <div class="captcha-box" style="width:600px;margin: auto;">
+            <div id="captchaBox" class="captcha-box" style="width:600px;margin: auto;">
                 <div class="card">
                     <div class="card-header">
                         Encode Captcha!
