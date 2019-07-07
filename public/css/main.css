@@ -367,6 +367,9 @@ body {
 }
 
 @media(max-width: 425px) {
+    .card {
+        width:auto !important;
+    }
    ul.sub-item li {
        margin-bottom: 10px;
    }
@@ -377,7 +380,7 @@ body {
         padding: 0px !important;
     }
 
-    table.table-responsive,.top-left,.row {
+    table.table-responsive,.row {
         width:100vw !important;
         margin: 0px !important;
     }
