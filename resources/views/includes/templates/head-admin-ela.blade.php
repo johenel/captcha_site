@@ -2,7 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- CSS SECTION -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/main.css">
+@if(session()->get('user')->account_type == 2)
+    <link rel="stylesheet" type="text/css" href="/css/main2.css">
+@else
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+@endif
 <!-- TOOLS CSS -->
 <link rel="stylesheet" type="text/css" href="/fa/css/font-awesome.min.css">
 
