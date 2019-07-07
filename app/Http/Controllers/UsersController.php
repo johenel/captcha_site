@@ -11,6 +11,7 @@ use App\Models\Encashments;
 use App\Models\Users;
 use App\Models\Rewards;
 use Illuminate\Support\Facades\URL;
+use Validator;
 
 class UsersController extends Controller
 {
@@ -47,6 +48,16 @@ class UsersController extends Controller
     public function typeCaptcha(Request $request)
     {
         sleep(5);
+
+        $validator = Validator::make($request->all(), [
+            'captcha' => 'required|captcha'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/typing-captcha#captchaBox')
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         $this->validate($request, [
             'captcha' => 'required|captcha'
