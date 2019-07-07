@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="content-wrapper">
-                        <h1>Thank you for submitting you<br>Activation payment details!</h1>
+                        <h1>Thank you for submitting your<br>Activation payment details!</h1>
                         <hr>
                         <p>An email will be sent to your registered email address : <span><b style="color:blue;">{{$email}}</b></span></p>
                         <a href="/logout" class="btn btn-success">Go to Home page</a>

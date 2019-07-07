@@ -7,10 +7,10 @@
             <h1 class="text-black-50 font-weight-bold">Referrals</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row referral-list">
         <div class="col-md-12">
             @if(count($referrals) > 0)
-                <table id="bootstrap-data-table" class="table table-bordered" style="background:white;margin-top:50px;">
+                <table id="bootstrap-data-table" class="table table-bordered table-responsive" style="background:white;margin-top:50px;">
                     <thead class="bg-dark text-white">
                         <tr>
                             <th>Name</th>

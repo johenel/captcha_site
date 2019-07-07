@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row" style="overflow: auto;min-height: 500px;">
                 <div class="col-md-12">
-                    <table class="table table-bordered bg-white">
+                    <table class="table table-bordered bg-white table-responsive">
                         <thead style="background: #000;color: white;">
                             <tr>
                                 <th nowrap>Name</th>

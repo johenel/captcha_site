@@ -931,7 +931,6 @@ header .form-inline {
   z-index: 9999; }
   header .form-inline .search-form {
     height: 100%;
-    max-width: 1025px;
     margin: 0 auto;
     position: relative; }
     header .form-inline .search-form input[type="text"] {
