@@ -394,6 +394,10 @@ body {
         padding: 1.25em 0px !important;
     }
 
+    .content section {
+        padding: 20px 24px;
+    }
+
     .content .animated .container, .content .animated .container .col-md-12 {
         /*padding: 0px;*/
     }
