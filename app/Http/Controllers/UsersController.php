@@ -59,9 +59,9 @@ class UsersController extends Controller
                 ->withInput();
         }
 
-        $this->validate($request, [
-            'captcha' => 'required|captcha'
-        ]);
+//        $this->validate($request, [
+//            'captcha' => 'required|captcha'
+//        ]);
 
         $transaction            = new Transactions();
         $transaction->users_id  = $request->session()->get('user')->id;
