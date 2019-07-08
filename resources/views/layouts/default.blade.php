@@ -8,6 +8,14 @@
     <div id="preloader">
         <div class="loader">&nbsp;</div>
     </div>
+    <style>
+        @media(max-width: 425px) {
+            .loader {
+                left: calc(50% - 11em/2);
+                top: 200px;
+            }
+        }
+    </style>
     <!-- END PRELOADER -->
     @yield('content')
     </body>
