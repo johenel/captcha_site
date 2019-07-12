@@ -68,7 +68,7 @@
                 $('#apdForm input[name=action]').val(val);
                 $('#apdForm input[name=apdid]').val(apdval);
 
-                // $('#apdForm').submit();
+                $('#apdForm').submit();
             });
         });
     </script>
