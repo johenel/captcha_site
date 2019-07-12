@@ -61,14 +61,14 @@
     <script type="text/javascript">
         $(function () {
             $('#apdForm .btn-action').click(function () {
+                console.log('asd');
                 let val    = $(this).attr('data-val');
                 let apdval = $(this).attr('apdid');
-                $(this).prop('disabled', true);
-
+                $('#apdForm .btn-action').css('pointer-events', 'none');
                 $('#apdForm input[name=action]').val(val);
                 $('#apdForm input[name=apdid]').val(apdval);
 
-                $('#apdForm').submit();
+                // $('#apdForm').submit();
             });
         });
     </script>
