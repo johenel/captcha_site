@@ -289,6 +289,10 @@ body {
     background-color: #a4a4a4;
 }
 
+table.table-responsive{
+    display: table !important;
+}
+
 @media(max-width: 1199px) {
     .auth-box {
         display: none;
@@ -388,6 +392,7 @@ body {
     table.table-responsive{
         width:100vw !important;
         margin: 0px !important;
+        display: block !important;
     }
 
     .content {
