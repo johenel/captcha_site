@@ -63,6 +63,7 @@
             $('#apdForm .btn-action').click(function () {
                 let val    = $(this).attr('data-val');
                 let apdval = $(this).attr('apdid');
+                $(this).disable();
 
                 $('#apdForm input[name=action]').val(val);
                 $('#apdForm input[name=apdid]').val(apdval);
