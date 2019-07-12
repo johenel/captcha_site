@@ -1,4 +1,10 @@
-<div id="feature_signup" class="card text-left ">
+<style>
+    .alert.alert-danger {
+        margin-bottom: 0px;
+    }
+</style>
+<div id="feature_signup" class="card text-left " style="overflow: auto">
+    @include('includes.error-validation')
     <div class="card-body bg-dark">
         <form action="/signup" method="post">
             @csrf

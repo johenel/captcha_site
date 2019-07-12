@@ -27,12 +27,16 @@ class SignupController extends Controller
 
         $referrer = $this->checkIfReferred($request->ref);
 
+        session()->flash('SIGNUP_ERROR', true);
+
         $this->validate($request, [
             'email' => 'required|email|unique:users',
             'first_name' => 'required|min:3',
             'last_name' => 'required|min:3',
             'password' => 'required|min:6|confirmed'
         ]);
+
+        session()->flash('SIGNUP_ERROR', false);
 
         $user = new Users;
 

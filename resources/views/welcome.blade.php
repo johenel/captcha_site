@@ -561,6 +561,12 @@
         @if(session()->has('SENT_CONTACTUS'))
             alert('Your inquiry has been submitted.');
         @endif
+
+        @if(session()->has('SIGNUP_ERROR'))
+            @if(session()->get('SIGNUP_ERROR') == true)
+                $('#signupModal').modal('show');
+            @endif
+        @endif
     </script>
 
 @endsection
