@@ -89,3 +89,9 @@ table td, table th {
         height: 350px;
     }
 }
+
+@media(max-width: 375px ) {
+    .rewards-row {
+        padding: 10px !important;
+    }
+}

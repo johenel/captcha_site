@@ -21,7 +21,7 @@
             <h1>Rewards</h1>
         </div>
         <hr>
-        <div class="row" style="padding: 40px;">
+        <div class="row rewards-row" style="padding: 40px;">
             @if(count($rewards) > 0)
                 @foreach($rewards as $r)
                     <div class="col-md-4 col-sm-4">
