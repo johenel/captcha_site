@@ -24,7 +24,7 @@
         <div class="row" style="padding: 40px;">
             @if(count($rewards) > 0)
                 @foreach($rewards as $r)
-                    <div class="col-md-3 col-sm-4">
+                    <div class="col-md-4 col-sm-4">
                         <div class="card">
                             <span class="price reward">
                                 <i class="fa fa-star" style="color:orange"></i> {{$r->price_reward_points}}<br><i class="fa fa-money" style="color:#04d204"></i> {{$r->price_money_balance}}
