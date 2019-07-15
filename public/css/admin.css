@@ -23,9 +23,18 @@
     padding: 0px 40px;
     margin-top:20px;
 }
+.card-img-top {
+    height: 500px;
+}
 
 table td, table th {
     text-align: center;
+}
+
+@media(max-width: 1440px) {
+    .card-img-top {
+        height: 500px;
+    }
 }
 
 
@@ -37,6 +46,9 @@ table td, table th {
 }
 
 @media(max-width: 1024px) {
+    .card-img-top {
+        height: 225px;
+    }
     .right-panel {
         margin-left: 84px;
     }
@@ -71,5 +83,9 @@ table td, table th {
 
     .stat-widget-five .stat-content {
         margin-left: 85px;
+    }
+
+    .card-img-top {
+        height: 350px;
     }
 }
